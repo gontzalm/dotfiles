@@ -21,6 +21,7 @@ call plug#end()
 
 " General settings
 set nu
+let mapleader=","
 
 " Theme
 set termguicolors
@@ -29,6 +30,7 @@ colorscheme dracula
 " NERDTree
 autocmd vimenter * NERDTree " autostart
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1  
