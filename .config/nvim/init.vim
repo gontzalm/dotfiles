@@ -16,12 +16,14 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'  
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
 " General settings
 set nu
 let mapleader=","
+set guifont=FiraCode\ Nerd\ Font\ 11
 
 " Theme
 set termguicolors
