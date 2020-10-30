@@ -29,6 +29,10 @@ set guifont=FiraCode\ Nerd\ Font\ 11
 set termguicolors
 colorscheme dracula
 
+" CoC
+let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-python', 'coc-texlab']
+
+
 " NERDTree
 autocmd vimenter * NERDTree " autostart
 map <C-n> :NERDTreeToggle<CR>
