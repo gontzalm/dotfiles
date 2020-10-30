@@ -35,6 +35,8 @@ let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-p
 
 " NERDTree
 autocmd vimenter * NERDTree " autostart
+autocmd VimEnter * wincmd w
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
