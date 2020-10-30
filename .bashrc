@@ -158,3 +158,4 @@ unset __conda_setup
 
 alias config='/usr/bin/git --git-dir=/home/gontz/dotfiles/ --work-tree=/home/gontz'
 set -o vi
+neofetch

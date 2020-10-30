@@ -16,6 +16,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'  
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
+Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
