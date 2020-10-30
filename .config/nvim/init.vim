@@ -9,6 +9,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'vim-python/python-syntax'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -19,6 +20,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'mhinz/vim-startify'
+Plug 'tpope/vim-surround'
 Plug 'ryanoasis/vim-devicons' "vim-devicons must always be last
 
 call plug#end()
@@ -27,7 +29,7 @@ call plug#end()
 set nu
 let mapleader=","
 
-" Splits 
+" Splits
 set splitbelow splitright
 
 nnoremap <C-h> <C-w>h
@@ -39,6 +41,9 @@ nnoremap <C-l> <C-w>l
 " Theme
 set termguicolors
 colorscheme dracula
+
+" Python Syntax
+let g:python_highlight_all = 1
 
 " CoC
 let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-python', 'coc-texlab']
