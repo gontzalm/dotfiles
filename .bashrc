@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+# Set vi mode
+set -o vi
+
 [[ $- != *i* ]] && return
 
 colors() {
@@ -93,11 +96,10 @@ unset use_color safe_term match_lhs sh
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
 alias more=less
-
-# My aliases
 alias ll="ls -Al"
+alias vim="nvim"
+alias config='/usr/bin/git --git-dir=/home/gontz/dotfiles/ --work-tree=/home/gontz'
 
 xhost +local:root > /dev/null 2>&1
 
@@ -141,6 +143,8 @@ ex ()
   fi
 }
 
+neofetch
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/gontz/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -155,7 +159,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-alias config='/usr/bin/git --git-dir=/home/gontz/dotfiles/ --work-tree=/home/gontz'
-set -o vi
-neofetch
