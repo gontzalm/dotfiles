@@ -157,3 +157,4 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias config='/usr/bin/git --git-dir=/home/gontz/dotfiles/ --work-tree=/home/gontz'
+set -o vi
