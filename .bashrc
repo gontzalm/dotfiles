@@ -99,7 +99,7 @@ alias free='free -m'                      # show sizes in MB
 alias more=less
 alias ll="ls -Al"
 alias vim="nvim"
-alias config='/usr/bin/git --git-dir=/home/gontz/dotfiles/ --work-tree=/home/gontz'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 xhost +local:root > /dev/null 2>&1
 
