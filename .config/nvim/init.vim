@@ -31,7 +31,7 @@ set nu
 let mapleader=","
 
 " Keybindings
-nnoremap <leader>h :noh<CR>
+nnoremap <silent> <leader>h :noh<CR>
 
 " Splits
 set splitbelow splitright
@@ -51,6 +51,10 @@ let g:python_highlight_all = 1
 
 " CoC
 let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-python', 'coc-texlab']
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>" 
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " NERDTree
 autocmd vimenter * NERDTree " autostart
