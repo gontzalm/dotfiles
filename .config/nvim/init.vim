@@ -8,7 +8,8 @@ endif
 " Plugin manager
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-python/python-syntax'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'scrooloose/nerdtree'
@@ -30,7 +31,7 @@ set nu
 let mapleader=","
 
 " Keybindings
-nnoremap <leader>c :noh<CR>
+nnoremap <leader>h :noh<CR>
 
 " Splits
 set splitbelow splitright
@@ -43,7 +44,7 @@ nnoremap <C-l> <C-w>l
 " PLUGIN SETTINGS
 " Theme
 set termguicolors
-colorscheme dracula
+colorscheme challenger_deep
 
 " Python Syntax
 let g:python_highlight_all = 1
