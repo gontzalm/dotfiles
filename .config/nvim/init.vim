@@ -29,6 +29,9 @@ call plug#end()
 set nu
 let mapleader=","
 
+" Keybindings
+nnoremap <leader>c :noh<CR>
+
 " Splits
 set splitbelow splitright
 
