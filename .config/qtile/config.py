@@ -31,7 +31,7 @@ from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-mod = "mod4"
+mod = "mod1"
 terminal = guess_terminal()
 
 # Keybindings
@@ -77,12 +77,12 @@ keys = [
 
 # Workspaces
 group_list = [
-    ("WWW", {"layout": "max"}),
-    ("SYS", {"layout": "max"}),
-    ("DEV", {"layout": "max"}),
-    ("CHAT", {"layout": "max"}),
-    ("MUS", {"layout": "max"}),
-    ("VID", {"layout": "max"}),
+    ("WWW", {"layout": "monadtall"}),
+    ("SYS", {"layout": "monadtall"}),
+    ("DEV", {"layout": "monadtall"}),
+    ("CHAT", {"layout": "monadtall"}),
+    ("MUS", {"layout": "monadtall"}),
+    ("VID", {"layout": "monadtall"}),
 ]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_list]
@@ -90,11 +90,11 @@ groups = [Group(name, **kwargs) for name, kwargs in group_list]
 for i, group in enumerate(groups, 1):
     keys.extend([
         # Switch to another group
-        Key([mod], i, lazy.group[group.name].toscreen(),
+        Key([mod], str(i), lazy.group[group.name].toscreen(), 
             desc=f"Switch to group {group.name}"),
 
         # Send to another group
-        Key([mod, "shift"], i, lazy.wgroupndow.togroup(group.name),
+        Key([mod, "shift"], str(i), lazy.window.togroup(group.name),
             desc=f"Switch to & move focused window to group {group.name}"),
     ])
 
@@ -105,11 +105,11 @@ layouts = [
     layout.Matrix(),
 ]
 
-widget_defaults = dict(
-    font='sans',
-    fontsize=12,
-    padding=3,
-)
+widget_defaults = {
+    "font": "sans",
+    "fontsize": 12,
+    "padding": 3,
+}
 extension_defaults = widget_defaults.copy()
 
 screens = [
