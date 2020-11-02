@@ -34,6 +34,7 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 terminal = guess_terminal()
 
+# Keybindings
 keys = [
     # Switch between windows in current stack pane
     Key([mod], "k", lazy.layout.down(),
@@ -73,37 +74,35 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "asdfuiop"]
 
-for i in groups:
+# Workspaces
+group_list = [
+    ("WWW", {"layout": "max"}),
+    ("SYS", {"layout": "max"}),
+    ("DEV", {"layout": "max"}),
+    ("CHAT", {"layout": "max"}),
+    ("MUS", {"layout": "max"}),
+    ("VID", {"layout": "max"}),
+]
+
+groups = [Group(name, **kwargs) for name, kwargs in group_list]
+
+for i, group in enumerate(groups, 1):
     keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(),
-            desc="Switch to group {}".format(i.name)),
+        # Switch to another group
+        Key([mod], i, lazy.group[group.name].toscreen(),
+            desc=f"Switch to group {group.name}"),
 
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
+        # Send to another group
+        Key([mod, "shift"], i, lazy.wgroupndow.togroup(group.name),
+            desc=f"Switch to & move focused window to group {group.name}"),
     ])
 
 layouts = [
+    layout.MonadTall(),
+    layout.MonadWide(),
     layout.Max(),
-    layout.Stack(num_stacks=2),
-    # Try more layouts by unleashing below layouts.
-    # layout.Bsp(),
-    # layout.Columns(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    layout.Matrix(),
 ]
 
 widget_defaults = dict(
