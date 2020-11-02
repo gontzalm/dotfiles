@@ -168,7 +168,7 @@ schemes:
       cyan:    '0xaaffe4'
       white:   '0xcbe3e7'
 
-color: *challenger_deep
+colors: *challenger_deep
 
 # Bell
 #
