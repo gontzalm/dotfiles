@@ -64,7 +64,7 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " NERDCommenter
-let g:NERDSpaceDelims = 1
+let g:NERDSpaceDelims = 0
 let g:NERDTrimTrailingWhitespace = 1
 
 " Airline
