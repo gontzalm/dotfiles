@@ -74,10 +74,9 @@ keys = [
         desc="Spawn a command using a prompt widget"),
 ]
 
-
-# Workspaces
+# Groups
 group_list = [
-    ("WWW", {"layout": "monadtall"}),
+    ("WWW", {"layout": "max"}),
     ("SYS", {"layout": "monadtall"}),
     ("DEV", {"layout": "monadtall"}),
     ("CHAT", {"layout": "monadtall"}),
@@ -90,7 +89,7 @@ groups = [Group(name, **kwargs) for name, kwargs in group_list]
 for i, group in enumerate(groups, 1):
     keys.extend([
         # Switch to another group
-        Key([mod], str(i), lazy.group[group.name].toscreen(), 
+        Key([mod], str(i), lazy.group[group.name].toscreen(),
             desc=f"Switch to group {group.name}"),
 
         # Send to another group
@@ -98,42 +97,82 @@ for i, group in enumerate(groups, 1):
             desc=f"Switch to & move focused window to group {group.name}"),
     ])
 
+# Layouts
+monad_config = {
+    "border_focus": "5100ff",
+    "border_width": 1,
+    "margin": 4,
+}
+
 layouts = [
-    layout.MonadTall(),
-    layout.MonadWide(),
+    layout.MonadTall(**monad_config),
+    layout.MonadWide(**monad_config),
     layout.Max(),
-    layout.Matrix(),
+    layout.Matrix()
 ]
 
+# Widgets
 widget_defaults = {
-    "font": "sans",
+    "font": "Fira Code Nerd Font",
     "fontsize": 12,
     "padding": 3,
 }
+
 extension_defaults = widget_defaults.copy()
+
+group_box_config = {
+    "active": "ffffff",
+    "background": "000000",
+    "disable_drag": True,
+    "highlight_method": "block",
+    "inactive": "bfcbdb",
+    "margin_x": 0,
+    "other_current_screen_border": "000000",
+    "other_screen_border": "000000",
+    "rounded": False,
+    "this_current_screen_border": "5100ff",
+    "this_screen_border": "5100ff",
+}
+
+# Screens
+bar_config = {
+    "background": "#000000",
+    "opacity": 0.9,
+}
+
+top_bar = bar.Bar(
+    [
+        widget.CurrentScreen(),
+        widget.GroupBox(**group_box_config),
+        widget.Prompt(),
+        widget.WindowName(),
+        widget.CurrentLayout(),
+        widget.Sep(height_percent=60),
+        widget.Systray(),
+        widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+        # widget.Sep(height_percent=60),
+        # widget.CPU(),
+        # widget.CPUGraph(),
+    ],
+    30,
+    **bar_config,
+)
+top_bar_1 = bar.Bar(
+    [
+        widget.CurrentScreen(),
+        widget.GroupBox(**group_box_config),
+        widget.WindowName(),
+    ],
+    30,
+    **bar_config,
+)
 
 screens = [
     Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
-                widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-                widget.QuickExit(),
-            ],
-            24,
-        ),
+        top=top_bar,
+    ),
+    Screen(
+        top=top_bar_1,
     ),
 ]
 
