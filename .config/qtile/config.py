@@ -137,7 +137,7 @@ group_box_config = {
 # Screens
 bar_config = {
     "background": "#000000",
-    "opacity": 0.9,
+    "opacity": 0.8,
 }
 
 top_bar = bar.Bar(
