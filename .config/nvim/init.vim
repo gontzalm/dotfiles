@@ -5,33 +5,58 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
 endif
 
-" Plugin manager
+" PLUGIN MANAGER
 call plug#begin('~/.config/nvim/plugged')
 
-" Plug 'dracula/vim', { 'as': 'dracula' }
+" Aesthetics 
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
-Plug 'vim-python/python-syntax'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
+Plug 'ryanoasis/vim-devicons' "vim-devicons must always be last
+
+" Completion, syntax highlighting, style
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'Vimjas/vim-python-pep8-indent'
+
+" Explorer
+Plug 'scrooloose/nerdtree'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Must-have utilities
+Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
-Plug 'mhinz/vim-startify'
 Plug 'tpope/vim-surround'
-Plug 'ryanoasis/vim-devicons' "vim-devicons must always be last
+
+" Filetype plugins
+Plug 'lervag/vimtex'
+
+" Other
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-" GENERAL SETTINGS
-set nu
-let mapleader=","
+" SETTINGS
+" [GENERAL]
+" Basics
+set number
+
+" Hard-wrap text at 80 characters
+set textwidth=80
+set wrapmargin=0
+set formatoptions+=t
+set linebreak
+
+" Tabs
+autocmd filetype * set softtabstop=2 | set shiftwidth=2 | set expandtab
+autocmd filetype python,markdown set softtabstop=4 | set shiftwidth=4 | set expandtab
 
 " Keybindings
-nnoremap <silent> <leader>h :noh<CR>
+let mapleader=","
+nnoremap <silent> <leader>h :noh<CR> " toggle highlighting
 
 " Splits
 set splitbelow splitright
@@ -41,20 +66,25 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" PLUGIN SETTINGS
+" [PLUGINS]
 " Theme
 set termguicolors
 colorscheme challenger_deep
 
-" Python Syntax
-let g:python_highlight_all = 1
+" Airline
+let g:airline#extensions#tabline#enabled = 1  " show open buffers (as tabs)
+let g:airline#extensions#tabline#fnamemod = ':t'  " show only file name
+
+let g:airline_powerline_fonts = 1
+
+set noshowmode  " do not show mode (already shown in airtable)
 
 " CoC
-let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-python', 'coc-texlab']
+let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-python', 'coc-vimtex']
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"     " tab navigation
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>" " tab navigation
 
 " NERDTree
 autocmd vimenter * NERDTree " autostart
@@ -64,16 +94,9 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 " NERDCommenter
-let g:NERDSpaceDelims = 0
+let g:NERDSpaceDelims = 1
+let g:NERDCustomDelimiters = {'python': {'left': '#'}}
 let g:NERDTrimTrailingWhitespace = 1
-
-" Airline
-let g:airline#extensions#tabline#enabled = 1  " show open buffers (as tabs)
-let g:airline#extensions#tabline#fnamemod = ':t'  " show only file name
-
-let g:airline_powerline_fonts = 1
-
-set noshowmode  " do not show mode (already shown in airtable)
 
 " indentline
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
