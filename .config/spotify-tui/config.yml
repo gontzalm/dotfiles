@@ -9,7 +9,7 @@ theme:
   hint: Yellow # hint text in errors
   hovered: Magenta # hovered pane border
   inactive: Gray # borders of inactive panes
-  playbar_background: Default # background of progress bar
+  playbar_background: "44, 44, 62" # background of progress bar
   playbar_progress: Blue # filled-in part of the progress bar
   playbar_text: Magenta # artist name in player pane
   selected: LightGreen # a) selected pane border, b) hovered item in list, & c) track title in player
