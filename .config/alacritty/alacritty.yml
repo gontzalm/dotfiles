@@ -93,11 +93,11 @@ font:
 
   italic:
     family: Fira Code Nerd Font
-    style: Italic
+    style: Light 
 
   bold_italic:
     family: Fira Code Nerd Font
-    style: Bold Italic
+    style: SemiBold
 
   size: 11.0
 
