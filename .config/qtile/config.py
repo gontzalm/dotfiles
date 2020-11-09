@@ -81,7 +81,8 @@ group_list = [
     ("DEV", {"layout": "monadtall"}),
     ("CHAT", {"layout": "monadtall"}),
     ("MUS", {"layout": "monadtall"}),
-    ("VID", {"layout": "monadtall"}),
+    ("VID", {"layout": "max"}),
+    ("GAME", {"layout": "max"}),
 ]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_list]
@@ -140,18 +141,21 @@ bar_config = {
     "opacity": 0.8,
 }
 
+wname_padding = 15
+
 top_bar = bar.Bar(
     [
         widget.CurrentScreen(),
         widget.GroupBox(**group_box_config),
         widget.Prompt(),
-        widget.WindowName(),
+        widget.WindowName(padding=wname_padding),
         widget.CurrentLayout(),
         widget.Sep(height_percent=60),
         widget.Systray(),
+        # widget.CPU(),
+        # widget.Memory(),
         widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
         # widget.Sep(height_percent=60),
-        # widget.CPU(),
         # widget.CPUGraph(),
     ],
     30,
@@ -161,7 +165,7 @@ top_bar_1 = bar.Bar(
     [
         widget.CurrentScreen(),
         widget.GroupBox(**group_box_config),
-        widget.WindowName(),
+        widget.WindowName(padding=wname_padding),
     ],
     30,
     **bar_config,
@@ -211,12 +215,4 @@ floating_layout = layout.Floating(float_rules=[
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
-# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
-# string besides java UI toolkits; you can see several discussions on the
-# mailing lists, GitHub issues, and other WM documentation that suggest setting
-# this string if your java app doesn't work correctly. We may as well just lie
-# and say that we're a working one by default.
-#
-# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
-# java that happens to be on java's whitelist.
-wmname = "LG3D"
+wmname = "Qtile"

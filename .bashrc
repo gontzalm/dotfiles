@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Set vim as manpager
-export MANPAGER="/bin/sh -c \"col -b | nvim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+export MANPAGER="/bin/sh -c \"col -b | nvim 'set ft=man ts=8 nomod nolist noma' -\""
 
 # Set vi mode
 set -o vi
@@ -23,7 +23,7 @@ PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
 alias ls='exa -al --color=always --group-directories-first' # my preferred listing
 alias cp="cp -i"
 alias df="df -h"
-alias free="free -m"
+alias free="free -h"
 alias more="less"
 alias vim="nvim"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
