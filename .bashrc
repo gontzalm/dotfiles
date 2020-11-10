@@ -27,6 +27,7 @@ alias free="free -h"
 alias more="less"
 alias vim="nvim"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias tsm="transmission-remote"
 
 # ex - archive extractor
 # usage: ex <file>
