@@ -50,12 +50,17 @@ set wrapmargin=0
 set formatoptions+=t
 set linebreak
 
-" Tabs
+" Replace tabs with spaces
 autocmd filetype * set softtabstop=2 | set shiftwidth=2 | set expandtab
-autocmd filetype python,markdown set softtabstop=4 | set shiftwidth=4 | set expandtab
+autocmd filetype python,markdown,tex set softtabstop=4 | set shiftwidth=4 | set expandtab
 
-" Keybindings
-let mapleader=","
+" Display special characters with symbols
+set list
+set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+
+"" Keybindings
+let mapleader=','
+let maplocalleader=','
 nnoremap <silent> <leader>h :noh<CR> " toggle highlighting
 
 " Splits
@@ -98,6 +103,13 @@ let g:NERDSpaceDelims = 1
 let g:NERDCustomDelimiters = {'python': {'left': '#'}}
 let g:NERDTrimTrailingWhitespace = 1
 
-" indentline
+" IndentLine
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+
+" VimTex
+let g:tex_flavor = 'latex'
+let g:vimtex_view_general_viewer = 'zathura'
+let g:vimtex_compiler_latexmk = {
+      \ 'build_dir' : 'build',
+      \}
