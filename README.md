@@ -2,16 +2,16 @@
 
 My personal config files for various programs, including:
 
-- Alacritty
+- [Alacritty](https://github.com/alacritty/alacritty)
 
 - Bash
 
 - GTK 3.0
 
-- Neovim
+- [Neovim](https://github.com/neovim/neovim)
 
-- Qtile
+- [Qtile](https://github.com/qtile/qtile)
 
-- Spotify-TUI
+- [Spotify-TUI](https://github.com/Rigellute/spotify-tui)
 
 - Xorg
