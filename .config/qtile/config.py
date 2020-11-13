@@ -76,13 +76,13 @@ keys = [
 
 # Groups
 group_list = [
-    ("WWW", {"layout": "max"}),
-    ("SYS", {"layout": "monadtall"}),
-    ("DEV", {"layout": "monadtall"}),
-    ("CHAT", {"layout": "monadtall"}),
-    ("MUS", {"layout": "monadtall"}),
-    ("VID", {"layout": "max"}),
-    ("GAME", {"layout": "max"}),
+    ("\uf0ac", {"layout": "max"}),
+    ("\uf085", {"layout": "monadtall"}),
+    ("\uf121", {"layout": "monadtall"}),
+    ("\uf27a", {"layout": "monadtall"}),
+    ("\uf001", {"layout": "monadtall"}),
+    ("\uf03d", {"layout": "max"}),
+    ("\uf11b", {"layout": "max"}),
 ]
 
 groups = [Group(name, **kwargs) for name, kwargs in group_list]
@@ -116,7 +116,7 @@ layouts = [
 widget_defaults = {
     "font": "Fira Code Nerd Font",
     "fontsize": 12,
-    "padding": 3,
+    "padding": 5,
 }
 
 extension_defaults = widget_defaults.copy()
@@ -124,12 +124,16 @@ extension_defaults = widget_defaults.copy()
 group_box_config = {
     "active": "ffffff",
     "background": "000000",
+    "borderwidth": 4,
     "disable_drag": True,
-    "highlight_method": "block",
+    "fontsize": 14,
+    "highlight_method": "line",
     "inactive": "bfcbdb",
     "margin_x": 0,
+    "margin_y": 5,
     "other_current_screen_border": "000000",
     "other_screen_border": "000000",
+    "padding_x": 5,
     "rounded": False,
     "this_current_screen_border": "5100ff",
     "this_screen_border": "5100ff",
@@ -143,7 +147,7 @@ bar_config = {
 
 wname_padding = 15
 
-top_bar = bar.Bar(
+primary_bar = bar.Bar(
     [
         widget.CurrentScreen(),
         widget.GroupBox(**group_box_config),
@@ -161,7 +165,8 @@ top_bar = bar.Bar(
     30,
     **bar_config,
 )
-top_bar_1 = bar.Bar(
+
+secondary_bar = bar.Bar(
     [
         widget.CurrentScreen(),
         widget.GroupBox(**group_box_config),
@@ -173,10 +178,10 @@ top_bar_1 = bar.Bar(
 
 screens = [
     Screen(
-        top=top_bar,
+        top=primary_bar,
     ),
     Screen(
-        top=top_bar_1,
+        top=secondary_bar,
     ),
 ]
 
@@ -191,7 +196,6 @@ mouse = [
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
-main = None  # WARNING: this is deprecated and will be removed soon
 follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
@@ -214,5 +218,4 @@ floating_layout = layout.Floating(float_rules=[
 ])
 auto_fullscreen = True
 focus_on_window_activation = "smart"
-
 wmname = "Qtile"
