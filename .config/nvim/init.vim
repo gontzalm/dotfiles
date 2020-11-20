@@ -12,7 +12,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons' "vim-devicons must always be last
 
@@ -39,8 +38,7 @@ Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
-" SETTINGS
-" [GENERAL]
+" GENERAL SETTINGS
 " Basics
 set number
 
@@ -71,7 +69,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" [PLUGINS]
+" PLUGINS
 " Theme
 set termguicolors
 colorscheme challenger_deep
