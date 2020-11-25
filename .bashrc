@@ -18,10 +18,10 @@ export MANWIDTH="999"
 bind "set completion-ignore-case on"
 
 # Prompt
-PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+PS1="\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] "
 
 # Aliases
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
+alias ls="exa -al --color=always --group-directories-first"
 alias cp="cp -i"
 alias df="df -h"
 alias free="free -h"
@@ -29,6 +29,7 @@ alias more="less"
 alias vim="nvim"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias tsm="transmission-remote"
+alias rsd="systemctl --user restart spotifyd"
 
 # ex - archive extractor
 # usage: ex <file>
