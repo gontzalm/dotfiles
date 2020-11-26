@@ -29,7 +29,8 @@ alias more="less"
 alias vim="nvim"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias tsm="transmission-remote"
-alias rsd="systemctl --user restart spotifyd"
+alias rspotifyd="systemctl --user restart spotifyd"
+alias bt="sudo bluetoothctl"
 
 # ex - archive extractor
 # usage: ex <file>
