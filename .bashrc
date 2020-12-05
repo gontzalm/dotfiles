@@ -25,12 +25,13 @@ alias ls="exa -al --color=always --group-directories-first"
 alias cp="cp -i"
 alias df="df -h"
 alias free="free -h"
-alias more="less"
+alias less="more" 
 alias vim="nvim"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias tsm="transmission-remote"
 alias rspotifyd="systemctl --user restart spotifyd"
 alias bt="sudo bluetoothctl"
+alias shutdown="sudo shutdown now"
 
 # ex - archive extractor
 # usage: ex <file>
