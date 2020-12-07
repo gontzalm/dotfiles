@@ -9,7 +9,7 @@
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# to use, copy, MODify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
 #
@@ -31,37 +31,54 @@ from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-mod = "mod1"
-terminal = guess_terminal()
+MOD = "mod1"
+TERMINAL = "alacritty"
+
+# Challenger Deep Colors
+COLORS = {
+    "background":     "1e1c31",
+    "foreground":     "cbe1e7",
+    "black":          "141228",
+    "red":            "ff5458",
+    "green":          "62d196",
+    "yellow":         "ffb378",
+    "blue":           "65b2ff",
+    "magenta":        "906cff",
+    "cyan":           "63f2f1",
+    "white":          "a6b3cc",
+    "bright_black":   "565575",
+    "bright_red":     "ff8080",
+    "bright_green":   "95ffa4",
+    "bright_yellow":  "ffe9aa",
+    "bright_blue":    "91ddff",
+    "bright_magenta": "c991e1",
+    "bright_cyan":    "aaffe4",
+    "bright_white":   "cbe3e7",
+}
 
 # Keybindings
 keys = [
     # Switch between windows in current stack pane
-    Key([mod], "j", lazy.layout.down(),
+    Key([MOD], "j", lazy.layout.down(),
         desc="Move focus down in stack pane"),
-    Key([mod], "k", lazy.layout.up(),
+    Key([MOD], "k", lazy.layout.up(),
         desc="Move focus up in stack pane"),
 
     # Move windows up or down in current stack
-    Key([mod, "control"], "j", lazy.layout.shuffle_down(),
+    Key([MOD, "shift"], "j", lazy.layout.shuffle_down(),
         desc="Move window down in current stack "),
-    Key([mod, "control"], "k", lazy.layout.shuffle_up(),
+    Key([MOD, "shift"], "k", lazy.layout.shuffle_up(),
         desc="Move window up in current stack "),
 
-    # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate(),
-        desc="Swap panes of split stack"),
-
     # Launch terminal
-    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([MOD], "Return", lazy.spawn(TERMINAL), desc="Launch terminal"),
 
-    # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([MOD], "w", lazy.window.kill(), desc="Kill focused window"),
 
-    Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
-    Key([mod], "r", lazy.spawncmd(),
+    Key([MOD, "shift"], "r", lazy.restart(), desc="Restart qtile"),
+    Key([MOD, "shift"], "q", lazy.shutdown(), desc="Shutdown qtile"),
+    Key([MOD], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
 ]
 
@@ -81,19 +98,19 @@ groups = [Group(name, **kwargs) for name, kwargs in group_list]
 for i, group in enumerate(groups, 1):
     keys.extend([
         # Switch to another group
-        Key([mod], str(i), lazy.group[group.name].toscreen(),
+        Key([MOD], str(i), lazy.group[group.name].toscreen(),
             desc=f"Switch to group {group.name}"),
 
         # Send to another group
-        Key([mod, "shift"], str(i), lazy.window.togroup(group.name),
+        Key([MOD, "shift"], str(i), lazy.window.togroup(group.name),
             desc=f"Switch to & move focused window to group {group.name}"),
     ])
 
 # Layouts
 monad_config = {
-    "border_focus": "5100ff",
-    "border_width": 1,
-    "margin": 4,
+    "border_focus": COLORS["cyan"],
+    "border_width": 2,
+    "margin": 5,
 }
 
 layouts = [
@@ -107,50 +124,68 @@ layouts = [
 widget_defaults = {
     "font": "Fira Code Nerd Font",
     "fontsize": 12,
+    "foreground": COLORS["foreground"],
     "padding": 5,
 }
 
 extension_defaults = widget_defaults.copy()
 
+curr_screen_config = {
+    "active_color": COLORS["bright_green"],
+    "active_text": "\uf2d0",
+    "inactive_color": COLORS["bright_red"],
+    "inactive_text": "\uf2d4",
+}
 group_box_config = {
-    "active": "ffffff",
-    "background": "000000",
+    "active": COLORS["cyan"],
     "borderwidth": 4,
     "disable_drag": True,
     "fontsize": 14,
     "highlight_method": "line",
-    "inactive": "bfcbdb",
+    "inactive": COLORS["bright_black"],
     "margin_x": 0,
     "margin_y": 5,
-    "other_current_screen_border": "000000",
-    "other_screen_border": "000000",
+    "other_current_screen_border": COLORS["background"],
+    "other_screen_border": COLORS["background"],
     "padding_x": 5,
     "rounded": False,
-    "this_current_screen_border": "5100ff",
-    "this_screen_border": "5100ff",
+    "this_current_screen_border": COLORS["bright_yellow"] ,
+    "this_screen_border": COLORS["bright_yellow"],
+}
+
+layout_config = {
+    "foreground": COLORS["magenta"],
+}
+
+updates_config = {
+    "colour_have_updates": COLORS["bright_green"],
+    "distro": "Arch_yay",
+    "display_format": "\uf079: {updates}",
+    "no_update_string": "\uf079: 0",
+    "update_interval": 300, 
 }
 
 # Screens
 bar_config = {
-    "background": "#000000",
-    "opacity": 0.8,
+    "background": COLORS["background"],
+    "opacity": 0.9,
 }
-
-wname_padding = 15
 
 primary_bar = bar.Bar(
     [
-        widget.CurrentScreen(),
+        widget.CurrentScreen(**curr_screen_config),
+        widget.Spacer(length=4),
         widget.GroupBox(**group_box_config),
         widget.Prompt(),
-        widget.WindowName(padding=wname_padding),
-        widget.CurrentLayout(),
+        widget.WindowName(),
+        widget.CurrentLayout(**layout_config),
+        widget.Sep(height_percent=60),
+        widget.CheckUpdates(**updates_config),
         widget.Sep(height_percent=60),
         widget.Systray(),
         # widget.CPU(),
         # widget.Memory(),
         widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
-        # widget.Sep(height_percent=60),
         # widget.CPUGraph(),
     ],
     30,
@@ -159,9 +194,11 @@ primary_bar = bar.Bar(
 
 secondary_bar = bar.Bar(
     [
-        widget.CurrentScreen(),
+        widget.CurrentScreen(**curr_screen_config),
+        widget.Spacer(length=4),
         widget.GroupBox(**group_box_config),
-        widget.WindowName(padding=wname_padding),
+        widget.WindowName(),
+        widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
     ],
     30,
     **bar_config,
@@ -178,11 +215,11 @@ screens = [
 
 # Drag floating layouts.
 mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
+    Drag([MOD], "Button1", lazy.window.set_position_floating(),
          start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
+    Drag([MOD], "Button3", lazy.window.set_size_floating(),
          start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front())
+    Click([MOD], "Button2", lazy.window.bring_to_front())
 ]
 
 dgroups_key_binder = None
