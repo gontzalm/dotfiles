@@ -136,6 +136,7 @@ curr_screen_config = {
     "inactive_color": COLORS["bright_red"],
     "inactive_text": "\uf2d4",
 }
+
 group_box_config = {
     "active": COLORS["cyan"],
     "borderwidth": 4,
@@ -165,6 +166,16 @@ updates_config = {
     "update_interval": 300, 
 }
 
+# key_layout_config = {
+    # "configured_keyboards": ["us", "es"],
+    # "foreground": COLORS["blue"],
+    # "option": "grp:lwin_toggle",
+# }
+
+clock_config = {
+    "format": "%Y-%m-%d %a %H:%M",
+}
+
 # Screens
 bar_config = {
     "background": COLORS["background"],
@@ -182,10 +193,12 @@ primary_bar = bar.Bar(
         widget.Sep(height_percent=60),
         widget.CheckUpdates(**updates_config),
         widget.Sep(height_percent=60),
+        # widget.Sep(height_percent=60),
+        # widget.KeyboardLayout(),
         widget.Systray(),
         # widget.CPU(),
         # widget.Memory(),
-        widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+        widget.Clock(**clock_config),
         # widget.CPUGraph(),
     ],
     30,
@@ -198,7 +211,7 @@ secondary_bar = bar.Bar(
         widget.Spacer(length=4),
         widget.GroupBox(**group_box_config),
         widget.WindowName(),
-        widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+        widget.Clock(**clock_config),
     ],
     30,
     **bar_config,
