@@ -163,7 +163,7 @@ updates_config = {
     "distro": "Arch_yay",
     "display_format": "\uf079: {updates}",
     "no_update_string": "\uf079: 0",
-    "update_interval": 300, 
+    "update_interval": 60, 
 }
 
 # key_layout_config = {
@@ -173,6 +173,7 @@ updates_config = {
 # }
 
 clock_config = {
+    "foreground": COLORS["blue"],
     "format": "%Y-%m-%d %a %H:%M",
 }
 
