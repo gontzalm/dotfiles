@@ -160,7 +160,7 @@ layout_config = {
 
 updates_config = {
     "colour_have_updates": COLORS["bright_green"],
-    "distro": "Arch_yay",
+    "distro": "Arch_checkupdates",
     "display_format": "\uf079: {updates}",
     "no_update_string": "\uf079: 0",
     "update_interval": 60, 
