@@ -2,13 +2,13 @@
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source ~/.config/nvim/init.vim
+    autocmd vimenter * PlugInstall --sync | source ~/.config/nvim/init.vim
 endif
 
 " PLUGIN MANAGER
 call plug#begin('~/.config/nvim/plugged')
 
-" Aesthetics 
+" Aesthetics
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline'
@@ -41,6 +41,7 @@ call plug#end()
 " GENERAL SETTINGS
 " Basics
 set number
+set scrolloff=1
 
 " Hard-wrap text at 80 characters
 set textwidth=80
@@ -63,7 +64,6 @@ nnoremap <silent> <leader>h :noh<CR> " toggle highlighting
 
 " Splits
 set splitbelow splitright
-
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
