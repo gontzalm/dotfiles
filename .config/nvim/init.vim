@@ -20,12 +20,12 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'Vimjas/vim-python-pep8-indent'
 
 " Explorer
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdtree'
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Must-have utilities
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
@@ -86,15 +86,15 @@ set noshowmode  " do not show mode (already shown in airtable)
 let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-python', 'coc-vimtex']
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"     " tab navigation
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>" " tab navigation
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " NERDTree
 autocmd vimenter * NERDTree " autostart
 autocmd vimenter * wincmd w
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
+let NERDTreeShowHidden = 1
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1
