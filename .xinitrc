@@ -50,4 +50,5 @@ fi
 
 nitrogen --restore &
 picom &
+cbatticon -i symbolic 2> /dev/null &
 exec qtile
