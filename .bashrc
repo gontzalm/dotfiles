@@ -32,6 +32,9 @@ alias rspotifyd="systemctl --user restart spotifyd"
 alias bt="sudo bluetoothctl"
 alias shutdown="sudo shutdown now"
 alias reboot="sudo shutdown -r now"
+zathura () {
+  nohup zathura $1 & exit
+}
 
 # ex - archive extractor
 # usage: ex <file>
