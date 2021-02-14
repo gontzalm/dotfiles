@@ -59,10 +59,14 @@ COLORS = {
 # Keybindings
 keys = [
     # Switch between windows in current stack pane
+    Key([MOD], "h", lazy.layout.left(),
+        desc="Move focus left in stack pane"),
     Key([MOD], "j", lazy.layout.down(),
         desc="Move focus down in stack pane"),
     Key([MOD], "k", lazy.layout.up(),
         desc="Move focus up in stack pane"),
+    Key([MOD], "l", lazy.layout.right(),
+        desc="Move focus right in stack pane"),
 
     # Move windows up or down in current stack
     Key([MOD, "shift"], "j", lazy.layout.shuffle_down(),
@@ -164,7 +168,7 @@ updates_config = {
     "distro": "Arch_checkupdates",
     "display_format": "\uf079 {updates}",
     "no_update_string": "\uf079",
-    "update_interval": 60, 
+    "update_interval": 60,
 }
 
 # key_layout_config = {
