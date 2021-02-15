@@ -33,7 +33,7 @@ alias bt="sudo bluetoothctl"
 alias shutdown="sudo shutdown now"
 alias reboot="sudo shutdown -r now"
 zathura () {
-  nohup zathura $1 & exit
+  nohup zathura $1 &> /dev/null & exit
 }
 
 # ex - archive extractor
