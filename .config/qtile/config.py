@@ -167,7 +167,7 @@ updates_config = {
     "colour_no_updates": COLORS["bright_green"],
     "distro": "Arch_checkupdates",
     "display_format": "\uf079 {updates}",
-    "no_update_string": "\uf079",
+    "no_update_string": "\uf079 0",
     "update_interval": 60,
 }
 

@@ -10,6 +10,9 @@ set -o vi
 bind -m vi-command "Control-l: clear-screen"
 bind -m vi-insert "Control-l: clear-screen"
 
+# Set neovim as default editor
+export EDITOR="nvim"
+
 # Set nvim as manpager
 export MANPAGER="nvim +Man!"
 export MANWIDTH="999"
