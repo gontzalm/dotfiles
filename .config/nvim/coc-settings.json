@@ -1,0 +1,4 @@
+{
+  "python.venvPath": "/home/users/miniconda3/envs",
+  "python.linting.pylintEnabled": true
+}
