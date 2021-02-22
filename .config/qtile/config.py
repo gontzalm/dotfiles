@@ -57,7 +57,7 @@ COLORS = {
 
 # Keybindings
 keys = [
-    # Switch between windows in current stack pane
+    # Qtile
     Key([MOD], "h", lazy.layout.left(),
         desc="Move focus left in stack pane"),
     Key([MOD], "j", lazy.layout.down(),
@@ -66,23 +66,24 @@ keys = [
         desc="Move focus up in stack pane"),
     Key([MOD], "l", lazy.layout.right(),
         desc="Move focus right in stack pane"),
-
-    # Move windows up or down in current stack
     Key([MOD, "shift"], "j", lazy.layout.shuffle_down(),
         desc="Move window down in current stack "),
     Key([MOD, "shift"], "k", lazy.layout.shuffle_up(),
         desc="Move window up in current stack "),
-
-    # Launch terminal
     Key([MOD], "Return", lazy.spawn(TERMINAL), desc="Launch terminal"),
-
     Key([MOD], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([MOD], "w", lazy.window.kill(), desc="Kill focused window"),
-
     Key([MOD, "shift"], "r", lazy.restart(), desc="Restart qtile"),
     Key([MOD, "shift"], "q", lazy.shutdown(), desc="Shutdown qtile"),
     Key([MOD], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
+
+    # Personal bindings
+    Key([], "Print",
+        lazy.spawn("scrot -s /tmp/screenshot.png -e "
+                   "'xclip -selection c -t image/png < $f'"),
+        desc="Launch scrot and copy screenshot to clipboard"
+    )
 ]
 
 # Groups
