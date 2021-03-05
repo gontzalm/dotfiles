@@ -12,7 +12,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
 " completion, syntax highlighting, style
@@ -41,6 +41,12 @@ call plug#end()
 " GENERAL SETTINGS
 " basics
 set number
+set hidden
+cnoreabbrev vb vert sb
+
+" open help in new window
+command -nargs=1 -complete=help Help help <args> | only
+cnoreabbrev h Help
 
 " keep cursor centered vertically
 nnoremap j jzz
@@ -82,9 +88,7 @@ colorscheme challenger_deep
 " airline
 let g:airline#extensions#tabline#enabled = 1  " show open buffers (as tabs)
 let g:airline#extensions#tabline#fnamemod = ':t'  " show only file name
-
 let g:airline_powerline_fonts = 1
-
 set noshowmode  " do not show mode (already shown in airtable)
 
 " coc
