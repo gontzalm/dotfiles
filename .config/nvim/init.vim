@@ -9,10 +9,8 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " aesthetics
-" Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline'
-" Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 
 " completion, syntax highlighting, style
@@ -25,6 +23,9 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " must-have utilities
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'tmhedberg/SimpylFold'
+Plug 'Konfekt/FastFold'
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
@@ -33,14 +34,14 @@ Plug 'tpope/vim-surround'
 " filetype plugins
 Plug 'lervag/vimtex'
 
-" Other
+" others
 Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
 " GENERAL SETTINGS
 " basics
-set number
+set number relativenumber
 set hidden
 cnoreabbrev vb vert sb
 
@@ -71,9 +72,9 @@ let mapleader=','
 let maplocalleader=','
 
 " toggle highlighting
-nnoremap <silent> <leader>h :noh<CR>
+nnoremap <silent> <leader>h :noh<cr>
 
-" natural splits & navigation
+" natural splits & window navigation
 set splitbelow splitright
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -86,23 +87,36 @@ set termguicolors
 colorscheme challenger_deep
 
 " airline
-let g:airline#extensions#tabline#enabled = 1  " show open buffers (as tabs)
-let g:airline#extensions#tabline#fnamemod = ':t'  " show only file name
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
-set noshowmode  " do not show mode (already shown in airtable)
+set noshowmode
 
 " coc
+set updatetime=300
+set shortmess+=c
 let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-pyright', 'coc-vimtex']
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<cr>"
+inoremap <expr> <tab> pumvisible() ? "\<C-n>" : "\<tab>"
+inoremap <expr> <S-tab> pumvisible() ? "\<C-p>" : "\<S-tab>"
+
+command -nargs=0 Format call CocAction('format')
+nnoremap <leader>a :CocAction<cr>
+
+" simpylfold
+nnoremap <space> za
+let g:SimpylFold_docstring_preview = 1
+
+" fastfold
+let g:fastfold_minlines = 0
 
 " nerdtree
-autocmd vimenter * NERDTree " autostart
+autocmd vimenter * NERDTree
 autocmd vimenter * wincmd w
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<cr>
 let NERDTreeShowHidden = 1
 
 " nerdcommenter
