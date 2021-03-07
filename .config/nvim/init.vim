@@ -16,6 +16,11 @@ Plug 'ryanoasis/vim-devicons'
 " completion, syntax highlighting, style
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'jiangmiao/auto-pairs'
+
+" git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " tree
 Plug 'preservim/nerdtree'
@@ -27,8 +32,6 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
 Plug 'preservim/nerdcommenter'
-Plug 'Yggdroot/indentLine'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 
 " filetype plugins
@@ -43,10 +46,10 @@ call plug#end()
 " basics
 set number relativenumber
 set hidden
-cnoreabbrev vb vert sb
+cnoreabbrev vb vertical splitbuffer
 
 " open help in new window
-command -nargs=1 -complete=help Help help <args> | only
+command -nargs=1 -complete=help Help vertical help <args>
 cnoreabbrev h Help
 
 " keep cursor centered vertically
@@ -61,7 +64,7 @@ set linebreak
 
 " Replace tabs with spaces
 autocmd filetype * set softtabstop=2 | set shiftwidth=2 | set expandtab
-autocmd filetype python,markdown,tex set softtabstop=4 | set shiftwidth=4 | set expandtab
+autocmd filetype python,markdown,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
 
 " Display special characters with symbols
 set list
@@ -93,10 +96,19 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 set noshowmode
 
+" fugitive
+set statusline+=%{FugitiveStatusline()}
+
 " coc
 set updatetime=300
 set shortmess+=c
-let g:coc_global_extensions = ['coc-git', 'coc-json', 'coc-markdownlint', 'coc-pyright', 'coc-vimtex']
+let g:coc_global_extensions = [
+    \ 'coc-git',
+    \ 'coc-json',
+    \ 'coc-markdownlint',
+    \ 'coc-pyright',
+    \ 'coc-vimtex'
+    \ ]
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<cr>"
 inoremap <expr> <tab> pumvisible() ? "\<C-n>" : "\<tab>"
@@ -132,5 +144,5 @@ let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_compiler_latexmk = {
-      \ 'build_dir' : 'build',
-      \}
+    \ 'build_dir' : 'build',
+    \ }
