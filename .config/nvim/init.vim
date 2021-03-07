@@ -84,6 +84,12 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" create non existing directories when writing a file
+autocmd bufwritepre *
+    \ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
+        \ call mkdir(expand('<afile>:h'), 'p') |
+    \ endif
+
 " PLUGINS
 " theme
 set termguicolors
