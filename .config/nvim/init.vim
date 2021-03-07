@@ -46,7 +46,7 @@ call plug#end()
 " basics
 set number relativenumber
 set hidden
-cnoreabbrev vb vertical splitbuffer
+cnoreabbrev vb vertical sbuffer
 
 " open help in new window
 command -nargs=1 -complete=help Help vertical help <args>
