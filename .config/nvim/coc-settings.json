@@ -1,4 +1,3 @@
 {
-  "coc.preferences.extensionUpdateCheck": "daily",
-  "python.venvPath": "/home/gontz/miniconda3/envs"
+  "coc.preferences.extensionUpdateCheck": "daily"
 }

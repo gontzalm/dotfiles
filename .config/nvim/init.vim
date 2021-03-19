@@ -1,11 +1,16 @@
-" automated installation of vimplug if not installed
+" PLUGIN MANAGER
+" install vim-plug if not found
 if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd vimenter * PlugInstall --sync | source ~/.config/nvim/init.vim
+    autocm~ vimenter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" PLUGIN MANAGER
+" run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
 call plug#begin('~/.config/nvim/plugged')
 
 " aesthetics
@@ -17,6 +22,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'jiangmiao/auto-pairs'
+
+" documentation
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -44,13 +52,11 @@ call plug#end()
 
 " GENERAL SETTINGS
 " basics
-set number relativenumber
+set ignorecase
 set hidden
+set number relativenumber
 cnoreabbrev vb vertical sbuffer
-
-" open help in new window
-command -nargs=1 -complete=help Help vertical help <args>
-cnoreabbrev h Help
+cnoreabbrev h vertical help
 
 " keep cursor centered vertically
 nnoremap j jzz
@@ -63,8 +69,8 @@ set formatoptions+=t
 set linebreak
 
 " Replace tabs with spaces
-autocmd filetype * set softtabstop=2 | set shiftwidth=2 | set expandtab
-autocmd filetype python,markdown,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
+autocmd FileType * set softtabstop=2 | set shiftwidth=2 | set expandtab
+autocmd FileType python,markdown,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
 
 " Display special characters with symbols
 set list
@@ -85,7 +91,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " create non existing directories when writing a file
-autocmd bufwritepre *
+autocmd BufWritePre *
     \ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
         \ call mkdir(expand('<afile>:h'), 'p') |
     \ endif
@@ -105,15 +111,21 @@ set noshowmode
 " fugitive
 set statusline+=%{FugitiveStatusline()}
 
+" doge
+let g:doge_doc_standard_python = 'google'
+
 " coc
 set updatetime=300
 set shortmess+=c
 let g:coc_global_extensions = [
     \ 'coc-git',
+    \ 'coc-html',
     \ 'coc-json',
     \ 'coc-markdownlint',
     \ 'coc-pyright',
-    \ 'coc-vimtex'
+    \ 'coc-toml',
+    \ 'coc-vimtex',
+    \ 'coc-yaml'
     \ ]
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<cr>"
@@ -131,9 +143,9 @@ let g:SimpylFold_docstring_preview = 1
 let g:fastfold_minlines = 0
 
 " nerdtree
-autocmd vimenter * NERDTree
-autocmd vimenter * wincmd w
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd VimEnter \(man://.*\)\@! NERDTree
+autocmd VimEnter * wincmd w
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<cr>
 let NERDTreeShowHidden = 1
 
@@ -141,10 +153,6 @@ let NERDTreeShowHidden = 1
 let g:NERDSpaceDelims = 1
 let g:NERDCustomDelimiters = {'python': {'left': '#'}}
 let g:NERDTrimTrailingWhitespace = 1
-
-" indentline
-let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
-let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
 " vimtex
 let g:tex_flavor = 'latex'
