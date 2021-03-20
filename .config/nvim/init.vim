@@ -143,8 +143,7 @@ let g:SimpylFold_docstring_preview = 1
 let g:fastfold_minlines = 0
 
 " nerdtree
-autocmd VimEnter \(man://.*\)\@! NERDTree
-autocmd VimEnter * wincmd w
+autocmd VimEnter * if !(argc() || &filetype == "man") | NERDTree | wincmd w | endif
 autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 map <C-n> :NERDTreeToggle<cr>
 let NERDTreeShowHidden = 1
