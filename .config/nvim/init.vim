@@ -30,11 +30,6 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
-" tree
-Plug 'preservim/nerdtree'
-Plug 'xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
 " must-have utilities
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tmhedberg/SimpylFold'
@@ -81,7 +76,7 @@ let mapleader=','
 let maplocalleader=','
 
 " toggle highlighting
-nnoremap <silent> <leader>h :noh<cr>
+nnoremap <silent> <leader>h :noh<CR>
 
 " natural splits & window navigation
 set splitbelow splitright
@@ -108,6 +103,13 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 set noshowmode
 
+" gitgutter
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+
 " fugitive
 set statusline+=%{FugitiveStatusline()}
 
@@ -118,6 +120,7 @@ let g:doge_doc_standard_python = 'google'
 set updatetime=300
 set shortmess+=c
 let g:coc_global_extensions = [
+    \ 'coc-explorer',
     \ 'coc-git',
     \ 'coc-html',
     \ 'coc-json',
@@ -127,13 +130,15 @@ let g:coc_global_extensions = [
     \ 'coc-vimtex',
     \ 'coc-yaml'
     \ ]
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<cr>"
-inoremap <expr> <tab> pumvisible() ? "\<C-n>" : "\<tab>"
-inoremap <expr> <S-tab> pumvisible() ? "\<C-p>" : "\<S-tab>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 command -nargs=0 Format call CocAction('format')
-nnoremap <leader>a :CocAction<cr>
+nnoremap <leader>a :CocAction<CR>
+
+nnoremap <silent> <C-e> :CocCommand explorer<CR>
 
 " simpylfold
 nnoremap <space> za
@@ -141,12 +146,6 @@ let g:SimpylFold_docstring_preview = 1
 
 " fastfold
 let g:fastfold_minlines = 0
-
-" nerdtree
-autocmd VimEnter * if !(argc() || &filetype == "man") | NERDTree | wincmd w | endif
-autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-n> :NERDTreeToggle<cr>
-let NERDTreeShowHidden = 1
 
 " nerdcommenter
 let g:NERDSpaceDelims = 1
