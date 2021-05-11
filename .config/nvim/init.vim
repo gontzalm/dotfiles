@@ -20,22 +20,21 @@ Plug 'ryanoasis/vim-devicons'
 
 " completion, syntax highlighting, style
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'jiangmiao/auto-pairs'
 
 " documentation
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
 " git
-Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 " must-have utilities
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tmhedberg/SimpylFold'
 Plug 'Konfekt/FastFold'
-Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'farmergreg/vim-lastplace'
+Plug 'romainl/vim-cool'
 
 " filetype plugins
 Plug 'lervag/vimtex'
@@ -103,13 +102,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 set noshowmode
 
-" gitgutter
-function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
-set statusline+=%{GitStatus()}
-
 " fugitive
 set statusline+=%{FugitiveStatusline()}
 
@@ -125,24 +117,27 @@ let g:coc_global_extensions = [
     \ 'coc-html',
     \ 'coc-json',
     \ 'coc-markdownlint',
+    \ 'coc-pairs',
     \ 'coc-pyright',
+    \ 'coc-sh',
     \ 'coc-toml',
+    \ 'coc-vimlsp',
     \ 'coc-vimtex',
     \ 'coc-yaml'
     \ ]
 
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <Tab>
     \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
+    \ <SID>check_back_space() ? "\<Tab>" :
     \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <silent><expr> <c-Space> coc#refresh()
 
 command -nargs=0 Format call CocAction('format')
 nnoremap <leader>a :CocAction<CR>
@@ -150,16 +145,11 @@ nnoremap <leader>a :CocAction<CR>
 nnoremap <silent> <C-e> :CocCommand explorer<CR>
 
 " simpylfold
-nnoremap <space> za
+nnoremap <Space> za
 let g:SimpylFold_docstring_preview = 1
 
 " fastfold
 let g:fastfold_minlines = 0
-
-" nerdcommenter
-let g:NERDSpaceDelims = 1
-let g:NERDCustomDelimiters = {'python': {'left': '#'}}
-let g:NERDTrimTrailingWhitespace = 1
 
 " vimtex
 let g:tex_flavor = 'latex'
