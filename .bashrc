@@ -58,4 +58,7 @@ ex ()
   fi
 }
 
-neofetch
+# neofetch if not in laptop
+if [ "$HOSTNAME" != "miair13" ] ; then
+    neofetch
+fi
