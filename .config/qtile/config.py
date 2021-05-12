@@ -119,6 +119,10 @@ GPU_TEMP_WIDGET_CONFIG = {
     "foreground": COLORS["bright_yellow"],
     "tag_sensor": "edge",
 }
+WLAN_WIDGET_CONFIG = {
+    "format": "{essid} {percent:2.0%}",
+    "interface": "wlp2s0",
+}
 CLOCK_WIDGET_CONFIG = {
     "foreground": COLORS["bright_blue"],
     "format": "%Y-%m-%d %a %H:%M",
@@ -278,11 +282,12 @@ else: # miair13
             SEP,
             widget.CPU(**CPU_WIDGET_CONFIG),
             SEP,
-            widget.Systray(),
+            SPACER,
             widget.BatteryIcon(),
             SEP,
-            widget.Wlan(),
-            # widget.Memory(),
+            widget.Wlan(**WLAN_WIDGET_CONFIG),
+            SEP,
+            widget.Systray(),
             CLOCK,
         ],
         30,
