@@ -102,7 +102,7 @@ UPDATES_WIDGET_CONFIG = {
     "colour_no_updates": COLORS["pure_white"],
     "distro": "Arch_checkupdates",
     "display_format": "\uf079 {updates}",
-    "no_update_string": "\uf079",
+    "no_update_string": "\uf079 ",
     "update_interval": 60,
 }
 CPU_WIDGET_CONFIG = {

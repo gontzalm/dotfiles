@@ -64,7 +64,7 @@ set linebreak
 
 " Replace tabs with spaces
 autocmd FileType * set softtabstop=2 | set shiftwidth=2 | set expandtab
-autocmd FileType python,markdown,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
+autocmd FileType markdown,python,sh,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
 
 " Display special characters with symbols
 set list
