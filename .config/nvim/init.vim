@@ -20,6 +20,7 @@ Plug 'ryanoasis/vim-devicons'
 
 " completion, syntax highlighting, style
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " documentation
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
@@ -29,8 +30,6 @@ Plug 'tpope/vim-fugitive'
 
 " must-have utilities
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'tmhedberg/SimpylFold'
-Plug 'Konfekt/FastFold'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'farmergreg/vim-lastplace'
@@ -62,20 +61,22 @@ set wrapmargin=0
 set formatoptions+=t
 set linebreak
 
-" Replace tabs with spaces
+" set filetypes
+augroup filetypedetect
+    autocmd BufRead,BufNewFile *.toml setfiletype toml
+augroup END
+
+" replace tabs with spaces
 autocmd FileType * set softtabstop=2 | set shiftwidth=2 | set expandtab
 autocmd FileType markdown,python,sh,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
 
-" Display special characters with symbols
+" display special characters with symbols
 set list
 set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 
 " leader key
 let mapleader=','
 let maplocalleader=','
-
-" toggle highlighting
-nnoremap <silent> <leader>h :noh<CR>
 
 " natural splits & window navigation
 set splitbelow splitright
@@ -101,6 +102,9 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
 set noshowmode
+
+" commentary
+autocmd FileType toml setlocal commentstring=#\ %s
 
 " fugitive
 set statusline+=%{FugitiveStatusline()}
@@ -133,8 +137,8 @@ inoremap <silent><expr> <Tab>
 inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 inoremap <silent><expr> <c-Space> coc#refresh()
@@ -144,12 +148,21 @@ nnoremap <leader>a :CocAction<CR>
 
 nnoremap <silent> <C-e> :CocCommand explorer<CR>
 
-" simpylfold
+" treesitter
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    highlight = {
+        enable = true,              -- false will disable the whole extension
+    },
+    indent = {
+        enable = true,
+    }
+}
+EOF
 nnoremap <Space> za
-let g:SimpylFold_docstring_preview = 1
-
-" fastfold
-let g:fastfold_minlines = 0
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 
 " vimtex
 let g:tex_flavor = 'latex'
