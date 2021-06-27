@@ -16,7 +16,6 @@ call plug#begin('~/.config/nvim/plugged')
 " aesthetics
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline'
-Plug 'ryanoasis/vim-devicons'
 
 " completion, syntax highlighting, style
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -34,12 +33,15 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'farmergreg/vim-lastplace'
 Plug 'romainl/vim-cool'
+Plug 'npxbr/glow.nvim', {'do': ':GlowInstall', 'branch': 'main'}
+
+" telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 " filetype plugins
 Plug 'lervag/vimtex'
-
-" others
-Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -149,7 +151,7 @@ nnoremap <leader>a :CocAction<CR>
 nnoremap <silent> <C-e> :CocCommand explorer<CR>
 
 " treesitter
-lua <<EOF
+lua << EOF
 require'nvim-treesitter.configs'.setup {
     ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     highlight = {
@@ -157,12 +159,21 @@ require'nvim-treesitter.configs'.setup {
     },
     indent = {
         enable = true,
+        disable = {"python"},
     }
 }
 EOF
 nnoremap <Space> za
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
+
+"telescope
+nnoremap <leader>ff :Telescope find_files<CR>
+nnoremap <leader>fg :Telescope live_grep<CR>
+nnoremap <leader>fb :Telescope buffers<CR>
+nnoremap <leader>fh :Telescope help_tags<CR>
+nnoremap <leader>gc :Telescope git_commits<CR>
+nnoremap <leader>gs :Telescope git_status<CR>
 
 " vimtex
 let g:tex_flavor = 'latex'
