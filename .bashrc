@@ -30,7 +30,8 @@ alias rspotifyd="systemctl --user restart spotifyd"
 alias bt="sudo bluetoothctl"
 alias shutdown="sudo shutdown now"
 alias reboot="sudo shutdown -r now"
-zathura () {
+zathura ()
+{
   /usr/bin/zathura "$1" --fork && exit
 }
 

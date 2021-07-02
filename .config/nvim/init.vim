@@ -70,7 +70,7 @@ augroup END
 
 " replace tabs with spaces
 autocmd FileType * set softtabstop=2 | set shiftwidth=2 | set expandtab
-autocmd FileType markdown,python,sh,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
+autocmd FileType markdown,python,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
 
 " display special characters with symbols
 set list
