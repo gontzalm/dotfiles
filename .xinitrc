@@ -50,4 +50,4 @@ fi
 
 nitrogen --restore &
 picom &
-exec qtile
+exec qtile start
