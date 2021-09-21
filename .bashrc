@@ -30,6 +30,7 @@ alias rspotifyd="systemctl --user restart spotifyd"
 alias bt="sudo bluetoothctl"
 alias shutdown="sudo shutdown now"
 alias reboot="sudo shutdown -r now"
+alias enable-monitor="xrandr --output eDP1 --auto --output HDMI2 --primary --auto --left-of eDP1 && qtile cmd-obj -o cmd -f restart"
 zathura ()
 {
   /usr/bin/zathura "$1" --fork && exit

@@ -220,8 +220,19 @@ SPACER = widget.Spacer(length=4)
 CLOCK = widget.Clock(**CLOCK_WIDGET_CONFIG)
 
 # BARS AND SCREENS
+secondary_bar = bar.Bar(
+    [
+        widget.CurrentScreen(**CURR_SCREEN_WIDGET_CONFIG),
+        SPACER,
+        widget.GroupBox(**GROUP_BOX_WIDGET_CONFIG),
+        widget.WindowName(),
+        CLOCK,
+    ],
+    30,
+    **BAR_CONFIG,
+)
+
 if platform.node() == "archlinux":
-    # BARS
     primary_bar = bar.Bar(
         [
             widget.CurrentScreen(**CURR_SCREEN_WIDGET_CONFIG),
@@ -246,30 +257,9 @@ if platform.node() == "archlinux":
         **BAR_CONFIG,
     )
 
-    secondary_bar = bar.Bar(
-        [
-            widget.CurrentScreen(**CURR_SCREEN_WIDGET_CONFIG),
-            SPACER,
-            widget.GroupBox(**GROUP_BOX_WIDGET_CONFIG),
-            widget.WindowName(),
-            CLOCK,
-        ],
-        30,
-        **BAR_CONFIG,
-    )
-
-    # SCREENS
-    screens = [
-        Screen(
-            top=primary_bar,
-        ),
-        Screen(
-            top=secondary_bar,
-        ),
-    ]
 else: # miair13
     # BARS
-    bar = bar.Bar(
+    primary_bar = bar.Bar(
         [
             widget.CurrentScreen(**CURR_SCREEN_WIDGET_CONFIG),
             SPACER,
@@ -294,12 +284,14 @@ else: # miair13
         **BAR_CONFIG,
     )
 
-    # SCREENS
-    screens = [
-        Screen(
-            top=bar,
-        ),
-    ]
+screens = [
+    Screen(
+        top=primary_bar,
+    ),
+    Screen(
+        top=secondary_bar,
+    ),
+]
 
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
