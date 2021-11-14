@@ -1,5 +1,6 @@
 {
   "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnSaveFiletypes": ["rust"],
   "explorer.icon.enableNerdfont": true,
   "yaml.format.enable": true
 }

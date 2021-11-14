@@ -14,7 +14,8 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.config/nvim/plugged')
 
 " aesthetics
-Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'sainnhe/edge'
+" Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline'
 
 " completion, syntax highlighting, style
@@ -69,8 +70,8 @@ augroup filetypedetect
 augroup END
 
 " replace tabs with spaces
-autocmd FileType * set softtabstop=2 | set shiftwidth=2 | set expandtab
-autocmd FileType markdown,python,tex,vim set softtabstop=4 | set shiftwidth=4 | set expandtab
+autocmd FileType * set softtabstop=4 | set shiftwidth=4 | set expandtab
+autocmd FileType sh set softtabstop=2 | set shiftwidth=2 | set expandtab
 
 " display special characters with symbols
 set list
@@ -96,13 +97,17 @@ autocmd BufWritePre *
 " PLUGINS
 " theme
 set termguicolors
-colorscheme challenger_deep
+let g:edge_style = 'neon'
+let g:edge_enable_italic = 1
+let g:edge_disable_italic_comment = 1
+colorscheme edge 
 
 " airline
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'edge'
 set noshowmode
 
 " commentary
@@ -113,6 +118,9 @@ set statusline+=%{FugitiveStatusline()}
 
 " doge
 let g:doge_doc_standard_python = 'google'
+
+" glow
+noremap <leader>p :Glow<CR>
 
 " coc
 set updatetime=300
@@ -125,6 +133,7 @@ let g:coc_global_extensions = [
     \ 'coc-markdownlint',
     \ 'coc-pairs',
     \ 'coc-pyright',
+    \ 'coc-rust-analyzer',
     \ 'coc-sh',
     \ 'coc-toml',
     \ 'coc-vimlsp',
@@ -155,7 +164,7 @@ lua << EOF
 require'nvim-treesitter.configs'.setup {
     ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     highlight = {
-        enable = true,              -- false will disable the whole extension
+        enable = true,
     },
     indent = {
         enable = true,
