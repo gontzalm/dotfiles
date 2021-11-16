@@ -8,9 +8,10 @@ endif
 
 " run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
-\| endif
+    \| PlugInstall --sync | source $MYVIMRC
+    \| endif
 
+" PLUGINS
 call plug#begin('~/.config/nvim/plugged')
 
 " aesthetics
@@ -18,7 +19,7 @@ Plug 'sainnhe/edge'
 " Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline'
 
-" completion, syntax highlighting, style
+" lsp, completion, syntax highlighting, style
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -50,7 +51,15 @@ call plug#end()
 " basics
 set ignorecase
 set hidden
-set number relativenumber
+set number
+set autoindent
+let g:vim_indent_cont = shiftwidth()
+filetype plugin indent on
+
+" commands
+command Config e ~/.config/nvim/init.vim
+
+" abbreviations
 cnoreabbrev vb vertical sbuffer
 cnoreabbrev h vertical help
 
@@ -60,22 +69,15 @@ nnoremap k kzz
 
 " hard-wrap text at 80 characters
 set textwidth=80
-set wrapmargin=0
-set formatoptions+=t
 set linebreak
 
-" set filetypes
-augroup filetypedetect
-    autocmd BufRead,BufNewFile *.toml setfiletype toml
-augroup END
-
 " replace tabs with spaces
-autocmd FileType * set softtabstop=4 | set shiftwidth=4 | set expandtab
-autocmd FileType sh set softtabstop=2 | set shiftwidth=2 | set expandtab
+autocmd FileType * set softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType sh set softtabstop=2 shiftwidth=2 expandtab
 
 " display special characters with symbols
 set list
-set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+set listchars=eol:⏎,tab:-->,trail:␠,nbsp:⎵
 
 " leader key
 let mapleader=','
@@ -94,13 +96,13 @@ autocmd BufWritePre *
         \ call mkdir(expand('<afile>:h'), 'p') |
     \ endif
 
-" PLUGINS
+" PLUGIN CONFIG
 " theme
 set termguicolors
 let g:edge_style = 'neon'
 let g:edge_enable_italic = 1
 let g:edge_disable_italic_comment = 1
-colorscheme edge 
+colorscheme edge
 
 " airline
 let g:airline#extensions#coc#enabled = 1
@@ -122,9 +124,11 @@ let g:doge_doc_standard_python = 'google'
 " glow
 noremap <leader>p :Glow<CR>
 
-" coc
+" CoC
+" basics
 set updatetime=300
 set shortmess+=c
+set signcolumn=number
 let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-git',
@@ -141,23 +145,30 @@ let g:coc_global_extensions = [
     \ 'coc-yaml'
     \ ]
 
-inoremap <silent><expr> <Tab>
+" navigate completion with tabs
+inoremap <silent> <expr> <Tab>
     \ pumvisible() ? "\<C-n>" :
     \ <SID>check_back_space() ? "\<Tab>" :
     \ coc#refresh()
-inoremap <expr><S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <silent> <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <c-Space> coc#refresh()
+" improve <CR> with coc-pairs
+inoremap <silent> <expr> <CR> "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"
 
-command -nargs=0 Format call CocAction('format')
-nnoremap <leader>a :CocAction<CR>
-
-nnoremap <silent> <C-e> :CocCommand explorer<CR>
+" mappings
+nmap <silent> <C-e> :CocCommand explorer<CR>
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <leader>fb <Plug>(coc-format)
+nmap <silent> <leader>rn <Plug>(coc-rename)
+nmap <silent> <leader>ac <Plug>(coc-codeaction-cursor)
 
 " treesitter
 lua << EOF
@@ -168,7 +179,6 @@ require'nvim-treesitter.configs'.setup {
     },
     indent = {
         enable = true,
-        disable = {"python"},
     }
 }
 EOF
@@ -176,10 +186,9 @@ nnoremap <Space> za
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 
-"telescope
+" telescope
 nnoremap <leader>ff :Telescope find_files<CR>
 nnoremap <leader>fg :Telescope live_grep<CR>
-nnoremap <leader>fb :Telescope buffers<CR>
 nnoremap <leader>fh :Telescope help_tags<CR>
 nnoremap <leader>gc :Telescope git_commits<CR>
 nnoremap <leader>gs :Telescope git_status<CR>
