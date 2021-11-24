@@ -18,6 +18,10 @@
     "diagnostic.virtualTextCurrentLineOnly": false,
     "diagnostic.warningSign": "",
     "explorer.icon.enableNerdfont": true,
+    "markdownlint.config": {
+        "MD007": { "indent": 4 },
+        "MD024": { "siblings_only": true }
+    },
     "prettier.proseWrap": "always",
     "python.formatting.provider": "black",
     "sql.formatOptions": {
