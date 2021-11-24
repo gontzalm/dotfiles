@@ -137,6 +137,7 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-markdownlint',
     \ 'coc-pairs',
+    \ 'coc-prettier',
     \ 'coc-pyright',
     \ 'coc-rust-analyzer',
     \ 'coc-sh',
