@@ -3,6 +3,7 @@
     "coc.preferences.extensionUpdateCheck": "weekly",
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
+        "markdown",
         "python",
         "rust",
         "sql",
@@ -17,6 +18,7 @@
     "diagnostic.virtualTextCurrentLineOnly": false,
     "diagnostic.warningSign": "",
     "explorer.icon.enableNerdfont": true,
+    "prettier.proseWrap": "always",
     "python.formatting.provider": "black",
     "sql.formatOptions": {
         "indent": "    ",
