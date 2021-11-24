@@ -5,6 +5,7 @@
         "json",
         "python",
         "rust",
+        "sql",
         "yaml"
     ],
     "coc.preferences.jumpCommand": "drop",
@@ -17,6 +18,10 @@
     "diagnostic.warningSign": "",
     "explorer.icon.enableNerdfont": true,
     "python.formatting.provider": "black",
+    "sql.formatOptions": {
+        "indent": "    ",
+        "linesBetweenQueries": 2
+    },
     "suggest.enablePreview": true,
     "suggest.removeDuplicateItems": true,
     "yaml.format.enable": true

@@ -130,6 +130,7 @@ set updatetime=300
 set shortmess+=c
 set signcolumn=number
 let g:coc_global_extensions = [
+    \ 'coc-docker',
     \ 'coc-explorer',
     \ 'coc-git',
     \ 'coc-html',
@@ -139,6 +140,7 @@ let g:coc_global_extensions = [
     \ 'coc-pyright',
     \ 'coc-rust-analyzer',
     \ 'coc-sh',
+    \ 'coc-sql',
     \ 'coc-toml',
     \ 'coc-vimlsp',
     \ 'coc-vimtex',
@@ -168,6 +170,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <leader>fb <Plug>(coc-format)
 nmap <silent> <leader>rn <Plug>(coc-rename)
+nmap <silent> <leader>ab <Plug>(coc-codeaction)
 nmap <silent> <leader>ac <Plug>(coc-codeaction-cursor)
 
 " treesitter
