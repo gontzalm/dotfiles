@@ -74,7 +74,7 @@ set linebreak
 
 " replace tabs with spaces
 autocmd FileType * set softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType sh,json set softtabstop=2 shiftwidth=2 expandtab
+autocmd FileType sh,json,markdown set softtabstop=2 shiftwidth=2 expandtab
 
 " display special characters with symbols
 set list
@@ -125,7 +125,7 @@ let g:doge_doc_standard_python = 'google'
 " glow
 noremap <leader>p :Glow<CR>
 
-" CoC
+" begin CoC
 " basics
 set nobackup nowritebackup
 set updatetime=300
