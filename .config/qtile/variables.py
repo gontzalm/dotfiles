@@ -3,6 +3,15 @@ from palette import Colors
 
 class Config:
     TERMINAL = "alacritty"
+    GROUP_LIST = [
+        ("\uf0ac", {"layout": "max"}),
+        ("\uf085", {"layout": "monadtall"}),
+        ("\uf121", {"layout": "monadtall"}),
+        ("\uf27a", {"layout": "monadtall"}),
+        ("\uf001", {"layout": "monadtall"}),
+        ("\uf03d", {"layout": "max"}),
+        ("\uf11b", {"layout": "max"}),
+    ]
     MONAD_CONFIG = {
         "border_focus": Colors.blue,
         "border_width": 2,

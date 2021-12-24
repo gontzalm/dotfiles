@@ -36,7 +36,7 @@ from variables import Config, WidgetsConfig
 
 
 # create groups and exend keybindings
-groups_generator = GroupsGenerator()
+groups_generator = GroupsGenerator(Config.GROUP_LIST)
 groups = groups_generator.generate_groups()
 keys.extend(groups_generator.generate_keybindings())
 
