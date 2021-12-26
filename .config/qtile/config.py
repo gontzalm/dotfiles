@@ -24,7 +24,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from libqtile import bar, layout, widget
+import subprocess
+
+from libqtile import bar, hook, layout, widget
 from libqtile.config import Match, Screen
 
 from helpers import GroupsGenerator
@@ -32,7 +34,7 @@ from keybindings import keys
 from variables import Config, WidgetsConfig
 
 
-# create groups and extend keybindings
+# GROUPS
 groups_generator = GroupsGenerator(Config.GROUP_LIST)
 groups = groups_generator.generate_groups()
 keys.extend(groups_generator.generate_keybindings())
@@ -110,3 +112,8 @@ floating_layout = layout.Floating(
     ]
 )
 wmname = Config.WM_NAME
+
+# AUTOSTART
+@hook.subscribe.startup_once
+def autostart() -> None:
+    subprocess.run(str(Config.AUTOSTART_SCRIPT))

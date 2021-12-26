@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from palette import Colors
 
 
@@ -5,6 +7,7 @@ class Config:
     MOD_KEY = "A"
     TERMINAL = "alacritty"
     WM_NAME = "Qtile"
+    AUTOSTART_SCRIPT = Path("~/.config/qtile/autostart.sh").expanduser()
     GROUP_LIST = [
         ("\uf0ac", {"layout": "max"}),
         ("\uf085", {"layout": "monadtall"}),
@@ -27,6 +30,7 @@ class Config:
     DMENU = {
         "background": f"#{Colors.background}",
         "dmenu_prompt": "Run: ",
+        "dmenu_lines": 5,
         "font": "Fira Code Nerd Font",
         "fontsize": 10,
         "foreground": f"#{Colors.white}",
@@ -66,8 +70,8 @@ class WidgetsConfig:
         "other_screen_border": Colors.white,
         "padding_x": 7,
         "rounded": False,
-        "this_current_screen_border": Colors.cyan,
-        "this_screen_border": Colors.cyan,
+        "this_current_screen_border": Colors.magenta,
+        "this_screen_border": Colors.magenta,
     }
     LAYOUT = {
         "foreground": Colors.bright_magenta,
