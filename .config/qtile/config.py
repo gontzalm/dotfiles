@@ -24,9 +24,6 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-
-import platform
-
 from libqtile import bar, layout, widget
 from libqtile.config import Match, Screen
 
@@ -35,94 +32,68 @@ from keybindings import keys
 from variables import Config, WidgetsConfig
 
 
-# create groups and exend keybindings
+# create groups and extend keybindings
 groups_generator = GroupsGenerator(Config.GROUP_LIST)
 groups = groups_generator.generate_groups()
 keys.extend(groups_generator.generate_keybindings())
 
 # LAYOUTS
 layouts = [
-    layout.MonadTall(**Config.MONAD_CONFIG),
-    layout.MonadWide(**Config.MONAD_CONFIG),
+    layout.MonadTall(**Config.MONAD),
+    layout.MonadWide(**Config.MONAD),
     layout.Max(),
     layout.Matrix(),
 ]
 
 # WIDGETS
-widget_defaults = WidgetsConfig.DEFAULT_CONFIG
-SEP = widget.Sep(**WidgetsConfig.SEP_CONFIG)
+widget_defaults = WidgetsConfig.DEFAULT
+SEP = widget.Sep(**WidgetsConfig.SEP)
 SPACER = widget.Spacer(length=4)
-CLOCK = widget.Clock(**WidgetsConfig.CLOCK_WIDGET_CONFIG)
+CLOCK = widget.Clock(**WidgetsConfig.CLOCK)
 
 # BARS AND SCREENS
-secondary_bar = bar.Bar(
+# secondary_bar = bar.Bar(
+#     [
+#         widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN),
+#         SPACER,
+#         widget.GroupBox(**WidgetsConfig.GROUP_BOX),
+#         widget.WindowName(),
+#         CLOCK,
+#     ],
+#     Config.BAR_SIZE,
+#     **Config.BAR,
+# )
+
+primary_bar = bar.Bar(
     [
-        widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN_WIDGET_CONFIG),
-        SPACER,
-        widget.GroupBox(**WidgetsConfig.GROUP_BOX_WIDGET_CONFIG),
+        # widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN),
+        # SPACER,
+        widget.GroupBox(**WidgetsConfig.GROUP_BOX),
         widget.WindowName(),
+        widget.CurrentLayout(**WidgetsConfig.LAYOUT),
+        SEP,
+        widget.MemoryGraph(**WidgetsConfig.MEMORY_GRAPH),
+        SEP,
+        widget.CPUGraph(**WidgetsConfig.CPU_GRAPH),
+        SEP,
+        widget.ThermalSensor(**WidgetsConfig.CPU_TEMP),
+        SEP,
+        widget.CheckUpdates(**WidgetsConfig.UPDATES),
+        SEP,
+        widget.Wlan(**WidgetsConfig.WLAN),
+        SEP,
+        widget.Battery(**WidgetsConfig.BATTERY),
+        SEP,
+        widget.Systray(),
         CLOCK,
     ],
-    30,
-    **Config.BAR_CONFIG,
+    Config.BAR_SIZE,
+    **Config.BAR,
 )
-
-# set different primary_bar for PC and laptop
-if platform.node() == "archlinux":
-    primary_bar = bar.Bar(
-        [
-            widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN_WIDGET_CONFIG),
-            SPACER,
-            widget.GroupBox(**WidgetsConfig.GROUP_BOX_WIDGET_CONFIG),
-            widget.WindowName(),
-            widget.CurrentLayout(**WidgetsConfig.LAYOUT_WIDGET_CONFIG),
-            SEP,
-            widget.CheckUpdates(**WidgetsConfig.UPDATES_WIDGET_CONFIG),
-            SEP,
-            widget.CPU(**WidgetsConfig.CPU_WIDGET_CONFIG),
-            SEP,
-            widget.ThermalSensor(**WidgetsConfig.CPU_TEMP_WIDGET_CONFIG),
-            widget.ThermalSensor(**WidgetsConfig.GPU_TEMP_WIDGET_CONFIG),
-            SEP,
-            widget.Systray(),
-            # widget.Memory(),
-            CLOCK,
-        ],
-        30,
-        **Config.BAR_CONFIG,
-    )
-
-else:  # miair13
-    primary_bar = bar.Bar(
-        [
-            widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN_WIDGET_CONFIG),
-            SPACER,
-            widget.GroupBox(**WidgetsConfig.GROUP_BOX_WIDGET_CONFIG),
-            widget.WindowName(),
-            widget.CurrentLayout(**WidgetsConfig.LAYOUT_WIDGET_CONFIG),
-            SEP,
-            widget.CheckUpdates(**WidgetsConfig.UPDATES_WIDGET_CONFIG),
-            SEP,
-            widget.CPU(**WidgetsConfig.CPU_WIDGET_CONFIG),
-            SEP,
-            SPACER,
-            widget.BatteryIcon(),
-            SEP,
-            widget.Wlan(**WidgetsConfig.WLAN_WIDGET_CONFIG),
-            SEP,
-            widget.Systray(),
-            CLOCK,
-        ],
-        30,
-        **Config.BAR_CONFIG,
-    )
 
 screens = [
     Screen(
         top=primary_bar,
-    ),
-    Screen(
-        top=secondary_bar,
     ),
 ]
 
@@ -138,4 +109,4 @@ floating_layout = layout.Floating(
         Match(title="pinentry"),  # GPG key password entry
     ]
 )
-wmname = "Qtile"
+wmname = Config.WM_NAME
