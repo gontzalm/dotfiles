@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from palette import Colors
+from palette import Color
 
 
 class Config:
@@ -18,24 +18,24 @@ class Config:
         ("\uf11b", {"layout": "max"}),
     ]
     MONAD = {
-        "border_focus": Colors.magenta,
+        "border_focus": Color.MAGENTA.hex,
         "border_width": 2,
         "margin": 5,
     }
     BAR_SIZE = 30
     BAR = {
-        "background": Colors.background,
+        "background": Color.BACKGROUND.hex,
         "opacity": 0.9,
     }
     DMENU = {
-        "background": f"#{Colors.background}",
+        "background": Color.BACKGROUND.fullhex,
         "dmenu_prompt": "Run: ",
         "dmenu_lines": 5,
         "font": "Fira Code Nerd Font",
         "fontsize": 10,
-        "foreground": f"#{Colors.white}",
-        "selected_background": f"#{Colors.magenta}",
-        "selected_foreground": f"#{Colors.white}",
+        "foreground": Color.WHITE.fullhex,
+        "selected_background": Color.MAGENTA.fullhex,
+        "selected_foreground": Color.WHITE.fullhex,
     }
 
 
@@ -43,7 +43,7 @@ class WidgetsConfig:
     DEFAULT = {
         "font": "Fira Code Nerd Font",
         "fontsize": 12,
-        "foreground": Colors.white,
+        "foreground": Color.WHITE.hex,
         "padding": 5,
     }
     SEP = {
@@ -51,74 +51,74 @@ class WidgetsConfig:
         "size_percent": 50,
     }
     CURR_SCREEN = {
-        "active_color": Colors.bright_green,
+        "active_color": Color.BRIGHT_GREEN.hex,
         "active_text": "\uf2d0",
-        "inactive_color": Colors.bright_red,
+        "inactive_color": Color.BRIGHT_RED.hex,
         "inactive_text": "\uf2d4",
     }
     GROUP_BOX = {
-        "active": Colors.white,
+        "active": Color.WHITE.hex,
         "borderwidth": 4,
         "center_aligned": True,
         "disable_drag": True,
         "fontsize": 14,
         "highlight_method": "line",
-        "inactive": Colors.grey,
+        "inactive": Color.GRAY.hex,
         "margin_x": 0,
         "margin_y": 5,
-        "other_current_screen_border": Colors.white,
-        "other_screen_border": Colors.white,
+        "other_current_screen_border": Color.WHITE.hex,
+        "other_screen_border": Color.WHITE.hex,
         "padding_x": 7,
         "rounded": False,
-        "this_current_screen_border": Colors.magenta,
-        "this_screen_border": Colors.magenta,
+        "this_current_screen_border": Color.MAGENTA.hex,
+        "this_screen_border": Color.MAGENTA.hex,
     }
     LAYOUT = {
-        "foreground": Colors.bright_magenta,
+        "foreground": Color.BRIGHT_MAGENTA.hex,
         "fmt": "\uf247  {}",
     }
     MEMORY_GRAPH = {
-        "border_color": Colors.white,
+        "border_color": Color.WHITE.hex,
         "border_width": 2,
-        "fill_color": Colors.bright_blue,
-        "graph_color": Colors.blue,
+        "fill_color": Color.BRIGHT_BLUE.hex,
+        "graph_color": Color.BLUE.hex,
         "type": "linefill",
     }
     CPU_GRAPH = {
-        "border_color": Colors.white,
+        "border_color": Color.WHITE.hex,
         "border_width": 2,
-        "fill_color": Colors.bright_red,
-        "graph_color": Colors.red,
+        "fill_color": Color.BRIGHT_RED.hex,
+        "graph_color": Color.RED.hex,
         "type": "linefill",
     }
     CPU_TEMP = {
         "fmt": "\uf2c9 {}",
-        "foreground": Colors.bright_yellow,
+        "foreground": Color.BRIGHT_YELLOW.hex,
         "tag_sensor": "Package id 0",
     }
     UPDATES = {
-        "colour_have_updates": Colors.bright_red,
-        "colour_no_updates": Colors.white,
+        "colour_have_updates": Color.BRIGHT_RED.hex,
+        "colour_no_updates": Color.WHITE.hex,
         "distro": "Arch_checkupdates",
         "display_format": "\uf079 {updates}",
         "no_update_string": "\uf079 ",
         "update_interval": 60,
     }
     WLAN = {
-        "foreground": Colors.white,
+        "foreground": Color.WHITE.hex,
         "format": "{essid} {percent:2.0%}",
         "interface": "wlp2s0",
     }
     BATTERY = {
         "charge_char": "\uf0e7",
         "discharge_char": "\uf242 ",
-        "foreground": Colors.bright_green,
+        "foreground": Color.BRIGHT_GREEN.hex,
         "format": "{char} {percent:2.0%} {hour:d}:{min:02d}",
-        "low_foreground": Colors.red,
+        "low_foreground": Color.RED.hex,
         "low_percentage": 0.2,
         "notify_below": 0.1,
     }
     CLOCK = {
-        "foreground": Colors.bright_blue,
+        "foreground": Color.BRIGHT_BLUE.hex,
         "format": "%Y-%m-%d %a %H:%M",
     }

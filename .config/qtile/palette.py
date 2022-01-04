@@ -1,18 +1,29 @@
-class Colors:
-    background = "1e1c31"
-    foreground = "cbe1e7"
-    black = "141228"
-    grey = "565575"
-    white = "ffffff"
-    red = "ff5458"
-    green = "62d196"
-    yellow = "ffb378"
-    blue = "65b2ff"
-    magenta = "906cff"
-    cyan = "63f2f1"
-    bright_red = "ff8080"
-    bright_green = "95ffa4"
-    bright_yellow = "ffe9aa"
-    bright_blue = "91ddff"
-    bright_magenta = "c991e1"
-    bright_cyan = "aaffe4"
+from enum import Enum
+
+
+class Color(Enum):
+    BACKGROUND = "1e1c31"
+    FOREGROUND = "cbe1e7"
+    BLACK = "141228"
+    GRAY = "565575"
+    WHITE = "ffffff"
+    RED = "ff5458"
+    GREEN = "62d196"
+    YELLOW = "ffb378"
+    BLUE = "65b2ff"
+    MAGENTA = "906cff"
+    CYAN = "63f2f1"
+    BRIGHT_RED = "ff8080"
+    BRIGHT_GREEN = "95ffa4"
+    BRIGHT_YELLOW = "ffe9aa"
+    BRIGHT_BLUE = "91ddff"
+    BRIGHT_MAGENTA = "c991e1"
+    BRIGHT_CYAN = "aaffe4"
+
+    @property
+    def hex(self):
+        return self.value
+
+    @property
+    def fullhex(self):
+        return f"#{self.value}"
