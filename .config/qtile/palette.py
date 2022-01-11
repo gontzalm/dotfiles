@@ -21,9 +21,9 @@ class Color(Enum):
     BRIGHT_CYAN = "aaffe4"
 
     @property
-    def hex(self):
+    def hex(self) -> str:
         return self.value
 
     @property
-    def fullhex(self):
+    def fullhex(self) -> str:
         return f"#{self.value}"

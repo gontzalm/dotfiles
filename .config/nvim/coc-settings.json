@@ -23,6 +23,7 @@
   },
   "prettier.proseWrap": "always",
   "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/usr/bin/black",
   "sql.formatOptions": {
     "indent": "    ",
     "linesBetweenQueries": 2

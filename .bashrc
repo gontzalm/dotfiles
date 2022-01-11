@@ -64,3 +64,6 @@ ex ()
 if [ "$HOSTNAME" != "miair13" ] ; then
     neofetch
 fi
+
+# add ~/bin to PATH
+export PATH=~/bin:"$PATH"
