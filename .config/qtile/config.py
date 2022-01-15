@@ -54,18 +54,6 @@ SPACER = widget.Spacer(length=4)
 CLOCK = widget.Clock(**WidgetsConfig.CLOCK)
 
 # BARS AND SCREENS
-# secondary_bar = bar.Bar(
-#     [
-#         widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN),
-#         SPACER,
-#         widget.GroupBox(**WidgetsConfig.GROUP_BOX),
-#         widget.WindowName(),
-#         CLOCK,
-#     ],
-#     Config.BAR_SIZE,
-#     **Config.BAR,
-# )
-
 primary_bar = bar.Bar(
     [
         # widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN),
@@ -93,9 +81,24 @@ primary_bar = bar.Bar(
     **Config.BAR,
 )
 
+secondary_bar = bar.Bar(
+    [
+        # widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN),
+        # SPACER,
+        widget.GroupBox(**WidgetsConfig.GROUP_BOX),
+        widget.WindowName(),
+        CLOCK,
+    ],
+    Config.BAR_SIZE,
+    **Config.BAR,
+)
+
 screens = [
     Screen(
         top=primary_bar,
+    ),
+    Screen(
+        top=secondary_bar,
     ),
 ]
 
