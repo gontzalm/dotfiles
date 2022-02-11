@@ -20,11 +20,11 @@ Plug 'sainnhe/edge'
 Plug 'vim-airline/vim-airline'
 
 " lsp, completion, syntax highlighting, style
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " documentation
-Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+Plug 'kkoomen/vim-doge', {'do': {-> doge#install()}}
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -145,7 +145,6 @@ let g:coc_global_extensions = [
     \ 'coc-pyright',
     \ 'coc-rust-analyzer',
     \ 'coc-sh',
-    \ 'coc-sql',
     \ 'coc-toml',
     \ 'coc-vimlsp',
     \ 'coc-vimtex',
@@ -218,9 +217,11 @@ require'nvim-treesitter.configs'.setup {
     ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     highlight = {
         enable = true,
+        additional_vim_regex_highlighting=false,
     },
     indent = {
         enable = true,
+        --disable = {"python"},
     }
 }
 EOF
@@ -234,7 +235,6 @@ require('telescope').load_extension('coc')
 EOF
 nnoremap <silent> <leader>ff :Telescope find_files<CR>
 nnoremap <silent> <leader>fg :Telescope live_grep<CR>
-nnoremap <silent> <leader>fh :Telescope help_tags<CR>
 nnoremap <silent> <leader>gc :Telescope git_commits initial_mode=normal<CR>
 nnoremap <silent> <leader>gs :Telescope git_status initial_mode=normal<CR>
 nnoremap <silent> <leader>fs :Telescope treesitter initial_mode=normal<CR>

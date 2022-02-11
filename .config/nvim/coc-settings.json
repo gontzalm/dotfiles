@@ -6,7 +6,6 @@
     "markdown",
     "python",
     "rust",
-    "sql",
     "yaml"
   ],
   "coc.preferences.jumpCommand": "drop",
@@ -24,10 +23,6 @@
   "prettier.proseWrap": "always",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "/usr/bin/black",
-  "sql.formatOptions": {
-    "indent": "    ",
-    "linesBetweenQueries": 2
-  },
   "suggest.enablePreview": true,
   "suggest.removeDuplicateItems": true,
   "yaml.format.enable": true
