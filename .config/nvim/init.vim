@@ -45,6 +45,7 @@ Plug 'fannheyward/telescope-coc.nvim'
 
 " filetype plugins
 Plug 'lervag/vimtex'
+Plug 'vimjas/vim-python-pep8-indent'
 
 call plug#end()
 
@@ -221,7 +222,7 @@ require'nvim-treesitter.configs'.setup {
     },
     indent = {
         enable = true,
-        --disable = {"python"},
+        disable = {"python"},
     }
 }
 EOF

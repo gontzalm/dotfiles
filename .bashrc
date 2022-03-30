@@ -26,11 +26,27 @@ alias free="free -h"
 alias vim="nvim"
 alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias tsm="transmission-remote"
+alias tsm-clear="tsm -l | grep 100% | awk '{print $1}'| paste -d, -s | xargs -i transmission-remote -t {} -r"
 alias rspotifyd="systemctl --user restart spotifyd"
 alias bt="sudo bluetoothctl"
 alias shutdown="sudo shutdown now"
 alias reboot="sudo shutdown -r now"
 alias extend="xlayoutdisplay && nitrogen --restore"
+
+tsm-status () {
+  while true; do
+    cat << EOF
+Transmission CLI Status:
+
+$(tsm -l)
+
+Press Ctrl-C to exit
+EOF
+    sleep 0.5
+    clear
+  done
+}
+
 zathura ()
 {
   /usr/bin/zathura "$1" --fork && exit
