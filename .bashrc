@@ -33,20 +33,6 @@ alias shutdown="sudo shutdown now"
 alias reboot="sudo shutdown -r now"
 alias extend="xlayoutdisplay && nitrogen --restore"
 
-tsm-status () {
-  while true; do
-    cat << EOF
-Transmission CLI Status:
-
-$(tsm -l)
-
-Press Ctrl-C to exit
-EOF
-    sleep 0.5
-    clear
-  done
-}
-
 zathura ()
 {
   /usr/bin/zathura "$1" --fork && exit
