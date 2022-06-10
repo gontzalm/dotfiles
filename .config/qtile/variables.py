@@ -10,9 +10,9 @@ class Config:
     AUTOSTART_SCRIPT = Path("~/.config/qtile/autostart.sh").expanduser()
     GROUP_LIST = [
         ("\uf0ac", {"layout": "max"}),
-        ("\uf085", {"layout": "monadtall"}),
-        ("\uf121", {"layout": "monadtall"}),
-        ("\uf27a", {"layout": "monadtall"}),
+        ("\uf120", {"layout": "monadtall"}),
+        ("\uf121", {"layout": "max"}),
+        ("\uf27a", {"layout": "max"}),
         ("\uf001", {"layout": "monadtall"}),
         ("\uf03d", {"layout": "max"}),
         ("\uf11b", {"layout": "max"}),

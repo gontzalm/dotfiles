@@ -215,10 +215,26 @@ omap ac <Plug>(coc-classobj-a)
 " treesitter
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = {
+        "bash",
+        "comment",
+        "dockerfile",
+        "html",
+        "json",
+        "jsonc",
+        "latex",
+        "lua",
+        "markdown",
+        "python",
+        "regex",
+        "rust",
+        "toml",
+        "vim",
+        "yaml"
+    },
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting=false,
+        additional_vim_regex_highlighting = false,
     },
     indent = {
         enable = true,
