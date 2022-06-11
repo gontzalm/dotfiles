@@ -1,48 +1,3 @@
-" = GENERAL SETTINGS =
-
-" BASICS
-set ignorecase
-set hidden
-set number
-set autoindent
-set textwidth=80
-set linebreak
-set list
-set listchars=eol:⏎,tab:-->,trail:␠,nbsp:⎵
-let mapleader=','
-let maplocalleader=','
-let g:vim_indent_cont = shiftwidth()
-
-" COMMANDS
-command Config e ~/.config/nvim/init.vim
-
-" ABBREVIATIONS
-cnoreabbrev vb vertical sbuffer
-cnoreabbrev h vertical help
-
-" MAPPINGS
-nnoremap j jzz
-nnoremap k kzz
-
-" TABS/SPACES
-autocmd FileType * set softtabstop=4 shiftwidth=4 expandtab
-autocmd FileType sh,json,markdown,yaml set softtabstop=2 shiftwidth=2 expandtab
-
-" SPLITS
-set splitbelow splitright
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" OTHERS
-" create non existing directories when writing a file
-autocmd BufWritePre *
-    \ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
-        \ call mkdir(expand('<afile>:h'), 'p') |
-    \ endif
-
-
 " = PLUGINS =
 
 " PLUGIN MANAGER
@@ -67,8 +22,10 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " do not load plugins if run by browser
 if exists('g:started_by_firenvim')
     call plug#end()
-    set guifont=monospace:h12
+    set relativenumber
+    set guifont=monospace:h11
     set laststatus=0
+    set background=light
     finish
 endif
 
@@ -266,9 +223,53 @@ nnoremap <silent> <leader>fc :Telescope coc commands<CR>
 nnoremap <silent> <leader>fd :Telescope coc diagnostics initial_mode=normal<CR>
 nnoremap <silent> <leader>fr :Telescope coc references initial_mode=normal<CR>
 
-" VIMTEX
+" vimtex
 let g:tex_flavor = 'latex'
 let g:vimtex_view_general_viewer = 'zathura'
 let g:vimtex_compiler_latexmk = {
     \ 'build_dir' : 'build',
     \ }
+
+
+" = GENERAL SETTINGS =
+
+" BASICS
+set ignorecase
+set hidden
+set number
+set autoindent
+set linebreak
+set list
+set listchars=eol:⏎,tab:-->,trail:␠,nbsp:⎵
+let mapleader=','
+let maplocalleader=','
+let g:vim_indent_cont = shiftwidth()
+
+" COMMANDS
+command Config e ~/.config/nvim/init.vim
+
+" ABBREVIATIONS
+cnoreabbrev vb vertical sbuffer
+cnoreabbrev h vertical help
+
+" MAPPINGS
+nnoremap j jzz
+nnoremap k kzz
+
+" TABS/SPACES
+autocmd FileType * set softtabstop=4 shiftwidth=4 expandtab
+autocmd FileType sh,json,markdown,yaml set softtabstop=2 shiftwidth=2 expandtab
+
+" SPLITS
+set splitbelow splitright
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" OTHERS
+" create non existing directories when writing a file
+autocmd BufWritePre *
+    \ if '<afile>' !~ '^scp:' && !isdirectory(expand('<afile>:h')) |
+        \ call mkdir(expand('<afile>:h'), 'p') |
+    \ endif
