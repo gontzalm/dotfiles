@@ -26,6 +26,23 @@ if exists('g:started_by_firenvim')
     set guifont=monospace:h11
     set laststatus=0
     set background=light
+    let g:firenvim_config = { 
+        \ 'globalSettings': {
+            \ 'alt': 'all',
+        \  },
+        \ 'localSettings': {
+            \ '.*': {
+                \ 'cmdline': 'firenvim',
+                \ 'content': 'text',
+                \ 'priority': 0,
+                \ 'selector': 'textarea',
+                \ 'takeover': 'always',
+            \ },
+            \ '.*notion\.so.*': { 'priority': 9, 'takeover': 'never', },
+            \ '.*mail\.google\.com.*': { 'priority': 9, 'takeover': 'never', },
+            \ '.*docs\.google\.com.*': { 'priority': 9, 'takeover': 'never', },
+        \ }
+    \ }
     finish
 endif
 
