@@ -8,10 +8,6 @@
 # Set neovim as default editor
 export EDITOR="nvim"
 
-# Set nvim as manpager
-export MANPAGER="nvim +Man!"
-export MANWIDTH="999"
-
 # Ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
@@ -19,19 +15,22 @@ bind "set completion-ignore-case on"
 PS1="\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] "
 
 # Aliases
-alias ls="exa -al --color=always --group-directories-first"
+alias bt="sudo bluetoothctl"
+alias cat="bat"
+alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias cp="cp -i"
 alias df="df -h"
+alias extend="xlayoutdisplay && nitrogen --restore"
 alias free="free -h"
-alias vim="nvim"
-alias config="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias ls="exa -al --color=always --group-directories-first"
+alias man="batman"
+alias reboot="sudo shutdown -r now"
+alias rg="batgrep"
+alias rspotifyd="systemctl --user restart spotifyd"
+alias shutdown="sudo shutdown now"
 alias tsm="transmission-remote"
 alias tsm-clear="tsm -l | grep 100% | awk '{print $1}'| paste -d, -s | xargs -i transmission-remote -t {} -r"
-alias rspotifyd="systemctl --user restart spotifyd"
-alias bt="sudo bluetoothctl"
-alias shutdown="sudo shutdown now"
-alias reboot="sudo shutdown -r now"
-alias extend="xlayoutdisplay && nitrogen --restore"
+alias vim="nvim"
 
 zathura ()
 {
