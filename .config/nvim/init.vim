@@ -16,36 +16,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " PLUGIN LIST
 call plug#begin('~/.config/nvim/plugged')
 
-" browser support
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-
-" do not load plugins if run by browser
-if exists('g:started_by_firenvim')
-    call plug#end()
-    set relativenumber
-    set guifont=monospace:h11
-    set laststatus=0
-    set background=light
-    let g:firenvim_config = { 
-        \ 'globalSettings': {
-            \ 'alt': 'all',
-        \  },
-        \ 'localSettings': {
-            \ '.*': {
-                \ 'cmdline': 'firenvim',
-                \ 'content': 'text',
-                \ 'priority': 0,
-                \ 'selector': 'textarea',
-                \ 'takeover': 'always',
-            \ },
-            \ '.*notion\.so.*': { 'priority': 9, 'takeover': 'never', },
-            \ '.*mail\.google\.com.*': { 'priority': 9, 'takeover': 'never', },
-            \ '.*docs\.google\.com.*': { 'priority': 9, 'takeover': 'never', },
-        \ }
-    \ }
-    finish
-endif
-
 " aesthetics
 Plug 'sainnhe/edge'
 " Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
