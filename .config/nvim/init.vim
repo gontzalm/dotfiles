@@ -106,15 +106,15 @@ let g:coc_global_extensions = [
     \ ]
 
 " coc: navigate completion with tabs
-inoremap <silent> <expr> <Tab>
-    \ pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<Tab>" :
+inoremap <silent><expr> <Tab>
+    \ coc#pum#visible() ? coc#pum#next(1) :
+    \ CheckBackspace() ? "\<Tab>" :
     \ coc#refresh()
-inoremap <silent> <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " coc: improve <CR> with coc-pairs
@@ -136,21 +136,20 @@ xmap <silent> <leader>a <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>ab <Plug>(coc-codeaction)
 nmap <silent> <leader>ac <Plug>(coc-codeaction-cursor)
 nmap <silent> <leader>al <Plug>(coc-codeaction-line)
+nmap <silent> <leader>cl <Plug>(coc-codelens-action)
 nmap <silent> <leader>fb <Plug>(coc-format)
 nmap <silent> <leader>qf <Plug>(coc-fix-current)
 nmap <silent> <leader>rn <Plug>(coc-rename)
 
 " coc: use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
-function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'vertical help '.expand('<cword>')
-    elseif (coc#rpc#ready())
-        call CocActionAsync('doHover')
-    else
-        execute '!' . &keywordprg . " " . expand('<cword>')
-    endif
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
 endfunction
 
 " coc: map function and class text objects
@@ -161,7 +160,7 @@ omap af <Plug>(coc-funcobj-a)
 xmap ic <Plug>(coc-classobj-i)
 omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
-omap ac <Plug>(coc-classobj-a) 
+omap ac <Plug>(coc-classobj-a)
 
 " treesitter
 lua << EOF
