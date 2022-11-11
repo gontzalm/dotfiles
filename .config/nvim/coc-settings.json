@@ -23,7 +23,7 @@
   "prettier.proseWrap": "always",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "/usr/bin/black",
-  "suggest.enablePreview": true,
+  "suggest.noselect": true,
   "suggest.removeDuplicateItems": true,
   "yaml.format.enable": true
 }
