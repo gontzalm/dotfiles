@@ -29,7 +29,7 @@ alias rg="batgrep"
 alias rspotifyd="systemctl --user restart spotifyd"
 alias shutdown="sudo shutdown now"
 alias tsm="transmission-remote"
-alias tsm-clear="tsm -l | grep 100% | awk '{print $1}'| paste -d, -s | xargs -i transmission-remote -t {} -r"
+alias tsm-clear="tsm -l | grep 100% | awk '{print $1}' | xargs -i transmission-remote -t {} -r"
 alias vim="nvim"
 
 zathura ()
@@ -62,9 +62,9 @@ ex ()
 }
 
 # neofetch if not in laptop
-if [ "$HOSTNAME" != "miair13" ] ; then
-    neofetch
-fi
+# if [ "$HOSTNAME" != "miair13" ] ; then
+neofetch
+# fi
 
 # add ~/bin to PATH
 export PATH=~/bin:"$PATH"
