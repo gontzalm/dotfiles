@@ -13,7 +13,3 @@ My personal config files for various programs, including:
 - [Qtile](https://github.com/qtile/qtile)
 
 - [Redshift](https://github.com/jonls/redshift)
-
-- [Spotify-TUI](https://github.com/Rigellute/spotify-tui)
-
-- Xorg
