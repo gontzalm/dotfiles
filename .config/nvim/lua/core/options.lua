@@ -1,0 +1,13 @@
+vim.o.expandtab = true
+vim.o.ignorecase = true
+vim.o.number = true
+vim.o.linebreak = true
+vim.o.list = true
+vim.o.listchars = "eol:⏎,tab:-->,trail:␠,nbsp:⎵"
+vim.o.scrolloff = 8
+vim.o.showmode = false
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.termguicolors = true
+vim.o.wrap = false
+vim.o.writebackup = false
