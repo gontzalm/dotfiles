@@ -96,7 +96,7 @@ return {
                     "ltex",
                     "lua_ls",
                     "marksman",
-                    "pylyzer",
+                    "pyright",
                     "taplo",
                 },
                 handlers = {
