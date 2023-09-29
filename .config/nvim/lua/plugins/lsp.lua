@@ -8,27 +8,35 @@ return {
         end,
     },
     {
+        "williamboman/mason.nvim",
+        cmd = { "Mason", "MasonUpdate" },
+        config = true,
+    },
+    {
         "neovim/nvim-lspconfig",
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            { "hrsh7th/cmp-nvim-lsp" },
-            { "williamboman/mason-lspconfig.nvim" },
+            "hrsh7th/cmp-nvim-lsp",
+            "williamboman/mason-lspconfig.nvim",
+            "williamboman/mason.nvim"
         },
         config = function()
             local lsp_zero = require("lsp-zero")
             lsp_zero.extend_lspconfig()
             lsp_zero.on_attach(
                 function(_, bufnr)
-                    lsp_zero.buffer_autoformat()
                     lsp_zero.default_keymaps({ buffer = bufnr })
-                    local telescope = require("telescope.builtin")
                     vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = bufnr })
                     vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { buffer = bufnr })
-                    vim.keymap.set("n", "gl", function() telescope.diagnostics({ initial_mode = "normal" }) end,
-                        { buffer = bufnr })
-                    vim.keymap.set("n", "gr", function() telescope.lsp_references({ initial_mode = "normal" }) end,
-                        { buffer = bufnr })
+                    vim.keymap.set("n", "gl",
+                        function() require("telescope.builtin").diagnostics({ initial_mode = "normal" }) end,
+                        { buffer = bufnr }
+                    )
+                    vim.keymap.set("n", "gr",
+                        function() require("telescope.builtin").lsp_references({ initial_mode = "normal" }) end,
+                        { buffer = bufnr }
+                    )
                 end
             )
 
@@ -44,6 +52,7 @@ return {
                     "marksman",
                     "pyright",
                     "taplo",
+                    "yamlls",
                 },
                 handlers = {
                     require("lsp-zero").default_setup,
@@ -59,8 +68,8 @@ return {
         "hrsh7th/nvim-cmp",
         event = "InsertEnter",
         dependencies = {
-            { "hrsh7th/cmp-buffer" },
-            { "L3MON4D3/LuaSnip" }
+            "hrsh7th/cmp-buffer",
+            "L3MON4D3/LuaSnip"
         },
         config = function()
             local lsp_zero = require("lsp-zero")
@@ -92,24 +101,4 @@ return {
             })
         end,
     },
-    {
-        "jay-babu/mason-null-ls.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        dependencies = {
-            { "williamboman/mason.nvim",         config = true },
-            { "jose-elias-alvarez/null-ls.nvim", config = true }
-        },
-        opts = {
-            ensure_installed = {
-                "blackd", -- needs manual editing of mappings/source.lua
-                "markdownlint",
-                "prettierd",
-                "ruff",
-                "shellcheck",
-                "shfmt",
-            },
-            handlers = {},
-        },
-    }
-
 }
