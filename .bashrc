@@ -62,5 +62,5 @@ ex ()
 
 neofetch
 
-# add ~/bin to PATH
-export PATH=~/bin:"$PATH"
+# add ~/bin and ~/.cargo/bin to PATH
+export PATH=~/bin:~/.cargo/bin:"$PATH"
