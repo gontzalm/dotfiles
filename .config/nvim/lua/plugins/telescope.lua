@@ -10,7 +10,13 @@ return {
         },
         {
             "<leader>fg",
-            function() require("telescope.builtin").live_grep() end,
+            function()
+                if vim.loop.fs_stat(".git") then
+                    require("telescope.builtin").git_files()
+                else
+                    require("telescope.builtin").live_grep()
+                end
+            end,
             desc = "Grep files"
         },
         {
