@@ -116,155 +116,36 @@ font:
 
 # Color schemes
 schemes:
-  argonaut: &argonaut
+  tokyonight: &tokyonight
     primary:
-      background: "0x292C3E"
-      foreground: "0xEBEBEB"
-    cursor:
-      text: "0xFF261E"
-      cursor: "0xFF261E"
-    normal:
-      black: "0x0d0d0d"
-      red: "0xFF301B"
-      green: "0xA0E521"
-      yellow: "0xFFC620"
-      blue: "0x1BA6FA"
-      magenta: "0x8763B8"
-      cyan: "0x21DEEF"
-      white: "0xEBEBEB"
-    bright:
-      black: "0x6D7070"
-      red: "0xFF4352"
-      green: "0xB8E466"
-      yellow: "0xFFD750"
-      blue: "0x1BA6FA"
-      magenta: "0xA578EA"
-      cyan: "0x73FBF1"
-      white: "0xFEFEF8"
+      background: "0x222436"
+      foreground: "0xc8d3f5"
 
-  challenger_deep: &challenger_deep
-    primary:
-      background: "0x1e1c31"
-      foreground: "0xcbe1e7"
-    cursor:
-      text: "0xff271d"
-      cursor: "0xfbfcfc"
     normal:
-      black: "0x141228"
-      red: "0xff5458"
-      green: "0x62d196"
-      yellow: "0xffb378"
-      blue: "0x65b2ff"
-      magenta: "0x906cff"
-      cyan: "0x63f2f1"
-      white: "0xa6b3cc"
-    bright:
-      black: "0x565575"
-      red: "0xff8080"
-      green: "0x95ffa4"
-      yellow: "0xffe9aa"
-      blue: "0x91ddff"
-      magenta: "0xc991e1"
-      cyan: "0xaaffe4"
-      white: "0xcbe3e7"
+      black: "0x1b1d2b"
+      red: "0xff757f"
+      green: "0xc3e88d"
+      yellow: "0xffc777"
+      blue: "0x82aaff"
+      magenta: "0xc099ff"
+      cyan: "0x86e1fc"
+      white: "0x828bb8"
 
-  ### Edge (Light variant)
-  edge_light: &edge_light
-    primary:
-      background: "0xfafafa"
-      foreground: "0x4b505b"
-    normal:
-      black: "0x4b505b"
-      red: "0xd05858"
-      green: "0x608e32"
-      yellow: "0xbe7e05"
-      blue: "0x5079be"
-      magenta: "0xb05ccc"
-      cyan: "0x3a8b84"
-      white: "0xfafafa"
     bright:
-      black: "0x4b505b"
-      red: "0xd05858"
-      green: "0x608e32"
-      yellow: "0xbe7e05"
-      blue: "0x5079be"
-      magenta: "0xb05ccc"
-      cyan: "0x3a8b84"
-      white: "0xfafafa"
+      black: "0x444a73"
+      red: "0xff757f"
+      green: "0xc3e88d"
+      yellow: "0xffc777"
+      blue: "0x82aaff"
+      magenta: "0xc099ff"
+      cyan: "0x86e1fc"
+      white: "0xc8d3f5"
 
-  ### Edge (Dark Default variant)
-  edge_dark_def: &edge_dark_default
-    primary:
-      background: "0x2c2e34"
-      foreground: "0xc5cdd9"
-    normal:
-      black: "0x3e4249"
-      red: "0xec7279"
-      green: "0xa0c980"
-      yellow: "0xdeb974"
-      blue: "0x6cb6eb"
-      magenta: "0xd38aea"
-      cyan: "0x5dbbc1"
-      white: "0xc5cdd9"
-    bright:
-      black: "0x3e4249"
-      red: "0xec7279"
-      green: "0xa0c980"
-      yellow: "0xdeb974"
-      blue: "0x6cb6eb"
-      magenta: "0xd38aea"
-      cyan: "0x5dbbc1"
-      white: "0xc5cdd9"
+    indexed_colors:
+      - { index: 16, color: "0xff966c" }
+      - { index: 17, color: "0xc53b53" }
 
-  ### Edge (Dark Aura variant)
-  edge_dark_aura: &edge_dark_aura
-    primary:
-      background: "0x2b2d37"
-      foreground: "0xc5cdd9"
-    normal:
-      black: "0x363a49"
-      red: "0xec7279"
-      green: "0xa0c980"
-      yellow: "0xdeb974"
-      blue: "0x6cb6eb"
-      magenta: "0xd38aea"
-      cyan: "0x5dbbc1"
-      white: "0xc5cdd9"
-    bright:
-      black: "0x363a49"
-      red: "0xec7279"
-      green: "0xa0c980"
-      yellow: "0xdeb974"
-      blue: "0x6cb6eb"
-      magenta: "0xd38aea"
-      cyan: "0x5dbbc1"
-      white: "0xc5cdd9"
-
-  ### Edge (Dark Neon variant)
-  edge_dark_neon: &edge_dark_neon
-    primary:
-      background: "0x2b2d3a"
-      foreground: "0xc5cdd9"
-    normal:
-      black: "0x363a4e"
-      red: "0xec7279"
-      green: "0xa0c980"
-      yellow: "0xdeb974"
-      blue: "0x6cb6eb"
-      magenta: "0xd38aea"
-      cyan: "0x5dbbc1"
-      white: "0xc5cdd9"
-    bright:
-      black: "0x363a4e"
-      red: "0xec7279"
-      green: "0xa0c980"
-      yellow: "0xdeb974"
-      blue: "0x6cb6eb"
-      magenta: "0xd38aea"
-      cyan: "0x5dbbc1"
-      white: "0xc5cdd9"
-
-colors: *edge_dark_neon
+colors: *tokyonight
 
 # Bell
 #
