@@ -1,5 +1,0 @@
-" git
-Plug 'tpope/vim-fugitive'
-set statusline+=%{FugitiveStatusline()}
-
-nmap <silent> <leader>si :CocCommand pyright.organizeimports<CR> 

@@ -6,7 +6,7 @@ return {
         {
             "<leader>ff",
             function() require("telescope.builtin").find_files() end,
-            desc = "Find files"
+            desc = "Find files."
         },
         {
             "<leader>fg",
@@ -17,17 +17,12 @@ return {
                     require("telescope.builtin").live_grep()
                 end
             end,
-            desc = "Grep files"
-        },
-        {
-            "<leader>fb",
-            function() require("telescope.builtin").buffers() end,
-            desc = "Find buffers"
+            desc = "Grep files."
         },
         {
             "<leader>fh",
             function() require("telescope.builtin").help_tags() end,
-            desc = "Find help tags"
+            desc = "Find help tags."
         }
 
     }

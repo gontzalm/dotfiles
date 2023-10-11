@@ -49,7 +49,7 @@ return {
                     "jsonls",
                     "ltex",
                     "lua_ls",
-                    "marksman",
+                    -- "marksman",
                     "pyright",
                     "taplo",
                     "yamlls",
