@@ -1,8 +1,0 @@
-[Unit]
-Description=Start the kanshi profile service
-
-[Service]
-ExecStart=/usr/bin/kanshi
-
-[Install]
-WantedBy=default.target

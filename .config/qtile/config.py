@@ -48,7 +48,6 @@ layouts = [
 ]
 
 # WIDGETS
-widget_defaults = WidgetsConfig.DEFAULT
 SEP = widget.Sep(**WidgetsConfig.SEP)
 SPACER = widget.Spacer(length=4)
 CLOCK = widget.Clock(**WidgetsConfig.CLOCK)
@@ -56,8 +55,6 @@ CLOCK = widget.Clock(**WidgetsConfig.CLOCK)
 # BARS AND SCREENS
 primary_bar = bar.Bar(
     [
-        # widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN),
-        # SPACER,
         widget.GroupBox(**WidgetsConfig.GROUP_BOX),
         widget.WindowName(),
         widget.CurrentLayout(**WidgetsConfig.LAYOUT),
@@ -83,8 +80,6 @@ primary_bar = bar.Bar(
 
 secondary_bar = bar.Bar(
     [
-        # widget.CurrentScreen(**WidgetsConfig.CURR_SCREEN),
-        # SPACER,
         widget.GroupBox(**WidgetsConfig.GROUP_BOX),
         widget.WindowName(),
         CLOCK,
@@ -95,10 +90,10 @@ secondary_bar = bar.Bar(
 
 screens = [
     Screen(
-        top=primary_bar,
+        bottom=primary_bar,
     ),
     Screen(
-        top=secondary_bar,
+        bottom=secondary_bar,
     ),
 ]
 
@@ -115,6 +110,7 @@ floating_layout = layout.Floating(
     ]
 )
 wmname = Config.WM_NAME
+
 
 # AUTOSTART
 @hook.subscribe.startup_once
