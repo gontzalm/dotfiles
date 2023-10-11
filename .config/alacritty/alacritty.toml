@@ -4,19 +4,19 @@ offset.x = 0
 offset.y = 1
 
 [font.normal]
-family = "Liga SFMonoNerdFont"
+family = "SFMono NerdFont Mono"
 style = "Regular"
 
 [font.bold]
-family = "Liga SFMonoNerdFont"
+family = "SFMono NerdFont Mono"
 style = "Bold"
 
 [font.italic]
-family = "Liga SFMonoNerdFont"
+family = "SFMono NerdFont Mono"
 style = "Regular Italic"
 
 [font.bold_italic]
-family = "Liga SFMonoNerdFont"
+family = "SFMono NerdFont Mono"
 style = "Bold Italic"
 
 [window]
