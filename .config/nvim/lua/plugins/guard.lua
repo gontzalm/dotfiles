@@ -34,12 +34,18 @@ return {
             })
         })
 
-        ft("sh"):fmt("shfmt"):lint("shellcheck")
+        ft("sh"):fmt({
+            cmd = "shfmt",
+            args = {"-i", "2", "-ci", "-bn"},
+            stdin = "true"
+        }):lint("shellcheck")
 
         ft("python"):fmt({
             cmd = "blackd-client",
             stdin = true,
         })
+
+        ft("toml"):fmt("lsp")
 
         require('guard').setup()
     end,
