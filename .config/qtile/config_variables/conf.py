@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from palette import Color
+from config_variables._helpers import Color
 
 
 class Config:
@@ -17,32 +17,27 @@ class Config:
         ("\uf03d", {"layout": "max"}),
         ("\uf11b", {"layout": "max"}),
     ]
+    BAR_SIZE = 30
+    BAR = {
+        "background": Color.BACKGROUND.hex,
+        "margin": 5,
+        "opacity": 0,
+    }
+
+
+class LayoutsConfig:
+    MAX = {"margin": 5}
     MONAD = {
         "border_focus": Color.MAGENTA.hex,
         "border_width": 2,
         "margin": 5,
     }
-    BAR_SIZE = 30
-    BAR = {
-        "background": Color.BACKGROUND.hex,
-        "opacity": 0.9,
-    }
-    DMENU = {
-        "background": Color.BACKGROUND.fullhex,
-        "dmenu_prompt": "Run: ",
-        "dmenu_lines": 5,
-        "font": "Fira Code Nerd Font",
-        "fontsize": 10,
-        "foreground": Color.WHITE.fullhex,
-        "selected_background": Color.MAGENTA.fullhex,
-        "selected_foreground": Color.WHITE.fullhex,
-    }
 
 
 class WidgetsConfig:
     DEFAULT = {
-        "font": "Fira Code Nerd Font",
-        "fontsize": 12,
+        "font": "SFMono NerdFont Mono",
+        "fontsize": 13,
         "foreground": Color.WHITE.hex,
         "padding": 5,
     }
@@ -58,10 +53,10 @@ class WidgetsConfig:
     }
     GROUP_BOX = {
         "active": Color.WHITE.hex,
-        "borderwidth": 4,
+        "borderwidth": 5,
         "center_aligned": True,
         "disable_drag": True,
-        "fontsize": 14,
+        "fontsize": 22,
         "highlight_method": "line",
         "inactive": Color.GRAY.hex,
         "margin_x": 0,
@@ -101,6 +96,7 @@ class WidgetsConfig:
         "colour_no_updates": Color.WHITE.hex,
         "distro": "Arch_checkupdates",
         "display_format": "\uf079 {updates}",
+        "fontsize": 22,
         "no_update_string": "\uf079 ",
         "update_interval": 60,
     }

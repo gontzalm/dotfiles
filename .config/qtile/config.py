@@ -26,77 +26,17 @@
 
 import subprocess
 
-from libqtile import bar, hook, layout, widget
-from libqtile.config import Match, Screen
+from libqtile import hook, layout
+from libqtile.config import Match
 
-from helpers import GroupsGenerator
-from keybindings import keys
-from variables import Config, WidgetsConfig
+from config_variables.conf import Config, WidgetsConfig
+from config_variables.groups import groups
+from config_variables.keybindings import keys
+from config_variables.screens import screens
+from config_variables.layouts import layouts
 
 
-# GROUPS
-groups_generator = GroupsGenerator(Config.GROUP_LIST)
-groups = groups_generator.generate_groups()
-keys.extend(groups_generator.generate_keybindings())
-
-# LAYOUTS
-layouts = [
-    layout.MonadTall(**Config.MONAD),
-    layout.MonadWide(**Config.MONAD),
-    layout.Max(),
-    layout.Matrix(),
-]
-
-# WIDGETS
-SEP = widget.Sep(**WidgetsConfig.SEP)
-SPACER = widget.Spacer(length=4)
-CLOCK = widget.Clock(**WidgetsConfig.CLOCK)
-
-# BARS AND SCREENS
-primary_bar = bar.Bar(
-    [
-        widget.GroupBox(**WidgetsConfig.GROUP_BOX),
-        widget.WindowName(),
-        widget.CurrentLayout(**WidgetsConfig.LAYOUT),
-        SEP,
-        widget.MemoryGraph(**WidgetsConfig.MEMORY_GRAPH),
-        SEP,
-        widget.CPUGraph(**WidgetsConfig.CPU_GRAPH),
-        SEP,
-        widget.ThermalSensor(**WidgetsConfig.CPU_TEMP),
-        SEP,
-        widget.CheckUpdates(**WidgetsConfig.UPDATES),
-        SEP,
-        widget.Wlan(**WidgetsConfig.WLAN),
-        SEP,
-        widget.Battery(**WidgetsConfig.BATTERY),
-        SEP,
-        widget.Systray(),
-        CLOCK,
-    ],
-    Config.BAR_SIZE,
-    **Config.BAR,
-)
-
-secondary_bar = bar.Bar(
-    [
-        widget.GroupBox(**WidgetsConfig.GROUP_BOX),
-        widget.WindowName(),
-        CLOCK,
-    ],
-    Config.BAR_SIZE,
-    **Config.BAR,
-)
-
-screens = [
-    Screen(
-        bottom=primary_bar,
-    ),
-    Screen(
-        bottom=secondary_bar,
-    ),
-]
-
+widget_defaults = WidgetsConfig.DEFAULT
 floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.

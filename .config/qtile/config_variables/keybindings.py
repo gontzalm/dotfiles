@@ -1,11 +1,10 @@
-from libqtile import extension
 from libqtile.config import EzKey as Key
 from libqtile.command import lazy
 
-from variables import Config
+from config_variables.conf import Config
+from config_variables.groups import group_keys
 
 keys = [
-    # qtile bindings
     Key(
         f"{Config.MOD_KEY}-h",
         lazy.layout.left(),
@@ -54,22 +53,22 @@ keys = [
     Key(
         f"{Config.MOD_KEY}-<Tab>",
         lazy.next_layout(),
-        desc="Toggle between layouts",
+        desc="Toggle between layouts.",
     ),
     Key(
         f"{Config.MOD_KEY}-w",
         lazy.window.kill(),
-        desc="Kill focused window",
+        desc="Kill focused window.",
     ),
     Key(
         f"{Config.MOD_KEY}-S-r",
-        lazy.restart(),
-        desc="Restart qtile",
+        lazy.reload_config(),
+        desc="Reload config.",
     ),
     Key(
         f"{Config.MOD_KEY}-r",
-        lazy.run_extension(extension.DmenuRun(**Config.DMENU)),
-        desc="Run dmenu.",
+        lazy.spawn("fuzzel"),
+        desc="Run fuzzel.",
     ),
     Key(
         f"{Config.MOD_KEY}-p",
@@ -77,3 +76,5 @@ keys = [
         desc="Screenshot a region and copy it to the clipboard.",
     ),
 ]
+
+keys.extend(group_keys)
