@@ -96,7 +96,7 @@ class WidgetsConfig:
         "colour_no_updates": Color.WHITE.hex,
         "distro": "Arch_checkupdates",
         "display_format": "\uf079 {updates}",
-        "fontsize": 22,
+        "fontsize": 14,
         "no_update_string": "\uf079 ",
         "update_interval": 60,
     }
