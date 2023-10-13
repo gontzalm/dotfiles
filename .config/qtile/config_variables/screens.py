@@ -1,6 +1,7 @@
 from libqtile import bar, qtile, widget
 from libqtile.config import Screen
 
+from config_variables._helpers import Helpers
 from config_variables.conf import Config, WidgetsConfig
 
 # WIDGETS
@@ -45,6 +46,10 @@ secondary_bar = bar.Bar(
 
 connected_monitors = len(qtile.core.outputs)
 screens = [
-    Screen(bottom=primary_bar if i == 0 else secondary_bar)
+    Screen(
+        bottom=primary_bar if i == 0 else secondary_bar,
+        wallpaper=Helpers.get_random_wallpaper(),
+        wallpaper_mode="fill",
+    )
     for i in range(connected_monitors)
 ]

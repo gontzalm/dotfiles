@@ -1,4 +1,6 @@
 from enum import Enum
+from pathlib import Path
+import random
 
 from libqtile.config import EzKey as Key
 from libqtile.config import Group
@@ -49,3 +51,10 @@ class GroupsGenerator:
                 Key(f"A-S-{i}", lazy.window.togroup(group[0])),
             )
         ]
+
+
+class Helpers:
+    @staticmethod
+    def get_random_wallpaper() -> str:
+        wallpapers = list(Path("~/wallpapers").expanduser().iterdir())
+        return str(random.choice(wallpapers))
