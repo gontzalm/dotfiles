@@ -5,7 +5,7 @@ from config_variables._helpers import Color
 
 class Config:
     MOD_KEY = "A"
-    TERMINAL = "alacritty"
+    TERMINAL = "foot"
     WM_NAME = "Qtile"
     AUTOSTART_SCRIPT = Path("~/.config/qtile/autostart.sh").expanduser()
     GROUP_LIST = [
