@@ -1,7 +1,8 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    event = "VeryLazy",
     build = ":TSUpdate",
+    event = "VeryLazy",
+    cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     opts = {
         ensure_installed = {
             "bash",
@@ -34,6 +35,7 @@ return {
             enable = true,
         },
     },
+    main = "nvim-treesitter.configs",
     init = function()
         vim.o.foldmethod = "expr"
         vim.o.foldexpr = "nvim_treesitter#foldexpr()"
