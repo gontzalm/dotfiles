@@ -9,4 +9,4 @@ ExecStart=/usr/bin/gammastep
 Restart=always
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
