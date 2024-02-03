@@ -1,8 +1,11 @@
 from libqtile.config import EzKey as Key
+from libqtile.config import KeyChord
 from libqtile.command import lazy
 
 from config_variables.conf import Config
 from config_variables.groups import group_keys
+
+mod_key_no_ez = next(v for k, v in Key.modifier_keys.items() if k == Config.MOD_KEY)
 
 keys = [
     Key(
@@ -75,6 +78,8 @@ keys = [
         lazy.spawn("slurp | grim -g - - | wl-copy", shell=True),
         desc="Screenshot a region and copy it to the clipboard.",
     ),
+    Key(f"{Config.MOD_KEY}-b", lazy.widget["bluetooth"].scroll_up()),
+    Key(f"{Config.MOD_KEY}-S-b", lazy.widget["bluetooth"].click()),
 ]
 
 keys.extend(group_keys)

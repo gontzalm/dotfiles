@@ -16,6 +16,8 @@ primary_bar = bar.Bar(
         widget.GroupBox(**WidgetsConfig.GROUP_BOX),
         widget.CurrentLayout(**WidgetsConfig.LAYOUT),
         SPACER,
+        widget.Bluetooth(**WidgetsConfig.BLUETOOTH),
+        SEP,
         widget.MemoryGraph(**WidgetsConfig.MEMORY_GRAPH),
         SEP,
         widget.CPUGraph(**WidgetsConfig.CPU_GRAPH),
@@ -28,7 +30,7 @@ primary_bar = bar.Bar(
         SEP,
         widget.Battery(**WidgetsConfig.BATTERY),
         SEP,
-        widget.Systray(),
+        # widget.Systray(), not supported in wayland
         CLOCK,
     ],
     Config.BAR_SIZE,
@@ -45,11 +47,25 @@ secondary_bar = bar.Bar(
 )
 
 connected_monitors = len(qtile.core.outputs)
-screens = [
-    Screen(
-        bottom=primary_bar if i == 0 else secondary_bar,
-        wallpaper=Helpers.get_random_wallpaper(),
-        wallpaper_mode="fill",
-    )
-    for i in range(connected_monitors)
-]
+
+if connected_monitors > 1:
+    screens = [
+        Screen(
+            bottom=secondary_bar,
+            wallpaper=Helpers.get_random_wallpaper(),
+            wallpaper_mode="fill",
+        ),
+        Screen(
+            bottom=primary_bar,
+            wallpaper=Helpers.get_random_wallpaper(),
+            wallpaper_mode="fill",
+        ),
+    ]
+else:
+    screens = [
+        Screen(
+            bottom=primary_bar,
+            wallpaper=Helpers.get_random_wallpaper(),
+            wallpaper_mode="fill",
+        ),
+    ]

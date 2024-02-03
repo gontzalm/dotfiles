@@ -118,3 +118,14 @@ class WidgetsConfig:
         "foreground": Color.BRIGHT_BLUE.hex,
         "format": "%Y-%m-%d %a %H:%M",
     }
+    BLUETOOTH = {
+        "default_show_battery": True,
+        "default_text": "\uf293 {connected_devices}",
+        "foreground": "2142ff",
+        "hide_unnamed_devices": True,
+        "symbol_connected": "\uf14a",
+        "symbol_discovery": (" \uf021", ""),
+        "symbol_paired": "\uf02e",
+        "symbol_powered": ("\uf012", ""),
+        "symbol_unknown": "\uf2d3",
+    }
