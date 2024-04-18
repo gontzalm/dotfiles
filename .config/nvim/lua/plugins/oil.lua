@@ -4,5 +4,5 @@ return {
     keys = {
         { "-", vim.cmd.Oil, desc = "Open parent directory." },
     },
-    config = true,
+    opts = { view_options = { show_hidden = true } },
 }
