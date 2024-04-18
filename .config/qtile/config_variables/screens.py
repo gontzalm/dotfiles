@@ -37,35 +37,43 @@ primary_bar = bar.Bar(
     **Config.BAR,
 )
 
-secondary_bar = bar.Bar(
-    [
-        widget.GroupBox(**WidgetsConfig.GROUP_BOX),
-        CLOCK,
-    ],
-    Config.BAR_SIZE,
-    **Config.BAR,
-)
+# secondary_bar = bar.Bar(
+#     [
+#         widget.GroupBox(**WidgetsConfig.GROUP_BOX),
+#         CLOCK,
+#     ],
+#     Config.BAR_SIZE,
+#     **Config.BAR,
+# )
 
-connected_monitors = len(qtile.core.outputs)
+screens = [
+    Screen(
+        bottom=primary_bar,
+        wallpaper=Helpers.get_random_wallpaper(),
+        wallpaper_mode="fill",
+    ),
+]
 
-if connected_monitors > 1:
-    screens = [
-        Screen(
-            bottom=secondary_bar,
-            wallpaper=Helpers.get_random_wallpaper(),
-            wallpaper_mode="fill",
-        ),
-        Screen(
-            bottom=primary_bar,
-            wallpaper=Helpers.get_random_wallpaper(),
-            wallpaper_mode="fill",
-        ),
-    ]
-else:
-    screens = [
-        Screen(
-            bottom=primary_bar,
-            wallpaper=Helpers.get_random_wallpaper(),
-            wallpaper_mode="fill",
-        ),
-    ]
+# connected_monitors = len(qtile.core.outputs)
+#
+# if connected_monitors > 1:
+#     screens = [
+#         Screen(
+#             bottom=secondary_bar,
+#             wallpaper=Helpers.get_random_wallpaper(),
+#             wallpaper_mode="fill",
+#         ),
+#         Screen(
+#             bottom=primary_bar,
+#             wallpaper=Helpers.get_random_wallpaper(),
+#             wallpaper_mode="fill",
+#         ),
+#     ]
+# else:
+#     screens = [
+#         Screen(
+#             bottom=primary_bar,
+#             wallpaper=Helpers.get_random_wallpaper(),
+#             wallpaper_mode="fill",
+#         ),
+#     ]
