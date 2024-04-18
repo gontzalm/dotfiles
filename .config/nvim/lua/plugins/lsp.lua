@@ -49,7 +49,6 @@ return {
                     "jsonls",
                     "ltex",
                     "lua_ls",
-                    -- "marksman",
                     "pyright",
                     "taplo",
                     "yamlls",
