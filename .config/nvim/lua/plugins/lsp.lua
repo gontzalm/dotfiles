@@ -42,6 +42,7 @@ return {
 
             require("mason-lspconfig").setup({
                 ensure_installed = {
+                    "basedpyright",
                     "bashls",
                     "docker_compose_language_service",
                     "dockerls",
@@ -49,12 +50,15 @@ return {
                     "jsonls",
                     "ltex",
                     "lua_ls",
-                    "pyright",
+                    "ruff",
                     "taplo",
                     "yamlls",
                 },
                 handlers = {
                     require("lsp-zero").default_setup,
+                    basedpyright = function()
+                        require("lspconfig").basedpyright.setup({})
+                    end,
                     lua_ls = function()
                         local lua_opts = require("lsp-zero").nvim_lua_ls()
                         require("lspconfig").lua_ls.setup(lua_opts)

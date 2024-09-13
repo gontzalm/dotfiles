@@ -8,13 +8,11 @@ return {
             json = { "prettierd" },
             jsonc = { "prettierd" },
             markdown = { "prettierd" },
-            python = { "isort", "blackd" },
+            python = { "ruff_organize_imports" },
             yaml = { "prettierd" },
         },
         format_on_save = { timeout_ms = 500, lsp_fallback = true },
         formatters = {
-            blackd = { command = "blackd-client" },
-            isort = { prepend_args = { "--profile", "black" } },
             prettierd = {
                 env = { PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/nvim/config/.prettierrc.toml") },
             },
