@@ -1,7 +1,11 @@
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.3",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    branch = "0.1.x",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        "nvim-tree/nvim-web-devicons",
+    },
     keys = {
         -- File pickers
         {
@@ -13,33 +17,33 @@ return {
                     require("telescope.builtin").find_files()
                 end
             end,
-            desc = "Find files."
+            desc = "Find files"
         },
         {
             "<leader>fg",
             require("telescope.builtin").live_grep,
-            desc = "Grep files."
+            desc = "Grep files"
         },
         -- Vim pickers
         {
-            "<leader>fb",
+            "<leader>b",
             function() require("telescope.builtin").buffers({ initial_mode = "normal" }) end,
-            desc = "List open buffers."
+            desc = "List open buffers"
         },
         {
             "<leader>fc",
             require("telescope.builtin").commands,
-            desc = "Find commands."
+            desc = "Find commands"
         },
         {
             "q:",
-            require("telescope.builtin").command_history,
-            desc = "Find help tags."
+            function() require("telescope.builtin").command_history({ initial_mode = "normal" }) end,
+            desc = "Show command history"
         },
         {
             "<leader>fh",
             require("telescope.builtin").help_tags,
-            desc = "Find help tags."
+            desc = "Find help tags"
         }
     }
 }

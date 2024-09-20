@@ -1,44 +1,38 @@
 return {
     {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v3.x",
-        init = function()
-            vim.g.lsp_zero_extend_cmp = 0
-            vim.g.lsp_zero_extend_lspconfig = 0
-        end,
-    },
-    {
         "williamboman/mason.nvim",
         cmd = { "Mason", "MasonUpdate" },
         config = true,
     },
     {
         "neovim/nvim-lspconfig",
-        cmd = { "LspInfo", "LspInstall", "LspStart" },
-        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "williamboman/mason-lspconfig.nvim",
             "williamboman/mason.nvim"
         },
+        cmd = { "LspInfo", "LspInstall", "LspStart" },
+        event = { "BufReadPre", "BufNewFile" },
         config = function()
-            local lsp_zero = require("lsp-zero")
-            lsp_zero.extend_lspconfig()
-            lsp_zero.on_attach(
-                function(_, bufnr)
-                    lsp_zero.default_keymaps({ buffer = bufnr })
-                    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = bufnr })
-                    vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, { buffer = bufnr })
-                    vim.keymap.set("n", "gl",
-                        function() require("telescope.builtin").diagnostics({ initial_mode = "normal" }) end,
-                        { buffer = bufnr }
-                    )
+            vim.api.nvim_create_autocmd("LspAttach", {
+                desc = "LSP actions",
+                callback = function(event)
+                    local opts = { buffer = event.buf }
+                    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+                    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+                    vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
+                    vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
+                    vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action, opts)
                     vim.keymap.set("n", "gr",
                         function() require("telescope.builtin").lsp_references({ initial_mode = "normal" }) end,
-                        { buffer = bufnr }
+                        opts
                     )
-                end
-            )
+                    vim.keymap.set("n", "gl",
+                        function() require("telescope.builtin").diagnostics({ initial_mode = "normal" }) end,
+                        opts
+                    )
+                end,
+            })
 
             require("mason-lspconfig").setup({
                 ensure_installed = {
@@ -55,13 +49,10 @@ return {
                     "yamlls",
                 },
                 handlers = {
-                    require("lsp-zero").default_setup,
-                    basedpyright = function()
-                        require("lspconfig").basedpyright.setup({})
-                    end,
-                    lua_ls = function()
-                        local lua_opts = require("lsp-zero").nvim_lua_ls()
-                        require("lspconfig").lua_ls.setup(lua_opts)
+                    function(server_name)
+                        require("lspconfig")[server_name].setup({
+                            capabilities = require("cmp_nvim_lsp").default_capabilities()
+                        })
                     end,
                 },
             })
@@ -69,39 +60,91 @@ return {
     },
     {
         "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
         dependencies = {
             "hrsh7th/cmp-buffer",
-            "L3MON4D3/LuaSnip"
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-path",
         },
+        event = { "InsertEnter", "CmdlineEnter" },
         config = function()
-            local lsp_zero = require("lsp-zero")
-            lsp_zero.extend_cmp()
-
             local cmp = require("cmp")
+
+            local has_words_before = function()
+                unpack = unpack or table.unpack
+                local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+                return col ~= 0 and
+                    vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+            end
+
             cmp.setup({
+                mapping = {
+                    ['<Tab>'] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            if #cmp.get_entries() == 1 then
+                                cmp.confirm({ select = true })
+                            else
+                                cmp.select_next_item()
+                            end
+                        elseif has_words_before() then
+                            cmp.complete()
+                            if #cmp.get_entries() == 1 then
+                                cmp.confirm({ select = true })
+                            end
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                    ["<S-Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        else
+                            fallback()
+                        end
+                    end),
+                    ["<CR>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.confirm({ select = true })
+                        else
+                            fallback()
+                        end
+                    end),
+                },
                 sources = {
                     { name = "nvim_lsp" },
                     { name = "buffer" },
                 },
-                formatting = lsp_zero.cmp_format(),
-                mapping = {
-                    ["<tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                            cmp.select_next_item({ behavior = "insert" })
-                        else
-                            fallback()
-                        end
-                    end),
-                    ["<s-tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                            cmp.select_prev_item({ behavior = "insert" })
-                        else
-                            fallback()
-                        end
-                    end),
+                snippet = {
+                    expand = function(args)
+                        -- You need Neovim v0.10 to use vim.snippet
+                        vim.snippet.expand(args.body)
+                    end,
                 },
             })
+
+            cmp.setup.cmdline({ "/", "?" }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = "buffer" }
+                }
+            })
+
+            cmp.setup.cmdline(":", {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources({
+                    { name = "path" }
+                }, {
+                    { name = "cmdline" }
+                }),
+                matching = { disallow_symbol_nonprefix_matching = false }
+            })
+
+            -- Insert `(` after selecting function or method item
+            local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+
+            cmp.event:on(
+                'confirm_done',
+                cmp_autopairs.on_confirm_done()
+            )
         end,
     },
 }
