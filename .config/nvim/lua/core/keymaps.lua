@@ -1,8 +1,9 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
-vim.keymap.set("n", "<space>", "za")
-vim.keymap.set("n", "<c-h>", "<c-w>h")
-vim.keymap.set("n", "<c-j>", "<c-w>j")
-vim.keymap.set("n", "<c-k>", "<c-w>k")
-vim.keymap.set("n", "<c-l>", "<c-w>l")
-vim.keymap.set("n", "<leader>yf", 'gg"*yG')
+vim.keymap.set("n", "<Space>", "za")
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<Leader>yf", 'gg"*yG')
+vim.keymap.set("n", "go", "<C-o>")

@@ -9,7 +9,11 @@ return {
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
             "williamboman/mason-lspconfig.nvim",
-            "williamboman/mason.nvim"
+            "williamboman/mason.nvim",
+            {
+                "ray-x/lsp_signature.nvim",
+                opts = { hint_enable = false, handler_opts = { border = "none" } }
+            },
         },
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
@@ -101,13 +105,6 @@ return {
                             fallback()
                         end
                     end),
-                    ["<CR>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
-                            cmp.confirm({ select = true })
-                        else
-                            fallback()
-                        end
-                    end),
                 },
                 sources = {
                     { name = "nvim_lsp" },
@@ -138,7 +135,7 @@ return {
                 matching = { disallow_symbol_nonprefix_matching = false }
             })
 
-            -- Insert `(` after selecting function or method item
+            -- Insert `(` after confirming function or method item
             local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
             cmp.event:on(
