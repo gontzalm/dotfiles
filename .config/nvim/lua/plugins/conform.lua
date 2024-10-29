@@ -10,6 +10,7 @@ return {
             lua = { lsp_format = "prefer" },
             markdown = { "prettierd" },
             python = { "ruff_organize_imports", lsp_format = "last" },
+            toml = { "taplo" },
             yaml = { "prettierd" },
         },
         format_on_save = { timeout_ms = 500 },
