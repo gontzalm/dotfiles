@@ -1,5 +1,6 @@
 vim.o.expandtab = true
 vim.o.ignorecase = true
+vim.o.laststatus = 3
 vim.o.linebreak = true
 vim.o.list = true
 vim.o.listchars = "eol:↵,tab:-->,trail:␠,nbsp:⎵"

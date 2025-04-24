@@ -38,6 +38,8 @@ return {
                 end,
             })
 
+            require("lspconfig").nushell.setup({})
+
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "basedpyright",

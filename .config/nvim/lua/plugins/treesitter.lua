@@ -17,6 +17,7 @@ return {
             "latex",
             "lua",
             "markdown",
+            "nu",
             "python",
             "query",
             "regex",
