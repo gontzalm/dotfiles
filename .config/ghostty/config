@@ -1,10 +1,6 @@
-# behaviour
-quit-after-last-window-closed
-fullscreen
+quit-after-last-window-closed = true
 command = /usr/local/bin/nu --config ~/.config/nu/config.nu
-macos-non-native-fullscreen = true
 
-# style
 font-family = VictorMono Nerd Font Mono
 font-family-bold = VictorMono NFM Bold
 font-family-italic = VictorMono NFM Oblique
@@ -13,11 +9,6 @@ font-family-bold-italic = VictorMono NFM Bold Oblique
 theme = ChallengerDeep
 background-opacity = 0.8
 background-blur = true
+mouse-hide-while-typing = true
 
-# keybindings
-keybind = super+shift+f=toggle_fullscreen
-keybind = super+enter=new_split:auto
-keybind = super+h=goto_split:left
-keybind = super+j=goto_split:down
-keybind = super+k=goto_split:up
-keybind = super+l=goto_split:right
+macos-titlebar-style = hidden
