@@ -2,9 +2,9 @@ quit-after-last-window-closed = true
 command = /usr/local/bin/nu --config ~/.config/nu/config.nu
 
 font-family = VictorMono Nerd Font Mono
-font-family-bold = VictorMono NFM Bold
-font-family-italic = VictorMono NFM Oblique
-font-family-bold-italic = VictorMono NFM Bold Oblique
+font-style = Medium
+font-style-italic = Oblique
+font-style-bold-italic = Bold Oblique
 
 theme = ChallengerDeep
 background-opacity = 0.8
