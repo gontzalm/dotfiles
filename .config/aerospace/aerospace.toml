@@ -1,0 +1,104 @@
+# startup
+start-at-login = true
+after-login-command = []
+after-startup-command = [
+  "exec-and-forget sketchybar",
+  "exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0",
+  "workspace 1",
+  "exec-and-forget open -a 'Google Chrome'",
+  "workspace 2",
+  "layout accordion",
+  "exec-and-forget open -a 'Microsoft Teams'",
+  "exec-and-forget open -a 'Microsoft Outlook'",
+  "workspace 3",
+  "exec-and-forget open -a Ghostty",
+  "workspace 4",
+  "exec-and-forget open -na 'Google Chrome' --args --new-window https://music.youtube.com",
+]
+
+# notify sketchybar about workspace change
+exec-on-workspace-change = [
+  "/bin/bash",
+  "-c",
+  "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE",
+]
+
+
+accordion-padding = 100
+
+default-root-container-layout = "tiles"
+default-root-container-orientation = "auto"
+
+on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
+
+automatically-unhide-macos-hidden-apps = true
+
+[exec.env-vars]
+PATH = "/usr/local/bin/:${PATH}"
+
+[gaps]
+inner.horizontal = 20
+inner.vertical = 20
+outer.left = 20
+outer.bottom = 20
+outer.top = [{ monitor.main = 40 }, 20]
+outer.right = 20
+
+[mode.main.binding]
+cmd-h = "focus left"
+cmd-j = "focus down"
+cmd-k = "focus up"
+cmd-l = "focus right"
+
+cmd-1 = "workspace 1"
+cmd-2 = "workspace 2"
+cmd-3 = "workspace 3"
+cmd-4 = "workspace 4"
+cmd-5 = "workspace 5"
+
+cmd-shift-1 = "move-node-to-workspace 1"
+cmd-shift-2 = "move-node-to-workspace 2"
+cmd-shift-3 = "move-node-to-workspace 3"
+cmd-shift-4 = "move-node-to-workspace 4"
+cmd-shift-5 = "move-node-to-workspace 5"
+
+cmd-slash = "layout tiles horizontal vertical"
+cmd-comma = 'layout accordion horizontal vertical'
+
+cmd-minus = "resize smart -50"
+cmd-equal = "resize smart +50"
+cmd-enter = "exec-and-forget open -na Ghostty"
+cmd-shift-r = "exec-and-forget open -a 'Launchpad'"
+cmd-shift-l = "exec-and-forget osascript -e 'tell application \"System Events\" to keystroke \"q\" using {control down, command down}'"
+cmd-p = "exec-and-forget screencapture -ci"
+
+
+cmd-shift-semicolon = "mode service"
+
+[mode.service.binding]
+esc = ["reload-config", "mode main"]
+r = ["flatten-workspace-tree", "mode main"] # reset layout
+f = [
+  "layout floating tiling",
+  "mode main",
+] # Toggle between floating and tiling layout
+backspace = ["close-all-windows-but-current", "mode main"]
+
+# sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
+#s = ['layout sticky tiling', 'mode main']
+
+cmd-shift-h = ["join-with left", "mode main"]
+cmd-shift-j = ["join-with down", "mode main"]
+cmd-shift-k = ["join-with up", "mode main"]
+cmd-shift-l = ["join-with right", "mode main"]
+
+k = "volume up"
+j = "volume down"
+shift-down = ['volume set 0', 'mode main']
+
+[workspace-to-monitor-force-assignment]
+1 = "main"
+2 = "secondary"
+3 = "main"
+4 = "secondary"
+5 = "main"
