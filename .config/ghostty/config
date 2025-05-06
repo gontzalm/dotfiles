@@ -1,5 +1,5 @@
 quit-after-last-window-closed = true
-command = /usr/local/bin/nu --config ~/.config/nu/config.nu
+command = /usr/local/bin/nu --config ~/.config/nushell/config.nu
 
 font-family = VictorMono Nerd Font Mono
 font-style = Medium
