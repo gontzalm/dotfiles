@@ -28,11 +28,10 @@ $env.prompt_indicator_vi_normal = ""
 $env.prompt_multiline_indicator = "::: "
 
 # env variables
-$env.hatch_config = ($env.home | path join .config/hatch/config.toml)
-$env.jsii_silence_warning_untested_node_version = 1
-$env.gemini_api_key = (pass google/gemini-api)
-$env.mistral_api_key = (pass mistral/api)
-$env.codestral_api_key = (pass mistral/codestral-api)
+$env.JSII_SILENCE_WARNING_UNTESTED_NODE_VERSION = 1
+$env.GEMINI_API_KEY = (pass google/gemini-api)
+$env.MISTRAL_API_KEY = (pass mistral/api)
+$env.CODESTRAL_API_KEY = (pass mistral/codestral-api)
 
 
 # aliases
