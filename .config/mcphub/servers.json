@@ -1,0 +1,54 @@
+{
+  "nativeMCPServers": {
+    "neovim": {
+      "disabled_tools": [
+        "execute_command"
+      ],
+      "disabled_prompts": [
+        "parrot"
+      ]
+    }
+  },
+  "mcpServers": {
+    "github.com/awslabs/mcp/tree/main/src/cdk-mcp-server": {
+      "args": [
+        "awslabs.cdk-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "command": "uvx"
+    },
+    "github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server": {
+      "args": [
+        "awslabs.aws-documentation-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "command": "uvx"
+    },
+    "github.com/awslabs/mcp/tree/main/src/aws-diagram-mcp-server": {
+      "args": [
+        "awslabs.aws-diagram-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "command": "uvx"
+    },
+    "github.com/awslabs/mcp/tree/main/src/cost-analysis-mcp-server": {
+      "args": [
+        "awslabs.cost-analysis-mcp-server@latest"
+      ],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      },
+      "disabled": false,
+      "command": "uvx"
+    }
+  }
+}
