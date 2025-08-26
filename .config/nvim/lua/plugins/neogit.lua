@@ -5,7 +5,6 @@ return {
         "sindrets/diffview.nvim",
         "nvim-telescope/telescope.nvim",
     },
-    event = "VeryLazy",
     keys = {
         { "<leader>gs", function() require("neogit").open() end, desc = "Open Neogit" }
     },

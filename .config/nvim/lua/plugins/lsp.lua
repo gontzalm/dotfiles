@@ -32,7 +32,13 @@ return {
                         opts
                     )
                     vim.keymap.set("n", "gl",
-                        function() require("telescope.builtin").diagnostics({ initial_mode = "normal" }) end,
+                        function()
+                            require("telescope.builtin").diagnostics({
+                                initial_mode = "normal",
+                                wrap_results = true,
+                                line_width = "full"
+                            })
+                        end,
                         opts
                     )
                 end,
