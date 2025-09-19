@@ -4,16 +4,6 @@ after-login-command = []
 after-startup-command = [
   "exec-and-forget sketchybar",
   "exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0",
-  "workspace 1",
-  "exec-and-forget open -a 'Google Chrome'",
-  "workspace 2",
-  "layout accordion",
-  "exec-and-forget open -a 'Microsoft Teams'",
-  "exec-and-forget open -a 'Microsoft Outlook'",
-  "workspace 3",
-  "exec-and-forget open -a Ghostty",
-  "workspace 4",
-  "exec-and-forget open -na 'Google Chrome' --args --new-window https://music.youtube.com",
 ]
 
 # notify sketchybar about workspace change
@@ -34,14 +24,14 @@ on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
 automatically-unhide-macos-hidden-apps = true
 
 [exec.env-vars]
-PATH = "/usr/local/bin/:${PATH}"
+PATH = "/opt/homebrew/bin:${PATH}"
 
 [gaps]
 inner.horizontal = 20
 inner.vertical = 20
 outer.left = 20
 outer.bottom = 20
-outer.top = [{ monitor.main = 40 }, 20]
+outer.top = [{ monitor."built-in" = 20 }, { monitor.main = 40 }, 20]
 outer.right = 20
 
 [mode.main.binding]
