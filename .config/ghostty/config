@@ -6,7 +6,7 @@ font-style = Medium
 font-style-italic = Oblique
 font-style-bold-italic = Bold Oblique
 
-theme = ChallengerDeep
+theme = Challenger Deep
 background-opacity = 0.8
 background-blur = true
 mouse-hide-while-typing = true
