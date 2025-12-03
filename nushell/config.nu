@@ -39,7 +39,6 @@ alias df = df -h
 alias v = nvim
 alias cat = bat
 alias lazysync = nvim --headless '+Lazy! sync' +qa
-alias dotfiles = git --git-dir=($env.home | path join .dotfiles) --work-tree=($env.home)
 
 # List the filenames, sizes, and modification times of items in a directory.
 def l [
