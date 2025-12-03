@@ -1,0 +1,14 @@
+quit-after-last-window-closed = true
+command = nu --config ~/.config/nushell/config.nu
+
+font-family = VictorMono Nerd Font Mono
+font-style = Medium
+font-style-italic = Oblique
+font-style-bold-italic = Bold Oblique
+
+theme = Catpuccin Macchiato
+background-opacity = 0.9
+background-blur = true
+mouse-hide-while-typing = true
+
+macos-titlebar-style = hidden

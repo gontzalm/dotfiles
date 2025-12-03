@@ -1,0 +1,3668 @@
+paru pass
+cd .config/hypr/hyprland.conf
+cd .config
+vim .
+paru treesitter
+vim .
+paru tree-sitter
+paru -Rs neovim-treesitter-parsers
+paru -Qs treesitter
+paru -Rs neovim-nvim-treesitter
+vim .
+paru tree-sitter
+vim .
+pacman -S qt5-wayland qt6-wayland
+sudo pacman -S qt5-wayland qt6-wayland
+sudo pacman -S dunst
+polkit-kde-authentication-agent-1
+sudo pacman -S plasma-polkit-agent
+vim .
+exit
+sudo shutdown -r now
+cd .config
+vim .
+pacman -S brightnessctl
+sudo pacman -S brightnessctl
+sudo pacman -S pamixer
+vim .
+pacman -S waybar
+sudo pacman -S waybar
+vim .
+cd
+git clone https://github.com/gaurav23b/simple-hyprland.git
+cp -r ~/simple-hyprland/configs/waybar ~/.config/
+dotfiles status
+waybar
+paru tofi
+cp -r ~/simple-hyprland/configs/tofi ~/.config/
+vim .
+paru hyprlock
+cp ~/simple-hyprland/configs/hypr/hyprlock.conf ~/.config/hypr/
+dotfiles status
+dotfiles restore .config/hypr/hyprlock.conf
+paru hypridle
+cp ~/simple-hyprland/configs/hypr/hypridle.conf ~/.config/hypr/
+vim .config/hypr/hyprland.conf
+paru wlogout
+cp -r ~/simple-hyprland/configs/wlogout ~/.config/<\n>cp -r ~/simple-hyprland/assets/wlogout ~/.config/assets/ # copying assets
+mkdir .config/assets
+cp -r ~/simple-hyprland/configs/wlogout ~/.config/<\n>cp -r ~/simple-hyprland/assets/wlogout ~/.config/assets/ # copying assets
+vim .config/hypr/hyprland.conf
+ls .config/assets/
+ls .config/assets/wlogout
+ls .config/assets/wlogout/assets/
+vim .config/wlogout/
+vim .config/hypr/hyprland.conf
+paru hyprshot
+paru
+paru hyprshot
+paru hyprpaper
+hyprpaper
+vim .
+paru tree-sitter
+tree-sitter
+paru npm
+npm install -g tree-sitter-cli
+sudo npm install -g tree-sitter-cli
+vim .
+paru ripgrep
+paru ripgre
+paru rg
+paru ripgrep
+vim .
+paru wget unzip
+paru wget
+paru unzip
+vim .config/hypr/hyprland.conf
+env
+cd .confg
+cd .config
+dotfiles status
+dotfiles add hypr/
+dotfiles status
+dotfiles add tofi/
+dotfiles add wlogout/
+dotfiles add assets/
+dotfiles status
+vim .
+mv tofi/configA tofi/config
+rm tofi/configV
+dotfiles status
+dotfiles add tofi
+dotfiles add hypr/
+dotfiles status
+ls
+dotfiles add waybar/
+dotfiles status
+ls
+rm -r fuzzel
+ls dconf
+cat dconf/user
+paru batg
+paru bat
+cat dconf/user
+rm dconf/
+rm -r dconf
+ls
+ls pulse
+ls
+cat pulse/cookie
+ls
+rm -r gtk-3.0/
+dotfiles status
+dotfiles add fuzzel gtk-3.0
+dotfiles status
+ls
+cat fontconfig/fonts.conf
+rm -r fontconfig/
+dotfiles add fontconfig
+dotfiles status
+dotfiles commit -m "configure hyprland and remove unused configs"
+git config --global user.email "go.monasterio@gmail.com"
+git config --global user.name "Gontzal Monasterio"
+dotfiles commit -m "configure hyprland and remove unused configs"
+dotfiles push
+git config --global push.autoSetupRemote true
+dotfiles push
+cd .config/
+vim .
+paru victormono
+paru -Ss victormono
+paru -Qs victormono
+paru -Sq victormono
+paru -S victormono-nerd-font
+paru victormono
+paru ttf-victor-mono-nerd
+ls
+vim .
+cd .config/
+vim .
+waybar
+paru waybar-bluetooth
+pacman -S waybar-bluetooth
+sudo pacman -S waybar-bluetooth
+waybar
+bt
+bluetooth
+paru bluez
+paru bluez-utils
+sudo systemctl enable --now bluetooth.service
+paru blueman
+blueman
+blueman-applet
+blueman
+blueman-manager
+waybar
+cd .config
+dotfiles pull
+cat .ssh/config
+ls
+mkdir .ssh
+vim .ssh/config
+ssh alarmpi
+paru ssh
+ssh
+sudp pacman -S ssh
+sudo pacman -S ssh
+paru -Rs libssh2
+paru openssh
+reflector
+paru reflector
+sudo systemctl enable --now reflector.service
+paru openssh
+reflector
+paru openssh
+pacman -S openssh
+sudo pacman -S openssh
+ls
+sudo pacman -Syu
+paru openssh
+ssh alarmpi
+ls
+paru localsend
+ls
+localsend
+ls
+cd .config
+rg challengerdeep
+rg challenger
+rg challenger deep
+rg 'challenger deep'
+ls
+ls nushell/
+ls
+vim .
+ghostty +listthemes
+ghostty +list-themes
+vim .
+dotfiles status
+dotfiles diff
+paru less
+dotfiles diff
+ls
+ls /usr/share/ghostty/themes/
+cd .config
+vim .
+dotfiles diff
+ls Downloads/
+ls
+scp Cerdeña_Sur_3.mp4 alarmpi:/mnt/hdd/media/edits/cerdena_sur_2025.mp4
+ssh alarmpi
+scp Cerdeña_Sur_3.mp4 alarmpi:/mnt/hdd/data/media/edits/cerdena_sur_2025.mp4
+ls
+scp Grandvalira.mp4 alarmpi:/mnt/hdd/data/media/edits/grandvalira.mp4
+scp Grandvalira.mp4 alarmpi:/mnt/hdd/data/media/edits/grandvalira_2025.mp4
+ls
+sudo shutdown now
+cd .config
+vim .
+cd .config
+paru kanshi
+reflector
+paru kanshi
+ls
+mkdir kanshi
+cd kanshi
+vim config
+swaymsg -t get_outputs
+hyprctl monitors
+paru kanshi
+systemctl enable --now reflector
+paru kanshi
+pacman -S kanshi
+sudo pacman -S kanshi
+paru
+paru kanshi
+kanshictl
+kanshictl status
+systemctl enable kanshi
+systemctl --user enable kanshi
+sudo systemctl enable kanshi
+kanshictl status
+hyprctl reload
+kanshictl status
+which rebootr
+which reboot
+sudo shutdown -r now
+neofetch
+fastfetch
+screenfetch
+paru neofetch
+neofetch
+kanshictl status
+neofetch
+cd .config
+cd
+cd Downloads/
+ls
+mv k-k-hphefMVC0rE-unsplash.jpg svartifoss.jpg
+cd
+mkdir wallpapers
+mv ~/Downloads/svartifoss.jpg wallpapers/
+hyprctl reload
+hyprpaper reload
+hyprpaper --help
+hyprpaper
+hyprctl hyperpaper reload
+hyprctl hyperpaper reload ~/wallpapers/svartifoss.jpg
+hyprctl hyperpaper reload ,~/wallpapers/svartifoss.jpg
+hyprctl hyprpaper reload ,~/wallpapers/svartifoss.jpg
+hyprctl hyprpaper listloaded
+vim .
+hyprpaper reload
+vim .
+ls
+pkill waybar
+hyprctl dispatch exec waybar
+hyprctl reload
+vim .
+vim .
+sudo shutdown -r now
+cd .config
+pkill waybar && hyprctl dispatch exec waybar
+pkill waybar; hyprctl dispatch exec waybar
+vim .
+dotfiles diff
+dotfiles status
+dotfiles add ghostty/config
+dotfiles hypr/hyprland.conf hypr/hyprpaper.conf waybar/config.jsonc waybar/
+dotfiles add hypr/hyprland.conf hypr/hyprpaper.conf waybar/config.jsonc waybar/
+dotfiles commit -m "various tweaks"
+dotfiles push
+cd
+ls .ssh/
+ssh-keygen -t ed25519 -C "go.monasterio@gmail.com"
+eval "$(ssh-agent -s)"
+bash -c 'eval "$(ssh-agent -s)"'
+ssh-add ~/.ssh/id_ed25519
+bash
+cat .ssh/id_ed25519.pub
+cat .ssh/id_ed25519.pub | pbcopy
+cat .ssh/id_ed25519.pub | xclip
+dotfiles push
+ls
+dotfiles status
+dotfiles origin
+dotfiles upstream
+dotfiles remote
+dotfiles remote -v
+alias dotfiles
+alias
+cd .conifg
+cd .config
+dotfiles remote set-url origin git@github.com:gontzalm/dotfiles.git
+dotfiles push
+sudo shutdown now
+paru
+sudo shutdown now
+pkill waybar; hyprctl dispatch exec waybar
+kanshi
+sudo shutdown -r now
+paru unixbench
+cd .config
+vim .
+cd nvim/
+vim .
+vim
+vim .
+lazysync
+vim .
+npm install -g mcp-hub@latest
+sudo chown -R gontz ~/.npm
+sudo chown -R gontz /usr/lib/node_modules/
+vim .
+npm install -g mcp-hub@latest
+whoami
+ls /usr/bin/
+ls -l /usr/bin/
+npm install -g mcp-hub@latest
+paru -R node
+paru -R nodejs
+paru -R npm
+ls /usr/lib/node_modules/
+paru -R node
+paru -R nodejs
+paru npm
+npm install -g mcp-hub@latest
+ubench
+npm doctor
+paru -R npm
+ls
+cd
+rm ~/.npm/
+rm -R ~/.npm/
+rm -r ~/.npm/
+ls
+rm -r /usr/lib/node_modules/
+ls /usr/lib/node_modules/
+sudo rm -r /usr/lib/node_modules/
+paru npm
+npm doctor
+npm install -g sember
+npm install -g semver
+paru -R nodejs
+paru -R semver
+paru -R npm
+paru -R nodejs
+paru -R node-gyp
+paru -R nodejs-notp
+paru -R nodejs-nopt
+paru -R semver
+ls
+paru npm
+npm install -g mcp-hub@latest
+npm config set prefix ~/.local
+npm install -g mcp-hub@latest
+ls .local/
+env path
+env $path
+env.$path
+env.$PATH
+env
+env.user
+env.$USER
+env
+$env.path
+ls .local/
+vim .
+cd .config
+cd nvim/
+paur
+paru
+journalctl -b -1
+cat /sys/power/mem_sleep
+echo s2idle | sudo tee /sys/power/mem_sleep<\n>
+cat /sys/power/mem_sleep
+systemctl sleep
+systemctl status nvidia-suspend.service
+paru tlp
+systemctl enable --now tlp
+systemctl mask systemd-rfkill
+systemctl mask systemd-rfkill.socket
+cat /sys/power/mem_sleep
+sudo vim /etc/systemd/sleep.conf
+sudo nvim /etc/systemd/sleep.conf
+systemctl sleep
+cd Downloads/
+start resume.pdf
+sudo shutdown now
+paru
+git clone git@github.com:gontzalm/rag-builder.git
+cd rag-builder/
+ls
+vim README.md
+cd
+cd .config/
+vim .
+cd nvim/
+vim .
+cd
+cd rag-builder/
+vim README.md
+paru jre-openjdk-headless
+vim README.md
+paru jre21-openjdk-headless
+cd
+cd .config/nvim/
+cd
+cd .config/nvim/
+vim .
+vim README.md
+paru aws-cdk
+paru aws
+paru aws-cdk
+paru aws-cli
+aws configure
+cat ~/.aws/credentials
+cdk --version
+cdk init app --language python
+ls
+cd
+ls
+mkdir tmp
+cd tmp
+cdk init app --language python
+ls
+cat requirements.txt
+cd
+cd rag-builder/
+vim pyproject.toml
+ls
+uv --version
+uv version
+paru uv
+ls
+uv add aws-cdk-lib constructs
+cat pyproject.toml
+vim pyproject.toml
+uv add aws-cdk-lib constructs
+cat requirements-dev.txt
+rm requirements.txt requirements-dev.txt
+ls
+cat source.bat
+rm source.bat
+ls
+rm README.md
+cat cdk.json
+mv cdk.json ~/rag-builder/
+ls
+cat app.py
+ls
+cat tmp/tmp_stack.py
+mv app.py ~/rag-builder/
+ls
+rm -r tmp/
+cat tests/unit/test_tmp_stack.py
+rm -r tests/
+ls
+cat .gitignore
+vim .gitignore
+cd ..
+rm -r tmp/
+ls
+ls
+ls .venv/
+uv run
+uv run pythhon
+uv run python
+vim app.py
+cdk bootstrap
+overlay use .venv/bin/activate.nu 
+cdk bootstrap
+vim app.py
+vim .
+vim app.py
+cdk bootstrap
+vim .
+git status
+guit add .
+git add .
+git status
+vim .gitignore
+git status
+git add .gitignore
+git status
+git restore --staged cdk.out/
+git status
+git commit -m "initial commit"
+git push
+man echo
+man
+help echo
+vim .
+cd rag_builder/lambda/backend-api/
+ls
+deactivate
+cd rag_builder/lambda/backend-api/
+ls
+uv add fastapi
+overlay use .venv/bin/activate.nu 
+vim .
+uv add boto3
+vim .
+deactivate
+cd ../..
+cd ..
+overlay use .venv/bin/activate.nu 
+vim l.
+ls
+rm `'`
+ls
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+paru docker
+systemctl enable --now docker.socket
+cdk deploy rag-builder-stack
+sudo groupadd docker
+sudo usermod -aG docker $env.USER
+$env.USER
+cdk deploy rag-builder-stack
+logout
+bash
+sudo shutdown -r now
+cd rag-builder/
+ls
+vim .
+overlay use .venv/bin/activate.nu 
+cdk deploy rag-builder-stack
+python
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+cd rag_builder/lambda/backend-api/
+uv export
+ls
+uv export out> requirements.txt
+cdk deploy rag-builder-stack
+cd ../../..
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cd rag_builder/lambda/backend-api/
+overlay use .venv/bin/activate.nu 
+deactivate 
+cd rag_builder/lambda/backend-api/
+overlay use .venv/bin/activate.nu 
+ls
+uv sync
+uv run fastapi run app/main.py
+uv add uvicorn
+ls
+uv export out> requirements.txt
+cd ../../..
+overlay use .venv/bin/activate.nu 
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cd
+cd Hyde
+cdk deploy rag-builder-stack
+git status
+git add .
+git status
+git commit -m "feat: add fastapi construct and backend-api initial structure"
+git push
+cd
+cd .config/
+ls
+cd waybar/
+ls
+cat config.jsonc
+cd ..
+ls
+vim .
+sudo shutdown now
+sudo /etc/pacman.conf
+sudo vim /etc/pacman.conf
+sudo nvim /etc/pacman.conf
+cd rag-builder/
+ls
+mkdir doc
+mv README.md doc/todo.md
+out> README.md
+touch README.md
+paru
+which touch
+which start
+ls
+git stautus
+git status
+vim README.md
+vim .
+overlay use .venv/bin/activate.nu 
+python
+vim .
+git restore rag_builder/constructs.py
+ls
+vim .
+uv add aws_cdk.aws_lambda_python_alpha
+job unfreeze
+vim .
+deactivate
+cd rag_builder/lambda/
+ls
+cd ingest
+uv add aws_lambda_powertools
+overlay use .venv/bin/activate.nu 
+vim .
+git status
+deactivate
+cd ../../..
+ls
+git status
+git add .
+git status
+ls
+git restore --staged uv.lock
+git diff
+ls
+vim pyproject.toml
+git add uv.lock
+git status
+git add pyproject.toml
+git status
+vim pyproject.toml
+git commit -m "feat: continue development"
+git push
+cd
+hypridle
+hyprctl exec hypridle
+sudo shutdown now
+paru
+cd rag-builder/
+ls
+cd rag-builder/
+git status
+git diff
+vim .
+cd rag_builder/lambda/backend-api/
+overlay use .venv/bin/activate.nu 
+ls
+vim .
+uv sync
+ls
+overlay use .venv/bin/activate.nu 
+vim .
+deactivate
+cd ../../..
+vim .
+overlay use .venv/bin/activate.nu 
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+vim .
+cdk deploy rag-builder-stack
+cd rag-builder/
+vim .
+overlay use .venv/bin/activate.nu 
+cdk deploy rag-builder-stack
+vim .
+git diff
+cd rag-builder/
+vim .
+git diff
+git add .
+git status
+git commit -m "feat: continue development"
+git push
+cd
+cd .config/
+vim .
+start assets/wlogout/assets/lock.png
+start assets/wlogout/assets/lock-hover.png
+wlogout
+paru librsvg
+vim .
+dotfiles restore wlogout/layout
+vim .
+paru
+cd .config
+hyprctl dispatch dpms off
+cd .config
+cat /etc/tlp.conf
+paru dmpms
+paru dpms
+kscreen-doctor
+hyprctl dispatch dpms off
+paru kscreen
+cd .config
+cat /sys/power/mem_sleep
+# echo deep > /sys/power/mem_sleep<\n>
+echo deep > /sys/power/mem_sleep<\n>
+echo deep out> /sys/power/mem_sleep<\n>
+sudo echo deep out> /sys/power/mem_sleep<\n>
+echo deep out> sudo tee /sys/power/mem_sleep<\n>
+cat /sys/power/mem_sleep
+echo s2idle out> sudo tee /sys/power/mem_sleep<\n>
+cat /sys/power/mem_sleep
+sudo vim /sys/power/mem_sleep
+cat /sys/power/mem_sleep
+vim /etc/systemd/sleep.conf
+ls
+rm ~
+rm '~'
+ls
+cd
+sudo vim /etc/systemd/sleep.conf
+sudo nvim /etc/systemd/sleep.conf
+cat /sys/power/mem_sleep
+systemctl suspend
+cat /sys/power/mem_sleep
+cat /etc/systemd/sleep.conf
+systemd-analyze cat-config /etc/systemd/sleep.conf
+paru google-ai
+vim .
+cd .config
+vim .
+dotfiles status
+dotfiles ad wlogout/ hypr/
+dotfiles add wlogout/ hypr/
+ls
+dotfiles status
+dotfiles commit -m "configure hypridle and fix wlogout icons"
+dotfiles push
+journalctl -b -1
+cat /etc/tlp.conf
+journalctl | rg dpms
+cd .config
+kanshi
+npx version
+paru
+ls
+rm '!'
+ls
+cd simple-hyprland/
+ls
+cd
+ls
+mkdir learning
+cd learning/
+ssh alarmpi
+git clone https://github.com/langchain-ai/lca-langchainV1-essentials.git
+cd lca-langchainV1-essentials/
+ls
+vim .env
+ls
+cd python
+ls
+cat example.env
+cd ..
+ls
+mv .env python/
+cd python
+vim .env
+cp .env studio/
+uv sync
+uv run langgraph dev
+cd studio/
+ls
+uv run langgraph dev
+paru noto-fonts noto-fonts-cjk noto-fonts-emoji
+sudo pacman -S noto-fonts-emoji noto-fonts noto-fonts-cjk
+cd ..
+ls
+rm -r lca-langchainV1-essentials/
+cd
+cd rag-builder/
+ls
+cd rag_builder/lambda/ingest/ls
+cd rag_builder/lambda/ingest/
+overlay use .venv/bin/activate.nu 
+vim .
+uv add httpx
+vim .
+uv add lancedb
+uv add pypdf
+uv add langchain-community
+uv add langchain
+cd
+paru
+cd rag-builder/
+cd rag_builder/lambda/ingest/
+ls
+cat pyproject.toml
+vim .
+cd
+cd rag-builder/
+ls
+cd rag_builder/lambda/backend-api/
+vim .
+overlay use .venv/bin/activate.nu 
+ls
+uv sync
+overlay use .venv/bin/activate.nu 
+vim .
+deactivate
+cd ..
+ls
+cd ingest
+vim .
+overlay use .venv/bin/activate.nu 
+vim .
+deactivate
+cd ../../..
+cdk deploy rag-builder-stack
+overlay use .venv/bin/activate.nu 
+cdk deploy rag-builder-stack
+vim .
+cd rag_builder/lambda/delete/
+deactivate
+cd rag_builder/lambda/delete/
+uv add boto3
+cat pyproject.toml
+ls
+cd ../..
+cd ..
+overlay use .venv/bin/activate.nu 
+cdk deploy rag-builder-stack
+cd rag_builder/lambda/delete/
+cd rag-builder/
+cd rag_builder/lambda/delete/
+ls
+cd ..
+ls
+cd backend-api/
+ls
+cd ../../..
+git diff
+git status
+cd
+paru
+cd rag-builder/
+ls
+overlay use .venv/bin/activate.nu 
+cd
+cd .config
+vim .
+cdk deploy rag-builder-stack
+vim .
+cd rag_builder/lambda/ingest/
+ls
+uv remove boto3
+ls
+cat pyproject.toml
+ls
+cd ../../..
+ls
+vim .
+cd rag_builder/lambda/ingest/
+ls
+uv sncy
+uv sync
+deactivate
+cd rag_builder/lambda/ingest/
+uv sync
+ls .venv/
+ls .venv/lib/
+ls .venv/lib/python3.13/
+ls .venv/lib/python3.13/site-packages/
+ls .venv/lib/python3.13/site-packages/pypdf/
+ls
+uv remove pypdf
+ls
+cd ..
+ls
+cd ../../..
+cd rag-builder/
+overlay use .venv/bin/activate.nu 
+cd rag_builder/lambda/ingest/
+ls
+uv list
+uv -h
+uv tree
+uv add pypdf
+uv tree
+uv tree -h
+uv tree --show-sizes
+cdk deploy rag-builder-stack
+cd ../../..
+vim .
+overlay use .venv/bin/activate.nu 
+deactivate
+vim .
+cd rag_builder/lambda/ingest/
+ls
+lsl
+ls
+cat pyproject.toml
+ls
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/lambda/ingest/
+ls
+cat Dockerfile
+uv run cdk deploy rag-builder-stack
+paru buildx
+vim .
+cd rag_builder/lambda/ingest/
+cat Dockerfile
+uv run cdk deploy rag-builder-stack
+cd rag_builder/lambda/ingest/
+cat Dockerfile
+vim .
+cat Dockerfile
+cd rag_builder/lambda/ingest/
+cat Dockerfile
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+cd ..
+ls
+cd delete/
+ls
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+docker run --rm -it \<\n>    --platform "linux/arm64" \<\n>    -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input" \<\n>    -v "$(mktemp -d):/asset-output" \<\n>    -w "/asset-input" \<\n>    "public.ecr.aws/sam/build-python3.13" \<\n>    bash -c "pip install -r requirements.txt -t /asset-output"
+docker run --rm -it<\n>    --platform "linux/arm64"<\n>    -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input"<\n>    -v "$(mktemp -d):/asset-output"<\n>    -w "/asset-input"<\n>    "public.ecr.aws/sam/build-python3.13"<\n>    bash -c "pip install -r requirements.txt -t /asset-output"
+docker run --rm -it  --platform "linux/arm64" -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input" -v "$(mktemp -d):/asset-output" -w "/asset-input" "public.ecr.aws/sam/build-python3.13" bash -c "pip install -r requirements.txt -t /asset-output"
+docker run --rm -it  --platform "linux/arm64" -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input" -v "(mktemp -d):/asset-output" -w "/asset-input" "public.ecr.aws/sam/build-python3.13" bash -c "pip install -r requirements.txt -t /asset-output"
+docker run --rm -it  --platform "linux/arm64" -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input" -v "(bash -c 'mktemp -d'):/asset-output" -w "/asset-input" "public.ecr.aws/sam/build-python3.13" bash -c "pip install -r requirements.txt -t /asset-output"
+basch -c "mtemp -d"
+bash -c "mtemp -d"
+bash -c "mktemp -d"
+docker run --rm -it  --platform "linux/arm64" -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input" -w "/asset-input" "public.ecr.aws/sam/build-python3.13" bash -c "pip install -r requirements.txt -t /asset-output"
+uv run cdk deploy rag-builder-stack
+docker run --rm public.ecr.aws/sam/build-python3.13 basch -c "which rsync"
+docker run --rm public.ecr.aws/sam/build-python3.13 bash -c "which rsync"
+docker run --rm public.ecr.aws/sam/build-python3.13 bash -c "which rsync" --platform=linux/amd64
+docker run --rm public.ecr.aws/sam/build-python3.13 bash -c "which rsync" --platform linux/amd64
+docker run --rm -it public.ecr.aws/sam/build-python3.13
+docker run --rm -it public.ecr.aws/sam/build-python3.12
+docker containers
+docker ps
+docker logs
+docker run --rm -it --platform "linux/arm64" -u "1000:1000" -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input:delegated" -v "/home/gontz/rag-builder/cdk.out/asset.1b59f42353bf38992622c168c99b65c68f7ae00dfe19af840835f79707839527-building:/asset-output:delegated" -w "/asset-input" "public.ecr.aws/sam/build-python3.13"
+docker run --rm -it --platform "linux/arm64" -u "1000:1000" -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input:delegated" -v "/home/gontz/rag-builder/cdk.out/asset.1b59f42353bf38992622c168c99b65c68f7ae00dfe19af840835f79707839527-building:/asset-output:delegated" -w "/asset-input" "public.ecr.aws/sam/build-python3.12"
+docker run --rm -it -u "1000:1000" -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input:delegated" -v "/home/gontz/rag-builder/cdk.out/asset.1b59f42353bf38992622c168c99b65c68f7ae00dfe19af840835f79707839527-building:/asset-output:delegated" -w "/asset-input" "public.ecr.aws/sam/build-python3.13"
+docker run --rm -it -u "1000:1000" -v "/home/gontz/rag-builder/rag_builder/lambda/delete:/asset-input:delegated" -v "/home/gontz/rag-builder/cdk.out/asset.1b59f42353bf38992622c168c99b65c68f7ae00dfe19af840835f79707839527-building:/asset-output:delegated" -w "/asset-input" "public.ecr.aws/sam/build-python3.12"
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+docker image prune
+uv run cdk deploy rag-builder-stack
+docker image prune -h
+docker image prune --all
+uv run cdk deploy rag-builder-stack
+vim .
+docker image prune --all
+uv run cdk deploy rag-builder-stack
+paru docker-buildx
+docker buildx ls
+docker buildx ls --all
+docker buildx ls
+uv run cdk deploy rag-builder-stack
+docker run --rm -t arm64v8/ubuntu uname -m
+docker run --rm -t arm64/ubuntu uname -m
+cat /proc/sys/fs/binfmt_misc/
+cat /proc/sys/fs/binfmt_misc/register
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+paru qemu
+paru qemu-user-static
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+docker buildx ls
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+python
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+nmcli
+iwctl
+paru
+cd rag_builder
+ls
+cd rag-builder
+ls
+vim .
+cd rag_builder/lambda/backend-api/
+vim .
+overlay use .venv/bin/activate.nu 
+ls
+cd ..
+cd ../..
+ls
+vim 
+vim .
+cd rag_builder/lambda/backend-api/
+uv sync
+overlay use .venv/bin/activate.nu 
+vim l
+ls
+vim .
+deactivate
+cd ../../..
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/lambda/ingest/
+uv add langchain-aws
+vim .
+cd ../../..
+ls
+git status
+ls
+cat pyproject.toml
+cd rag_builder/lambda/ingest/
+cat pyproject.toml
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+cd rag_builder/lambda/ingest/
+vim .
+uv run cdk deploy rag-builder-stack
+cd ../../..
+uv run cdk deploy rag-builder-stack
+vim .
+vim .
+uv run cdk deploy rag-builder-stack
+vim 
+aws bedrock list-foundation-models
+vim .
+ls
+cd rag_builder/lambda/ingest/
+ls
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/lambda/ingest/
+ls
+uv run cdk deploy rag-builder-stack
+vim .
+ls
+git diff
+git status
+git add .
+git commit -m "feat: continue development"
+git push
+ls
+paru
+cd rag-builder/
+vim .
+ls
+vim .
+cd rag_builder/lambda/delete-document/
+uv add langchain-community
+vim .
+cd ../
+vim .
+cd ../..
+uv run cdk deploy rag-builder-stack
+paru
+cdk --version
+paru cdk
+uv run cdk deploy rag-builder-stack
+systemctl status docker
+systemctl restart docker
+systemctl status docker
+systemctl status docker.socket
+systemctl restart docker.socket
+systemctl status docker.socket
+systemctl status docker
+systemctl restart docker
+systemctl status docker
+journalctl | -eu docker
+journalctl -eu docker
+killal dockerd
+killall dockerd
+cd
+cd .config/
+ls
+dockerd --debug
+sudo dockerd --debug
+cd rag-builder/
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/lambda/delete-document/
+ls
+cat pyproject.toml
+c
+cd
+cd rag-builder/
+cd ../..
+cd ..
+cat uv.lock
+vim .
+uv run cdk deploy rag-builder-stack
+paru
+vim.
+vim .
+cd rag-builder/
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+cd
+ls .cache/pip/
+uv run cdk deploy rag-builder-stack
+git status
+git add .
+git status
+git commit -m "feat: continue development"
+git push
+cd
+paru
+lazysync
+vim .
+cd rag-builder/
+vim doc/todo.md
+paru
+paru dovecot
+paru gemini
+cd rag-builder/
+gemini
+vim .
+cdk --help
+cdk deploy --help
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+systemctl status docker
+systemctl restart docker
+cd rag-builder/
+vim .
+cd rag_builder/lambda/query-knowledge-base/
+uv add langchain[aws]
+cd ..
+cd ingest-document/
+ls
+cat pyproject.toml
+cat uv.lock
+cd ..
+cd query-knowledge-base/
+ls
+vim function.py
+cat pyproject.toml
+uv add langchain-community
+uv remove langchain-community
+cat pyproject.toml
+uv add langchain-community
+rm -r .venv/
+vim pyproject.toml
+uv sync
+uv add langchain-community
+vim .
+cd ../../..
+ls
+ls .cdk-pip-cache/
+ls .cdk-pip-cache/http-v2/
+ls .cdk-pip-cache/http-v2/3/
+ls .cdk-pip-cache/http-v2/3/3/
+ls
+git status
+vim .gitignore
+git status
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+cd rag_builder/lambda/delete-document/
+uv add lancedb
+cd ..
+cd query-knowledge-base/
+uv add lancedb
+cd ../..
+cd ..
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+vim .
+ls
+cd rag_builder/lambda/delete-document/
+ls
+uv remove langchain-community
+uv remove langchain[aws]
+uv remove langchain[<\n>]
+cat pyproject.toml
+cd ../../
+ls
+cd ..
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+cd rag_builder/lambda/optimize-vector-store/
+ls
+cat optimizer.py
+vim .
+uv run cdk deploy rag-builder-stack
+cd ../../..
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+rg ingestion
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+paru
+vim rag-builder/
+cd
+cd rag-builder/
+vim .
+ls
+vim .
+cd rag_builder/lambda/frontend/
+ls
+cat pyproject.toml
+vim .
+uv sync
+vim .
+uv add httpx
+vim .
+cd
+cd rag-builder/
+ls
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+job unfreeze
+uv run cdk deploy rag-builder-stack
+xsel
+xclip
+wl-copy
+echo "hello" | wl-copy
+cat rag_builder/stack.py | wl-copy
+wl-copy rag_builder/stack.py
+cat rag_builder/stack.py | wl-copy
+vim .
+cat rag_builder/stack.py | wl-copy
+python -c "import secrets; print(secrets.token_hex(32))"
+uv run cdk deploy rag-builder-stack
+wl-copy rag_builder/stack.py
+cat rag_builder/stack.py | wl-copy
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+job unfreeze
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+cat rag_builder/stack.py | wl-copy
+vim .
+uv run cdk deploy rag-builder-stack
+cat rag_builder/stack.py | wl-copy
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+cat rag_builder/stack.py | wl-copy
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+cd rag_builder/lambda/frontend-app/
+ls
+uv run fastapi run app/main.py
+uv run python -m fastapi run app/main.py
+ls
+uv remove fastapi
+uv remove uvicorn
+uv add fastapi[standard]
+cat pyproject.toml
+uv run fastapi run app/main.py
+uv run fastapi dev 
+ls
+uv remove httpx
+cat pyproject.toml
+uv run fastapi dev app/main.py
+uv add starlette
+uv add starlette[full]
+cat pyproject.toml
+uv run fastapi dev
+vim .
+uv run fastapi dev
+vim .
+uv run fastapi dev
+rg os.environ
+vim .env
+job unfreeze
+grep -v '^\s*$\|^\s*#' .env | lines | split column "=" k v | each {|x| {$x.k: $x.v}} | into record | load-env
+$env
+ls
+cat .env
+vim .
+uv run fastapi dev
+vim .
+uv run fastapi dev
+cd ../../..
+vim .
+uv run cdk deploy rag-builder-stack
+cd rag_builder/lambda/frontend-app/
+uv run fastapi dev
+grep -v '^\s*$\|^\s*#' .env | lines | split column "=" k v | each {|x| {$x.k: $x.v}} | into record | load-env
+vim .
+cd ../../..
+uv run cdk deploy rag-builder-stack
+cd ../../..
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+cd ../../..
+vim .
+uv run cdk deploy rag-builder-stack
+uv run cdk destroy rag-builder-stack
+vim .
+uv run fastapi dev
+uv run cdk deploy rag-builder-stack
+vim .env
+grep -v '^\s*$\|^\s*#' .env | lines | split column "=" k v | each {|x| {$x.k: $x.v}} | into record | load-env
+uv run fastapi dev
+cd rag_builder/lambda/frontend-app/
+vim .
+cd ../../..
+uv run cdk deploy rag-builder-stack
+cd rag_builder/lambda/frontend-app/
+vim .
+cd ../../..
+cd
+cd .config/
+vim .
+alias load-dotenv=grep -v '^\s*$\|^\s*#' .env | lines | split column "=" k v | each {|x| {$x.k: $x.v}} | into record | load-env
+uv run cdk deploy rag-builder-stack
+alias load-dotenv='grep -v '^\s*$\|^\s*#' .env | lines | split column "=" k v | each {|x| {$x.k: $x.v}} | into record | load-env'
+vim .
+cd rag_builder/lambda/frontend-app/
+vim .
+uv run fastapi dev
+cd ../../..
+git status
+vim .gitignore
+git add .
+git status
+git commit -m "feat: continue development"
+git push
+paru
+cd rag-builder/
+vim .
+cd rag_builder/lambda/frontend-app/
+cat pyproject.toml
+uv run
+uv run python
+aws sts get-caller-identity
+cat uv.lock
+uv run fastapi dev
+vim .
+cd
+cd rag-builder/
+vim .
+cd rag_builder/lambda/frontend-app/
+uv run fastapi dev
+gemini
+cd ../../..
+gemini
+ls
+cd rag_builder/lambda/frontend-app/
+ls
+vim .
+uv run fastapi dev
+cd ../../..
+vim doc/spec/
+aws sts get-caller-identity
+cd rag_builder/lambda/frontend-app/
+vim .
+cd ../../..
+vim .
+cd rag_builder/lambda/frontend-app/
+aws sts get-caller-identity
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run fastapi dev
+vim .
+uv run fastapi dev
+uv run cdk deploy rag-builder-stack
+vim .
+VIM .
+vim .
+python
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/lambda/load-document/
+uv add httpx-auth
+vim .
+cd ../../..
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run fastapi dev
+uv run cdk deploy rag-builder-stack
+vim .
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run fastapi dev
+vim .
+uv run cdk deploy rag-builder-stack
+fastapi dev
+uv run fastapi dev
+gemini
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+rg aria-busy
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+uv run cdk deploy rag-builder-stack
+gemini
+vim doc/spec/frontend.md
+gemini
+vim doc/spec/frontend.md
+gemini
+cat doc/spec/frontend.md
+gemini
+vim doc/
+git status
+vim doc/todo.md
+git status
+vim .
+git status
+git add .
+git commit -m "feat: continue development"
+git push
+paru
+cd rag-builder/
+cat doc/bugs.md
+vim .
+gemini
+git diff
+gemini
+cat rag_builder/lambda/frontend-app/app/templates/logged_out.html
+cd rag_builder/lambda/frontend-app/
+uv run fastapi dev
+gemini
+cd ../../..
+vim .
+uv run cdk deploy rag-builder-stack
+cat doc/bugs.md
+vim doc/bugs.md
+gemini
+git diff
+vim .
+sl
+ls
+gemini
+vim .
+uv run fastapi dev
+gemini
+vim .
+gemini
+vim .
+gemini
+vim .
+gemini
+vim .
+ls
+gemini
+vim .
+cd rag_builder/lambda/frontend-app/
+vim .
+vim doc
+cd ../../..
+vim doc/
+vim .
+uv run cdk deploy rag-builder-stack
+uv run fastapi dev
+vim .
+git status
+vim .
+git status
+git add .
+git commit -m "feat: continue development"
+git push
+ls
+uv lock
+uv lock -h
+uv sync
+uv sync -h
+uv sync --upgrade
+rg lambda_python_alpha
+uv remove aws-lambda-python-alpha
+uv remove aws-cdk.aws-lambda-python-alpha
+uv sync
+ls
+cd rag_builder/lambda/
+ls
+cd backend-api/
+uv sync --upgrade
+cd ..
+ls
+cd delete-document/
+uv sync --upgrade
+cd ..
+ls
+cd frontend-app/
+uv sync --upgrade
+cd ..
+ls
+cd load-document/
+uv sync --upgrade
+cd ..
+ls
+cd optimize-vector-store/
+uv sync --upgrade
+cd ..
+ls
+cd query-knowledge-base/
+uv sync --upgrade
+cd ../../..
+uv status
+git status
+git add .
+git commit -m "chore: update dependencies"
+git push
+aws sts get-caller-identity
+vim .
+cd rag-builder/
+vi m.
+vim .
+cd rag-builder/
+gemini
+exit
+cd rag-builder/
+ls
+git diff
+cat doc/bugs.md
+paru
+cd
+cd .config
+vim .
+cd rag_builder/frontend-app/
+ls
+npm run dev
+npm install
+ls
+rm -r node_modules/
+npm i next@latest react@latest react-dom@latest
+cat package.json
+vim package.json
+npm i next@latest react@latest react-dom@latest
+npm i aws-amplify@latest
+ls
+cat package.json
+npm run dev
+vim .
+gemini
+npm run dev
+ls
+cat config.js
+vim config.js
+rg window.appConfig
+cd ../../..
+ls
+cd rag-builder/
+ls
+git diff
+cdk synth rag-builder-stack
+uv run cdk synth rag-builder-stack
+vim .
+uv run cdk synth rag-builder-stack
+vim .
+uv run cdk synth rag-builder-stack
+vim .
+uv run cdk synth rag-builder-stack
+vim .
+uv run cdk synth rag-builder-stack
+vim .
+uv run cdk synth rag-builder-stack
+vim .
+uv run cdk synth rag-builder-stack
+vim .
+uv run cdk synth rag-builder-stack
+vim .
+uv run cdk synth rag-builder-stack
+gemini
+ls
+cd rag_builder/frontend-app/
+ls
+rm -r .next/ out/
+sudo rm -r .next/ out/
+ls
+rm -r node_modules/
+ls
+uv run cdk deploy rag-builder-stack
+rm package-lock.json
+ls
+cd
+cd Downloads/
+ls
+cat config.js
+ls
+rm pico-main.zip config.js Ticket_T-IN167-334375_6553876_Full-price_2025-09-09_17-00_1-2.pkpass
+ls
+gemini
+ls
+cat vite.config.js
+cat package.json
+ls
+cat index.html
+vim .
+gemini
+cd ../../..
+cd rag-builder/
+vim .
+gemini
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+aws sts get-caller-identity
+cd rag_builder/frontend-app/
+vim .
+uv run cdk deploy rag-builder-stack
+cd ../..
+uv run cdk deploy rag-builder-stack
+vim .
+ls
+gemini
+cd
+cd .config/nvim/
+vim .
+vim .
+cd
+cd rag-builder/
+rg import.env
+cd rag_builder/frontend-app/
+ls
+uv run cdk deploy rag-builder-stack
+cd 
+cd Downloads/
+ls
+cat index.html
+ls
+cat index-C-bH6bx_.js
+ls
+cd rag_builder/frontend-app/
+ls
+cat .env
+vim .
+ls
+cd ../..
+ls
+lls
+ls
+cd ../..
+vim .
+cd
+cd Downloads/
+ls
+cat config.js
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+gemini
+vim .
+gemini
+ls
+vim .
+cd rag_builder/frontend-app/
+uv run dev
+npm run dev
+cd ..
+ls
+cd ..
+ls
+gemini
+cd rag_builder/frontend-app/
+npm run dev
+paru
+aws sts get-caller-identity
+aws sts get-caller-identity --query Account
+aws sts get-caller-identity --query Account --output json
+aws sts get-caller-identity --query Account --output text
+cd rag-builder/
+gemini
+uv run cdk deploy rag-builder-stack
+cd .
+vim .
+uv run cdk deploy rag-builder-stack
+ls
+cd rag_builder/
+ls
+cd frontend-app/
+ls
+npm run dev
+vim .
+cd rag_builder/frontend-app/
+vim .
+npm run dev
+vim .
+nmp i @aws-amplify/ui-react
+npm i @aws-amplify/ui-react
+ls
+cat package.json
+nmp -h
+npm -h
+npm uninstall @aws-amplify/ui-react
+ls
+rm -r node_modules/
+rm -rf node_modules/
+ls
+sudo rm -r node_modules/
+ls
+vim package.json
+npm install react react-dom react-router-dom aws-amplify @aws-amplify/ui-react
+cat package.json
+vim .
+npm install tailwindcss @tailwind/vite
+npm install tailwindcss @tailwindcss/vite
+cat package.json
+npm list
+npm uninstall autoprefixer
+nmp list
+npm list
+cat pyproject.toml
+cat package.json
+npm uninstall postcss
+ls
+cat package.json
+nmp uninstall vite tailwindcss @vitejs/plugin-react
+npm uninstall vite tailwindcss @vitejs/plugin-react
+npm install vite tailwindcss @vitejs/plugin-react
+cat package.json
+vim .
+npm run dev
+npm add @mui/icons-material
+vim .
+gemini
+cd ../..
+ls
+uv run cdk deploy rag-builder-stack
+gemini
+vim .
+uv run cdk deploy rag-builder-stack
+cd rag_builder/frontend-app/
+cd rag-builder/
+ls
+cd rag_builder/frontend-app/
+uv run dev
+npm run dev
+rg cancel
+rg CANCEL
+gemini
+rg modal
+vim .
+npm run dev
+gemini
+vim .
+gemini
+vim .
+gemini
+ls
+gemini
+cd ../..
+ls
+npm run dev
+ls cdk.out/
+ls
+uv run cdk deploy rag-builder-stack --outputs cdk-outputs.json
+ls
+cat cdk-outputs.json
+uv run cdk deploy rag-builder-stack --outputs-file cdk-outputs.json
+cat cdk-outputs.json
+cat cdk.json
+vim .
+uv run cdk deploy rag-builder-stack --outputs-file cdk-outputs.json
+cd frontend-app
+cd rag_builder/frontend-app/
+ls
+ls ..
+gemini
+vim .
+ls
+gemini
+vim .
+gemini
+vim .
+npm run dev
+cd doc/spec/
+vim .
+cd ../..
+gemini
+gemini
+ls
+vim .
+gls
+ls
+ls rag_builder/
+rm -r rag_builder/frontend-app/
+ls
+vim .
+ls
+rm doc/spec/frontend.md
+ls
+ls doc/
+rm -r doc/spec/
+ls doc/
+vim .
+rm -r rag_builder/lambda/frontend-app/
+git status
+git add .
+git status
+git commit -m "feat: continue development"
+git push
+paru
+cd rag-builder/
+ls
+vim .
+cd rag_builder/apprunner/chainlit-app/
+ls
+cp ../../lambda/backend-api/pyproject.toml .
+ls
+vim pyproject.toml
+uv add chainlit
+uv run chainlit create-secret
+ls
+ls .files/
+ls .chainlit/
+ls rag_builder/apprunner/chainlit-app/
+uv run cdk deploy rag-builder-stack
+vim .
+cdk cli-telemetry --status
+vim cdk.json
+cdk cli-telemetry --status
+cdk ack 34892
+cdk acknowledge 34892
+ls
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+cd
+cd rag-builder/
+ls
+rg typeguard
+vim uv.lock
+uv run cdk deploy rag-builder-stack
+uv sync --upgrade
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+ls
+cd rag_builder/apprunner/chainlit-app/
+ls
+vim app.py
+uv run chainlit app.py
+uv run chainlit run app.py -w
+vim .
+cd
+cd rag-builder/
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/apprunner/chainlit-app/
+uv run cdk deploy rag-builder-stack
+vim app.py
+aws sts get-caller-identity --query Account --output text
+cat .env
+uv run chainlit run app.py -w
+vim .env
+vim .
+uv add langchain[aws] langchain-community lancedb
+job unfreeze
+vim .
+cd
+cd rag-builder/
+uv run cdk deploy rag-builder-stack
+paru
+cd rag-builder/
+ls
+cd rag_builder/apprunner/chainlit-app/
+cat instructions.md
+uv run chainlit run app.py -w
+cd rag-builder/rag_builder/fargate/chainlit-app/
+ls
+cd rag-builder/rag_builder/fargate/chainlit-app/
+uv run chainlit run app.py -w
+ls
+uv run chainlit run app.py -w
+uv run
+uv run chainlit run app.py -w
+rm -r .venv/
+uv sync
+uv run chainlit run app.py -w
+uv run chainlit run app/main.py -w
+vim instructions.md
+cd
+cd rag-builder/rag_builder/fargate/chainlit-app/
+ls
+uv add httpx
+vim .
+uv add pandas
+uv run chainlit run main.py -w
+job unfreeze
+cd ../..
+ls
+cd ..
+uv run cdk deploy rag-builder-stack
+cd rag-builder/rag_builder/fargate/chainlit-app/
+cd rag_builder/fargate/chainlit-app/
+cd
+cd rag-builder/lambda
+cd rag-builder/rag_builder/lambda/backend-api/
+ls
+uv run fastapi dev
+ls
+cat pyproject.toml
+vim pyproject.toml
+uv add fastapi[standard]
+uv add boto3
+uv run fastapi dev
+vim .
+uv run chainlit run main.py -w
+paur
+paru
+cd rag-builder/
+ls
+uv sync --upgrade
+ls
+rm cdk-outputs.json
+ls
+vi m.
+python
+vim .
+cd rag_builder/fargate/chainlit-app/
+vim .
+uv add pandas-stubs --dev
+cat pyproject.toml
+cd
+cd rag-builder/
+uv run cdk deploy rag-builder-stack
+systemctl status docker
+systemctl restart docker
+systemctl status docker
+vim .
+cd rag-builder/
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/fargate/chainlit-app/
+uv run chainlit run main.py -w
+vim .
+cd ../..
+cd ..
+ls
+gemini
+uv run cdk deploy rag-builder-stack
+mv ~/Documents/Google_AI_Studio_2025-11-17T12_44_20.238Z.png .
+ls
+mv Google_AI_Studio_2025-11-17T12_44_20.238Z.png favicon.png
+vim .
+ls
+ls rag_builder/apprunner/chainlit-app/
+ls rag_builder/fargate/chainlit-app/public/
+mv ~/Downloads/Google_AI_Studio_2025-11-17T12_47_48.404Z.png rag_builder/fargate/chainlit-app/public/favicon.png
+ls
+cd rag_builder/fargate/chainlit-app/
+ls
+ls public/
+uv run chainlit run main.py -w
+vim .
+ls
+vim .
+gemini
+vim .
+uv run chainlit run main.py -w
+ls
+cd ../../..
+ls
+vim .
+uv run cdk deploy rag-builder-stack
+cd rag_builder/fargate/chainlit-app/
+uv run chainlit run main.py -w
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+cat doc/features.md
+cd rag_builder/fargate/chainlit-app/
+vim .
+cd ../../..
+ls
+uv run chainlit run main.py -w
+vim .
+gemini
+vim .
+gemini
+vim .
+cd rag_builder/fargate/chainlit-app/
+uv export out> requirements.txt
+cat requirements.txt
+ls
+cd ../../..
+gemini
+vim .
+cd rag-builder/
+ls
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+git diff
+paru
+cd rag-builder/
+ls
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+gemini
+vim .
+uv run cdk deploy rag-builder-stack
+uv run cdk destroy rag-builder-stack
+uv sync --upgrade
+ls
+cd rag_builder/lambda/
+ls
+cd backend-api/
+uv sync --upgrade
+cd ..
+cd delete-document/
+uv sync --upgrade
+cd ..
+cd load-document/
+uv sync --upgrade
+cd ..
+cd optimize-vector-store/
+uv sync --upgrade
+cd ../..
+cd ..
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+fg
+job unfreeze
+uv run cdk deploy rag-builder-stack
+vim .
+cat rag_builder/fargate/chainlit-app/.env
+cd rag_builder/fargate/chainlit-app/
+uv run chainlit run main.py -w
+cd ../..
+ls
+cd ..
+vim .
+uv run cdk deploy rag-builder-stack
+gemini
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+gemini
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+ls
+vim .
+uv run cdk deploy rag-builder-stack
+cat rag_builder/fargate/chainlit-app/.env
+vim rag_builder/fargate/chainlit-app/.env
+vim .
+uv run cdk deploy rag-builder-stack
+git diff
+gemini
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+git status
+uv run cdk deploy rag-builder-stack
+git status
+gemini
+vim doc/features.md
+git add .
+git commit -m "feat: continue development"
+git push
+cat doc/features.md
+paru mermaid-cli
+ls
+cat README.md
+gemini
+mmdc -h
+cat README.template.md
+mmdc -i README.template.md -o README.md
+ls
+open README-1.svg
+start README-1.svg
+ls
+rm README-1.svg
+ls
+rm README.md
+ls
+mmdc -i README.template.md -o README.md --iconPacks @iconify-json/logos
+start README-1.svg
+mmdc -h
+vim README.template.md
+mmdc -i README.template.md -o README.md --iconPacks @iconify-json/logos
+start README-1.svg
+cat README.template.md
+mmdc -i README.template.md -o README.md --iconPack @iconify-json/logos
+mmdc -i README.template.md -o README.md --iconPacks '@iconify-json/logos'
+mmdc -i README.template.md -o README.md --iconPack @iconify-json/logos
+mmdc -i README.template.md -o README.md --iconPacks '@iconify-json/logos'
+start README.md
+cat README.md
+start README-1.svg
+vim README.template.md
+mmdc -i README.template.md -o README.md --iconPacks '@iconify-json/logos'
+start README-1.svg
+cat README.md
+start README-1.svg
+mmdc -i README.template.md -o README.md --iconPacks '@iconify-json/logos'
+start README-1.svg
+paru -Rs mermaid-cli
+ls
+paru mermaid-cli
+mmdc -i README.template.md -o README.md
+start README-1.svg
+ls
+mmdc -i README.template.md -o README.md
+start README-1.svg
+ls
+mmdc -i README.template.md -o README.md
+start README-1.svg
+mmdc -i README.template.md -o README.md
+start README-1.svg
+vim README.template.md
+mmdc -i README.template.md -o README.md
+start README-2.svg
+mmdc -i README.template.md -o README.md
+start README-1.svg
+rm *.svg
+ls
+rm README.template.md
+ls
+git status
+git restore README.md
+paru
+paru -Rs chromium
+cd rag-builder/
+ls
+cat doc/features.md
+gemini
+vim .
+gemini
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+uv sync --upgrade
+vim .
+cd rag_builder/fargate/chainlit-app/
+gemini
+uv run chainlit run main.py -w
+vim .
+cd ..
+ls
+git diff
+cd rag_builder/fargate/chainlit-app/
+uv sync --upgrade
+uv export out> requirements.txt
+cd ../../..
+ls
+cat doc/features.md
+uv run cdk deploy rag-builder-stack
+vim .
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/fargate/chainlit-app/
+vim .
+python
+uv run chainlit run main.py -w
+paru
+cd rag-builder/
+ls
+cd rag_builder/fargate/chainlit-app/
+vim .
+uv run chainlit run main.py -w
+gemini
+vim .
+gemini
+vim .
+uv run chainlit run main.py -w
+vim .
+uv run chainlit run main.py -w
+git diff
+ls
+cd ../../..
+ls
+cat doc/features.md
+gemini
+vim README.md
+mmdc README.md
+mmdc -i README.md
+mmdc -h
+/quit
+gemini
+vim .
+mmdc -i README.md
+start README-1.svg
+ls
+start README.md-1.svg
+vim README.md
+gemini
+mmdc -i README.md
+open README-1.svg
+start README.md-1.svg
+mmdc -i README.md -o readme.png
+start readme-1.png
+ls
+rm *.svg *.png
+ls
+vim README.md
+git add README.md
+git status
+git add .
+git commit -m "feat: continue development"
+git push
+vim README.md
+git diff
+git add README.md
+ls
+git commit -m "docs: update diagram"
+git push
+vim README.md
+gemini
+git add README.md
+git commit -m "docs: update diagram" --amend
+git push f-
+git push -f
+vim README.md
+git add README.md
+git commit -m "docs: update diagram" --amend
+git push -f
+paru
+cd rag-builder/
+uv run cdk deploy rag-builder-stack
+vim .
+cd rag_builder/fargate/chainlit-app/
+vim .
+git status
+vim .
+git status
+vim .
+uv run cdk deploy rag-builder-stack
+cd ../../..
+uv run cdk deploy rag-builder-stack
+vim .
+git status
+git add .
+git status
+git commit -m "feat: instruct the agent the vectore store may not be empty"
+git pusyh
+git push
+uv run cdk deploy rag-builder-stack
+cd
+cd Downloads/
+ls
+cat 1-7f007e2f-d297-44ed-8bed-ea5e973c261f.txn
+rm *.txt
+ls
+rm *.txn
+rm config.js index-C-bH6bx_.js index.html
+ls
+cd rag_builder/lambda/load-document/
+uv run python
+uv add pandas
+vim .
+uv run python
+uv remove pandas
+git diff
+uv run cdk deploy rag-builder-stack
+vim .
+neofetch 
+cd Downloads/
+ls
+start cursorful-video-1763745599489.mp4
+ls
+mv cursorful-video-1763745599489.mp4 rag-builder-demo.mp4
+ls
+cat rag-builder-demo.mp4
+paru ffmpeg
+ffmpeg -i rag-builder-demo.mp4 -o rag-builder-demo-compressed.mp4
+cd
+cd rag-builder/
+ls
+git diff
+git add .
+ffmpeg -i rag-builder-demo.mp4 rag-builder-demo-compressed.mp4
+git commit -m "fix: use document_id when posting document"
+git push
+ls
+start rag-builder-demo-compressed.mp4
+ffmpeg -i rag-builder-demo-compressed.mp4 rag-builder-demo-compressed-2.mp4
+ls
+ffmpeg -i rag-builder-demo.mp4 -c:v libx265 rag-builder-demo-compressed.mp4
+ls
+paru
+cd Downloads/
+ls
+rm rag-builder-demo-*
+ls
+ffmpeg -i rag-builder-demo.mp4 -map 0:v -c:v copy -bsf:v h264_mp4toannexb raw.h264
+ffmpeg -fflags +genpts -r 60 -i raw.h264 -c:v copy output.mp4
+ls
+start output.mp4
+ls
+ffmpeg -fflags +genpts -r 90 -i raw.h264 -c:v copy output.mp4
+start output.mp4
+ls
+mv rag-builder-demo.mp4 rag-builder-demo-original.mp4
+ls
+ffmpeg -i output.mp4 output-compressed.mp4
+ls
+ffmpeg -i output.mp4 -crf 24 output-compressed.mp4
+ls
+paru dolphin
+dolphin
+ffmpeg -i output.mp4 -crf 25 output-compressed.mp4
+ls
+start output-compressed.mp4
+ls
+rm raw.h264
+ls
+ffmpeg -i output.mp4 -crf 26 output-compressed.mp4
+ls
+start output-compressed.mp4
+ls
+mv output-compressed.mp4 rag-builder-demo.mp4
+ls
+mv output.mp4 demo-raw.mp4
+ls
+rm rag-builder-demo-original.mp4
+ls
+mv rag-builder-demo.mp4 demo.mp4
+ls
+cd
+cd rag-builder/
+git pull
+ssh-keygen -p
+paru
+cd rag-builder/
+cd rag_builder/lambda/backend-api/
+ls
+rg client
+uv add --dev pytest coverage
+ls
+uv export
+uv export --no-dev
+vim .
+ls
+cd rag_builder/lambda/backend-api/
+ls
+cat pyproject.toml
+uv add --dev httpx
+ls
+cat requirements.txt
+uv export --no-dev
+uv export --no-dev | grep httpx
+uv remove httpx
+uv remove httpx --dev
+ls
+cat pyproject.toml
+ls
+./test
+vim .
+./test
+vim .
+./test
+vim pyproject.toml
+./test
+vim pyproject.toml
+./test
+docker container stop rag-builder-backend-api-test-db
+./test
+vim pyproject.toml
+./test
+docker container stop rag-builder-backend-api-test-db
+./test
+vim pyproject.toml
+ls
+./test
+vim test
+./test -vvv
+gemini
+vim .
+git diff
+gemini
+vim .
+./test
+vim .
+./test
+vim .
+uv add --dev moto[sqs]
+vim .
+gemini
+./test
+vim .
+./test
+vim .
+./test
+vim .
+./test
+vim .
+gemini
+uv add --dev boto3-stubs[sqs]
+vim .
+uv add --dev boto3-stubs[dynamodb]
+vim .
+./load
+./test
+vim .
+./test
+vim .
+./tesrt
+./test
+vim .
+./test
+vim test
+./test
+ls
+cd ..
+ls
+git status
+cd ..
+git status
+vim .gitignore
+git status
+paru
+cd rag_builder/lambda/backend-api/
+./test
+ls
+cd ../../..
+ls
+glob
+glob -h
+which glob
+which ls
+which rg
+glob -h
+vim pyproject.toml
+ls
+neofetch 
+gemini
+ls
+vim doc/features.md
+cat doc/features.md
+mv doc/features.md doc/roadmap.md
+vim doc/roadmap.md
+git restore doc/
+git status
+ls doc/
+rm doc/roadmap.md
+ls
+git add .gitignore
+git add rag_builder/lambda/backend-api/test*
+git status
+git diff
+git status
+git add rag_builder/lambda/backend-api/
+git status
+git commit -m "test: add backend-api tests"
+git add rag_builder/constructs.py
+rg compile
+cat rag_builder/constructs.py
+ls
+git commit -m "chore: exclude dev dependencies on uv export"
+git push
+vim .
+git dif
+git diff
+uv run cdk deploy rag-builder-stack
+vim .
+git diff
+ls
+vim .
+git status
+git diff
+vi m.
+vim .
+gemini
+git status
+ls rag_builder/lambda/delete-document/
+git add .gitignore
+git commit -m "chore: ignore generated Dockerfiles"
+git status
+git diff rag_builder/constructs.py
+git add rag_builder/constructs.py
+git status
+git commit -m "refactor: python ignore patterns"
+git push
+ls
+cat doc/features.md
+vim doc/features.md
+git status
+git add doc/features.md
+git commit -m "docs: update features"
+git add rag_builder/lambda/backend-api/requirements.txt
+git commit -m "chore: update requirements.txt"
+git push
+cat doc/features.md
+nmcli
+ifconfig
+nmcli
+cd .config
+ls
+ls pulse/
+ls session/
+ls sudo
+cat sudo
+rm sudo
+ls
+cat user-dirs.dirs
+ls
+rm -r nextjs-nodejs/
+ls
+ls configstore/
+ls chromium/
+paru -Rs mermaid-cli
+ls
+rm -r chromium/
+ls
+ls /etc/systemd/system/
+cat /etc/systemd/system/display-manager.service
+ls /usr/share/wayland-sessions/
+paru lemurs
+systemctl disable display-manager
+systemctl enable lemurs
+ls /usr/share/wayland-sessions/
+ls /usr/share/wayland-sessions/hyprland.desktop
+cat /usr/share/wayland-sessions/hyprland.desktop
+rm -r /usr/share/wayland-sessions/
+rm -r /usr/share/wayland-sessions/hyprland.desktop
+ls
+sudo nvim /etc/lemurs/wayland/hyprland
+sudo chmod 755 /etc/lemurs/wayland/hyprland
+ls /etc/lemurs/wayland/hyprland
+cat /etc/lemurs/wayland/hyprland
+which hyprland
+which Hyprland
+systemct status lemurs
+systemct status lemurs.service
+systemctl status lemurs.service
+cat /etc/lemurs/wayland
+ls /etc/lemurs/wayland
+yay -Rs lemurs
+paru -Rs lemurs
+rm -r /etc/lemurs/
+sudo rm -r /etc/lemurs/
+paru autologin
+ls /usr/local/bin/
+autologin -h
+which autologin
+ls /etc/pam.d/
+cat /etc/pam.d/autologin
+cat /etc/pam.d/login
+systemctl status autologin
+systemctl enable autologin
+systemctl describe autologin
+systemctl ls autologin
+systemctl -h
+systemctl edit autologin
+cat /etc/systemd/system/display-manager.service
+sudo nvim /usr/lib/systemd/system/autologin.service
+ls
+systemctl status lemurs
+paru -Rs lemurs
+paru hyprland-guiutils
+systemctl status lemurs
+ls
+systemctl status autologin
+whoami
+paru -Rs sddm
+paru hyprland-guiutils
+cd rag-builder/
+paru
+cat doc/features.md
+vim .
+cd rag_builder/lambda/load-document/
+ls
+rg pyarrow
+vim uv.lock
+cat function.py
+cat loader.py
+cd ..
+ls
+cd delete-document/
+ls
+cat deleter.py
+cd ..
+ls
+cd load-document/
+python
+cd ../
+ls
+cd delete-document/
+ls
+rg pyarrow
+cat loader.py
+cd ..
+cd delete-document/
+ls
+cat deleter.py
+python
+cd ../../..l
+cd
+cd rag-builder/
+ls
+vim .
+gemini
+vim .
+uv run cdk deploy --context deploy_chainlit=false
+vim .
+uv run cdk deploy --context deploy_chainlit=false
+vim .
+git dif
+git diff
+cd rag_builder/lambda/delete-document/
+uv run python
+cd
+cd rag-builder/
+ls
+cd rag_builder/lambda/load-document/
+cd
+cd rag-builder/
+cd rag_builder/lambda/load-document/
+cat loader.py
+vim .
+cd
+cd rag-builder/
+cd rag_builder/fargate/chainlit-app/
+ls
+cd ../../..
+cd rag_builder/fargate/chainlit-app/
+vim .
+cd ../../..
+vim .
+uv run python
+uv add langchain-vectorstores
+cat pyproject.toml
+cd ..
+cd delete-document/
+ls
+cat deleter.py
+uv run chainlit run main.py -w
+cd ../
+cd load-document/
+uv run python
+vim .
+vim .
+uv remove langchain-community
+uv list
+uv show
+uv -h
+uv tree
+ls
+uv run python
+cd
+cd rag-builder/
+cd rag_builder/fargate/chainlit-app/
+vim .
+cd ../../..
+ls
+git diff
+gemini
+git status
+git show
+git push
+git status
+cd rag_builder/fargate/chainlit-app/
+uv run chainlit run main.py -w
+vim .
+vim doc/features.md
+cd ../../..
+vim doc/features.md
+gemini
+git diff
+git add README.md; git commit -m "docs: add RAG search implementation details"; git push
+git add doc/features.md
+git commit -m "docs: update features"
+git push
+gemini
+git status
+git add README.md; git commit -m "docs: add deploy_chainlit context value"
+git push
+paru hyprland-guiutils
+paru
+cd rag-builder/
+ls
+uv sync --upgrade
+cd rag_builder/lambda/
+ls
+cd backend-api/
+uv sync --upgrade
+cd ..
+cd delete-document/
+uv sync --upgrade
+cd ..
+cd load-document/
+uv sync --upgrade
+cat pyproject.toml
+ls
+cd
+cd rag-builder/rag_builder/lambda/backend-api/
+cd ..]
+ls
+cd ..
+ls
+cd optimize-vector-store/
+uv sync --upgrade
+cd ../..
+cd fargate/chainlit-app/
+uv sync --upgrade
+cd ../..
+ls
+cd ..
+ls
+git diff
+python
+which python
+ls /usr/bin/python
+ls -l /usr/bin/python
+ls -l python3
+which python3
+ls -l /usr/bin/python3
+ls
+uv python
+uv python list
+ls
+cd rag_builder/lambda/load-document/
+ls
+vim pyproject.toml
+cd ../test/
+ls
+uv sync
+uv python list
+cd ..
+rm -r test/
+ls
+cd ../..
+git status
+git add .
+git commit -m "chore: update dependencies"
+git push
+uv run cdk deploy --context deploy_chainlit=false
+ls
+ls cdk.out/
+cat cdk.out/rag-builder-stack.template.json
+paru sam-cli
+paru aws-sam
+paru sam
+cd 
+cd Downloads/
+ls
+rm aws-sam-cli-linux-x86_64.zip cv.pdf
+rm OnyxChatSilentDemo.gif
+rm res*
+ls
+star M30B2025104292PDH.pdf
+start M30B2025104292PDH.pdf
+rm M30B2025104292PDH.pdf
+paru aws-sam
+sam --version
+gemini
+cd rag_builder/lambda/load-document/
+ls
+vim pyproject.toml
+uv run coverage run
+uv run coverage report
+uv remove pytest moto respx coverage pytest-mock pytest-env
+uv remove pytest moto respx coverage pytest-mock pytest-env --dev
+uv add --dev pytest pytest-env pytest-mock moto[s3] respx coverage
+gemini
+cd ..
+gemini
+gemini --resume
+vim .
+gemini --resume
+cd ../../..
+vim .
+cd rag_builder/lambda/load-document/
+ls
+vim .
+uv run coverage run
+vim .
+uv run coverage run
+vim .
+uv run coverage run
+vim .
+uv run coverage run
+uv run coverage report
+ls
+uv run coverage run; uv run coverage report
+gemini --resume
+git status
+git diff
+git status
+ls
+uv remove --dev moto
+ls
+uv tree
+uv tree --dev
+cat pyproject.toml
+cd ..
+ls
+cd ..
+ls
+cd ..
+vim doc/features.md
+git staus
+git status
+git add .
+git status
+git commit -m "test: add load-document tests"
+git push
+gemini
+cd rag_builder/lambda/optimize-vector-store/
+vim .
+uv run pytest
+vim .
+uv run pytest
+vim .
+uv add pytest-cov
+uv remove pytest-cov
+uv add --dev pytest-cov
+uv run pytest --cov=.
+vim .
+uv run pytest
+uv run pytest --cov
+vim .
+ls
+uv run pytest --cov
+vim .
+uv run pytest --cov
+git diff
+git diff .
+git add .
+git status
+git commit -m "test: add optimize-vector-store tests"
+cd ../../..
+ls
+git status
+cd rag_builder/lambda/
+ls
+cd load-document/
+ls
+vim pyproject.toml
+uv add --dev pytest-cov
+cd rag-builder/
+cd rag_builder/lambda/load-document/
+ls
+uv add --dev pytest-cov
+uv run pytest --cov
+vim .
+uv run pytest --cov
+cd ..
+ls
+cd backend-api/
+ls
+vim .
+uv add --dev pytest-cov
+vim .
+./test
+git status
+git add .
+cd ..
+cd load-document/
+git status
+git add .
+git status
+cd ../../..
+git commit -m "test: use pytest-cov"
+git push
+paru
+cd rag-builder/
+ls
+cd rag_builder/lambda/delete-document/
+ls
+vim .
+cd rag_builder/lambda/delete-document/
+uv sync
+gemini
+vim .
+cd rag_builder/lambda/delete-document/
+vim .
+uv run pytest --cov
+vim .
+uv run pytest --cov
+ls
+git status
+git add .
+git status
+git commit -m "test: add delete-document tests"
+git push
+cd ../../..
+ls
+uv run pytest
+uv run pytest -vvv
+vim pyproject.toml
+cd rag_builder/lambda/delete-document/
+ls
+vim pyproject.toml
+uv run pytest --cov
+vim pyproject.toml
+uv run pytest --cov
+vim .
+uv run python -m pytest --cov
+uv run pytest --cov
+vim pyproject.toml
+vim .
+cd ../..
+ls
+cd ..
+vim pyproject.toml
+uv run pytest
+uv add --dev pytest-mock
+uv run pytest
+uv run pytest --update-snapshots
+uv run pytest --update-snapshot
+uv run pytest --snapshot-update
+uv run pytest
+vim .
+uv run pytest
+vim .
+uv run pytest
+vim .
+uv run pytest --snapshot-update
+uv run pytest
+git status
+git add tests/
+git add uv.lock
+git add pyproject.toml
+git status
+git diff
+vim .
+gemini
+uv run pytest --snapshot-update
+vim .
+git diff
+uv run pytest --snapshot-update
+uv run pytest
+git status
+git diff tests/conftest.py
+git add tests/conftest.py
+git status
+uv run pytest --snapshot-update
+git add tests/
+git status
+git commit -m "test: add cdk snapshot test"
+git push
+git status
+git add rag_builder/lambda/
+git commit -m "chore: use tool.pytest section"
+git push
+vim doc/
+git diff
+git add doc/
+vim .
+git status
+git add doc/
+git status
+git commit -m "docs: update roadmap"
+git push
+vim .
+cd rag-builder/
+vim .
+git diff
+git add .
+git commit -m "chore: rename fixture and remove print"
+git push
+gemini
+paru
+cd rag-builder/
+ls
+vim pyproject.toml
+gemini
+ls
+uv python list
+cat pyproject.toml
+vim .
+gemini
+vim .
+gemini
+ls
+git status
+gemini
+git status
+git diff
+git add .github/
+git status
+git commit -m "ci: add CI job"
+git push
+vim .
+git diff
+git add .
+git status
+git commit -m "ci: add CI job" --amend
+git push -f
+gemini
+uv run cdk synth rag-builder-stack
+uv run cdk flags --unstable=flags
+uv run cdk flags --help
+uv run cdk flags @aws-cdk/aws-ecs-patterns:uniqueTargetGroupId
+uv run cdk flags @aws-cdk/aws-ecs-patterns:uniqueTargetGroupId --unstable=flags
+cat .github/workflows/ci.yml
+uv run cdk flags @aws-cdk/aws-ecs-patterns:uniqueTargetGroupId --unstable=flags true
+vim cdk.context.json
+vim cdk.json
+job unfreeze
+uv run cdk flags --unstable=flags
+git status
+git diff
+git add .
+git commit -m "chore: add recommended cdk flags"
+vim .
+uv run cdk synth rag-builder-stack
+vim .
+rg http.get
+rg client.get
+rg client.post
+rg http.post
+uv run cdk deploy --context deploy_chainlit=false
+vim .
+uv run cdk deploy --context deploy_chainlit=false
+python -c "import uuid; uuid.uuid4()"
+python -c "import uuid; print(uuid.uuid4())"
+gemini
+uvicorn -h
+cd rag_builder/lambda/backend-api/
+uv run uvicorn -h
+uv run uvicorn --help
+vim .
+uv run cdk deploy --context deploy_chainlit=false
+vim .
+uv run cdk deploy --context deploy_chainlit=false
+docker run --rm -d -p 8080:8080 --platform linux/arm64 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f15003015             │<\n>│ 5529f764797c9499c5a951316e28da5e812c706e
+docker run --rm -d -p 8080:8080 --platform linux/arm64 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f150030155529f764797c9499c5a951316e28da5e812c706e
+docker run -d -p 8080:8080 --platform linux/arm64 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f150030155529f764797c9499c5a951316e28da5e812c706e
+curl localhost:8080/docs
+docker ps
+docker run -d -p 8080:8080 --platform linux/arm64 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f150030155529f764797c9499c5a951316e28da5e812c706e
+docker ps
+docker run --rm -p 8080:8080 --platform linux/arm64 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f150030155529f764797c9499c5a951316e28da5e812c706e
+docker run --rm -p 8080:8080 --platform linux/arm64 --entrypoint uvicorn 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f150030155529f764797c9499c5a951316e28da5e812c706e --port 8080 --host 0.0.0.0 --root-path /prod app.main:app
+docker run --rm -p 8080:8080 --platform linux/arm64 --entrypoint /opt/extensions/lambda-adapter 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f150030155529f764797c9499c5a951316e28da5e812c706e --port 8080 --host 0.0.0.0 --root-path /prod app.main:app
+docker run --rm -p 8080:8080 --platform linux/arm64 --entrypoint /opt/extensions/lambda-adapter 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f150030155529f764797c9499c5a951316e28da5e812c706e
+docker ps
+docker stop gracious_almeida
+docker ps
+docker run --rm -p 8080:8080 --platform linux/arm64 --entrypoint /opt/extensions/lambda-adapter 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:f1d6135ce952543f150030155529f764797c9499c5a951316e28da5e812c706e
+uv run cdk deploy --context deploy_chainlit=false
+vim .
+uv run cdk deploy --context deploy_chainlit=false
+aws lambda list-functions --query "Functions[?contains(FunctionName, 'backend')].FunctionName" --output text
+aws lambda get-function --function-name rag-builder-stack-backendapifastapifunctionF6B1EC9-l8Ks2SvNHPfy --query "Code.ImageUri" --output text
+docker run --rm -p 8000:8000 --platform linux/arm64 115623964190.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-115623964190-us-east-1:a582363c0a07f0472648fb71892cd740f0759f3f2a9b6e12d549d627332303b2
+curl localhost:8000/docs
+docker ps
+docker rm cranky_sammet
+docker stop cranky_sammet
+docker ps
+docker rm cranky_sammet
+docker stop --rm cranky_samet
+docker ls
+docker container list
+docker ps
+git diff
+vim .
+git diff
+curl -x PATCH https://noull7417l.execute-api.us-east-1.amazonaws.com/prod/documents/load/990de9c1-cd7f-4154-af7e-4343c33ff45b
+curl --request PATCH https://noull7417l.execute-api.us-east-1.amazonaws.com/prod/documents/load/990de9c1-cd7f-4154-af7e-4343c33ff45b
+cd rag_builder/fargate/chainlit-app/
+uv run chainlit run main.py -w
+cd ../..
+cd ..
+ls
+uv run cdk destroy rag-builder-stack
+uv run cdk deploy rag-builder-stack
+uv run cdk deploy rag-builder-stack --deploy_chainlit=false
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+uv run cdk destroy rag-builder-stack
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+vim .
+cd rag_builder/fargate/chainlit-app/
+vim .
+git diff
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+uv run chainlit run main.py -w
+ls .files/
+cat .files/c49d1af9-9a6c-4956-b7cc-0cb678e1364b/
+cat .files/c49d1af9-9a6c-4956-b7cc-0cb678e1364b/084aaf9b-db45-48d0-a756-da0e308c8d01
+rm -r .files/
+ls
+git diff
+vim .
+git status
+vi m.
+vim .
+cd
+cd .config/
+vim .
+l
+l -a
+l -l
+l
+v .
+which v
+vim .
+v .
+gemini
+git switch main
+git log
+git switch main
+git switch ci-test
+uv run pytest --snapshot-update
+git diff
+git add  tests/
+git status
+git commit -m "test: update cdk snapshot"
+git push
+vim .
+v .
+git log
+v .
+git switch main
+vim .
+v .
+git status
+git add .github/
+git commit -m "ci: divide CI workflow in two jobs"
+git push
+git switch ci-test
+git status
+git diff
+vim .
+v .
+git status
+git add rag_builder/
+git commit -m "test: update wait_for_index call"
+git push
+vim .
+v .
+git switch main
+v .
+git switch ci-test
+v .
+git switch main
+git pull
+git branch -a
+git pull
+git config --global fetch.prune true
+git pull
+git branch
+git branch -d ci-test
+git branch -D ci-test
+git branch
+git branch ci-test
+git switch ci-test
+vim .
+v .
+git diff
+git add .
+git status
+git switch main
+vim .
+v .
+git diff
+git status
+git add .github/
+git restore --staged rag_builder/
+git staut
+git status
+git commit -m "ci: add coverage"
+git push
+git push -f
+git push
+git push -f
+git push
+git switch ci-test
+git status
+git add rag_builder/
+git commit -m "chore: remove log message to test CI"
+git push
+git switch main
+vim .
+v .
+uv run pytest --cov
+v .
+git diff
+vim .
+v .
+git diff
+git log
+git add .github
+git status
+git commit -m "ci: add coverage" --amend
+git push
+git push -f
+git switch ci-test
+git status
+git rebase main
+git push
+git push -f
+git switch main
+git pull
+paru
+uv run python 3.14
+uv run python
+cd rag-builder/
+git status
+v README.md
+git status
+v README.md
+grip README.md
+paru grip
+=paru grip
+paru grip
+grip README.md
+v README.md
+grip README.md
+v README.md
+grip README.md
+vim .
+v .
+grip README.md
+v .
+v README.md
+grip README.md
+v README.md
+git diff
+git add README.md
+git commit -m "docs: add more badges"
+git push
+gemini
+grip README.md
+v README.md
+grip README.md
+v README.md
+git diff
+git add README.md
+git commit -m "docs: add more badges" --amend
+git push -f
+v README.md
+git add README.md
+git commit -m "docs: add more badges" --amend
+git push -f
+gemini
+vim .
+git status
+git restore .
+git status
+rm .github/commands/
+rm .github/workflows/gemini-*
+git status
+rm -r .github/commands/
+paru aws-cli
+paru aws-cdk
+uvx run cdk
+uvx aws-cdk
+uvx fastapi
+git status
+vim .
+which node
+node --version
+git diff
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+git diff
+uv run pytest --update-snapshot
+uv run pytest --snapshot-update
+vim .
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+vim .
+v .
+vim .
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+vim .
+v .
+vim .
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+vim .
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+git diff
+uv run pytest --snapshot-update
+v .
+git status
+git diff
+git add .github/
+git status
+git commit -m "ci: add CD workflow"
+git push
+vim .
+v .
+vim .gitignore
+v .gitignore
+git add .gitignore
+git status
+git diff .github
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+git status
+git add rag_builder/constructs.py
+v .
+git status
+git add rag_builder/constructs.py
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+v .
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+git add rag_builder/
+git status
+git commit -m "chore: use .dockerignore instead of --exclude flag"
+git push
+git status
+git dif
+git add .github/workflows/cd.yml
+git commit -m "ci: rename step"
+git push
+v .
+git diff
+git add .github/workflows/cd.yml
+git commit -m "ci: set up QEMU and Buildx"
+git push
+git log
+uv sync --upgrade
+uv run pytest
+uv run pytest -vv
+uv run pytest --snapshot-update
+git status
+git add .
+git status
+git branch cd-test
+git switch cd-test
+git status
+git commit -m "chore: update dependencies"
+git push
+git switch mian
+git switch main
+git pull
+git branch
+git branch -D cd-test
+git branch -D ci-test
+v .
+git status
+git log
+git status
+git add rag_builder/fargate/
+git status
+v .
+git add rag_builder/
+git status
+git commit -m "chore: use .dockerignore instead of --exclude flag (2)"
+git push
+gemini
+gemini
+cd rag_builder/lambda/load-document/
+uv run pytest --cov --cov-report html
+start htmlcov/index.html
+rm -r htmlcov/
+vim .
+cd rag_builder/lambda/load-document/
+uv run pytest --cov-report=term-missing
+uv run pytest --cov --cov-report=term-missing
+vim pyproject.toml
+v pyproject.toml
+uv run pytest --cov --cov-report=term-missin
+uv run pytest --cov --cov-report=term-missing
+uv run pytest --cov
+uv run pytest --cov --junit-xml=pytest.xm
+uv run pytest --cov --junit-xml=pytest.xml
+ls
+rm pytest.xm*
+ls
+v .
+git status
+git diff
+git add .github/
+git status
+git commit -m "ci: post coverage comments"
+git push
+vim .github/
+v .
+git diff
+git branch ci-test
+git switch ci-test
+vim .
+v .
+cd rag_builder/lambda/load-document/
+ls
+ls-builtino
+ls-builtin
+l
+uv sync --upgrade
+git status
+git add uv.lock
+git commit -m "chore: update dependencies"
+git push
+v .
+git stauts
+git status
+cd ..
+cd backend-api/
+uv sync --upgrade
+cd ..
+cd delete-document/
+uv sync --upgrade
+cd ..
+cd optimize-vector-store/
+uv sync --upgrade
+cd ..
+ls
+git status
+git add backend-api/ delete-document/
+git commit -m "chore: update dependencies"
+git push
+ls
+cd backend-api/
+ls
+vim pyproject.toml
+v pyproject.toml
+cat test
+./tes
+./tests
+./test
+cd ..
+./test
+cd ..
+ls
+cd load-document/
+v pyproject.toml
+cd ..
+cd backend-api/
+v pyproject.toml
+uv add --dev pytest-env
+git diff
+git status
+git add pyproject.toml uv.lock
+git commit -m "test: add env variables"
+git push
+git staus
+git switch main
+git pull
+git branch -D ci-test
+cd ../..
+cd ..
+git add .github/workflows/cd.yml
+git status
+git commit -m "ci: add concurrency control to CD"
+git push
+cat rag_builder/lambda/backend-api/pyproject.toml
+v .
+git status
+git add doc/roadmap.md
+git commit -m "docs: update roadmap"
+v README.md
+git add README.md
+git commit -m "docs: add CI/CD section"
+git push
+paru
+paru opencode
+cd .config
+opencode
+ls
+cd .config
+v .
+ghostty +list-themes
+v .
+ls
+ghostty +list-themes
+cat ghostty/config
+ls
+l
+ls
+cd
+cd rag-builder/
+ls
+opencode
+l
+opencode
+ls
+v .
+git status
+git add rag_builder/constructs.py
+git commit -m "chore: discard output"
+git push
+http 
+which http
+uv run cdk deploy rag-builder-stack -c deploy_chainlit=false
+cd
+cd .config
+v .
+dotfiles diff
+v .
+cd .config
+v .
+dotfiles status
+lazysync
+dotfiles status
+dotfiles diff nvim/lua/
+dotfiles status
+dotfiles add nvim/
+dotfiles commit -m "update nvim config"
+dotfiles add nushell/config.nu
+dotfiles commit -m "update nushell config"
+dotfiles push
+dotfiles remote
+dotfiles remote set-url origin git@github.com:gontzalm/dotfiles.git
+dotfiles push
+v .
+ghostty +list-themes
+v .
+ls
+l
+v .
+ghostty +list-themes
+v .
+l
+l
+v .
+ghostty +list-themes
+v .
+l
+ls
+l
+v .
+bat --config-dir
+dotfiles status bat
+dotfiles
+dotfiles status
+ls
+cd ..
+ls
+l
+cat .bashrc
+rm .bashrc
+dotfiles status
+dotfiles add .bashrc
+dotfiles status
+dotfiles commit -m "delete .bashrc"
+dotfiles push
+dotfiles
+cd .config/
+ls
+ls opencode/
+cd ..
+ls
+l
+rm -r .dotfiles/
+cd .config
+git init 
+git config --global init.defaultBranch main
+rm -r .git
+git init
+ls
+l
+git status
