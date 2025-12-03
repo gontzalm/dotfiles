@@ -27,6 +27,9 @@ $env.prompt_indicator_vi_insert = ""
 $env.prompt_indicator_vi_normal = ""
 $env.prompt_multiline_indicator = "::: "
 
+# theme
+source ~/.config/nushell/catppuccin_macchiato.nu
+
 # env variables
 $env.JSII_SILENCE_WARNING_UNTESTED_NODE_VERSION = 1
 # $env.GEMINI_API_KEY = (pass google/gemini-api)

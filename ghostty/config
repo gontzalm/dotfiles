@@ -6,8 +6,8 @@ font-style = Medium
 font-style-italic = Oblique
 font-style-bold-italic = Bold Oblique
 
-theme = Catpuccin Macchiato
-background-opacity = 0.9
+theme = Catppuccin Macchiato
+background-opacity = 0.8
 background-blur = true
 mouse-hide-while-typing = true
 

@@ -7,12 +7,13 @@ padding-top = 33%
 result-spacing = 25
 num-results = 5
 
-font = JetBrainsMono Nerd Font
+font = VictorMono Nerd Font
 font-size = 24
 
-text-color = #4e4e5f
+prompt-text = "  "
 
-prompt-text = " : "
-
-background-color = #11111bd9
-selection-color = #83A4E7
+# Catppuccin Macchiato
+text-color = #cad3f5
+prompt-color = #8aadf4
+selection-color = #a6da95
+background-color = #000A

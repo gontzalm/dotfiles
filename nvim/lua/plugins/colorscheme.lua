@@ -49,6 +49,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
+        transparent_background = true,
         integrations = {
             mason = true,
             notify = true,
