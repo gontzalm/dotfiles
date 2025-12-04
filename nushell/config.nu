@@ -1,5 +1,6 @@
 use std/util "path add"
 
+
 # path
 path add "~/.local/bin"
 path add "/usr/local/bin"
@@ -28,9 +29,10 @@ $env.prompt_indicator_vi_normal = ""
 $env.prompt_multiline_indicator = "::: "
 
 # carapace
-mkdir $"($nu.cache-dir)"
-carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
-source $"($nu.cache-dir)/carapace.nu"
+source ($nu.cache-dir | path join carapace.nu)
+
+# zoxide
+source ($nu.cache-dir | path join zoxide.nu)
 
 # theme
 source ~/.config/nushell/catppuccin_macchiato.nu
