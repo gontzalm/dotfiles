@@ -27,6 +27,11 @@ $env.prompt_indicator_vi_insert = ""
 $env.prompt_indicator_vi_normal = ""
 $env.prompt_multiline_indicator = "::: "
 
+# carapace
+mkdir $"($nu.cache-dir)"
+carapace _carapace nushell | save --force $"($nu.cache-dir)/carapace.nu"
+source $"($nu.cache-dir)/carapace.nu"
+
 # theme
 source ~/.config/nushell/catppuccin_macchiato.nu
 
@@ -36,7 +41,6 @@ $env.STARSHIP_CONFIG = $env.HOME | path join ".config/starship/config.toml"
 # $env.GEMINI_API_KEY = (pass google/gemini-api)
 # $env.MISTRAL_API_KEY = (pass mistral/api)
 # $env.CODESTRAL_API_KEY = (pass mistral/codestral-api)
-
 
 # aliases
 alias df = df -h
