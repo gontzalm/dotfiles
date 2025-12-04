@@ -32,6 +32,7 @@ source ~/.config/nushell/catppuccin_macchiato.nu
 
 # env variables
 $env.JSII_SILENCE_WARNING_UNTESTED_NODE_VERSION = 1
+$env.STARSHIP_CONFIG = $env.HOME | path join ".config/starship/config.toml"
 # $env.GEMINI_API_KEY = (pass google/gemini-api)
 # $env.MISTRAL_API_KEY = (pass mistral/api)
 # $env.CODESTRAL_API_KEY = (pass mistral/codestral-api)
