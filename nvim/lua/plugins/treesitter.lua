@@ -23,6 +23,7 @@ return {
             "regex",
             "sql",
             "toml",
+            "vhs",
             "vim",
             "vimdoc",
             "xml",
