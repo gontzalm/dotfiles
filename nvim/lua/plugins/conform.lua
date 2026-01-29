@@ -15,7 +15,7 @@ return {
             toml = { "taplo" },
             yaml = { "prettierd" },
         },
-        format_on_save = { timeout_ms = 500 },
+        format_on_save = { timeout_ms = 5000 },
         formatters = {
             prettierd = {
                 env = { PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/nvim/config/.prettierrc.toml") },
