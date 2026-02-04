@@ -1,47 +1,14 @@
 return {
     {
-        "mason-org/mason.nvim",
-        cmd = { "Mason", "MasonUpdate" },
-        opts = {},
-    },
-    {
-        "mason-org/mason-lspconfig.nvim",
-        dependencies = { "mason-org/mason.nvim" },
-        opts = {
-            ensure_installed = {
-                "basedpyright",
-                "bashls",
-                "docker_compose_language_service",
-                "dockerls",
-                "html",
-                "jsonls",
-                "ltex_plus",
-                "lua_ls",
-                "ruff",
-                "taplo",
-                "yamlls",
-            },
-            handlers = {
-                function(server_name)
-                    vim.lsp.config(
-                        server_name,
-                        { capabilities = require("cmp_nvim_lsp").default_capabilities() }
-                    )
-                end,
-            },
-        },
-    },
-    {
         "neovim/nvim-lspconfig",
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
-            "mason-org/mason-lspconfig.nvim",
             {
                 "ray-x/lsp_signature.nvim",
                 opts = { hint_enable = false, handler_opts = { border = "none" } }
             },
         },
-        cmd = { "LspInfo", "LspInstall", "LspStart" },
+        cmd = { "LspInfo", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
         config = function()
             vim.api.nvim_create_autocmd("LspAttach", {
@@ -70,7 +37,29 @@ return {
                 end,
             })
 
-            vim.lsp.enable("nushell")
+            local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
+            local lsp_servers = {
+                -- "basedpyright", -- basedpyright-bin
+                "bashls",       -- bash-language-server
+                "dockerls",     -- dockerfile-language-server
+                "html",         -- vscode-html-language-server
+                "jsonls",       -- vscode-json-language-server
+                "lua_ls",       -- lua-language-server
+                "ltex",         -- ltex-ls-bin
+                "markdownlint", -- markdownlint-cli
+                "nushell",      -- nushell
+                "prettierd",    -- prettierd
+                "ruff",         -- ruff
+                "taplo",        -- taplo
+                "ty",           -- ty
+                "yamlls",       -- yaml-language-server
+            }
+
+            for _, server in ipairs(lsp_servers) do
+                vim.lsp.config(server, { capabilities = capabilities })
+                vim.lsp.enable(server)
+            end
         end,
     },
     {

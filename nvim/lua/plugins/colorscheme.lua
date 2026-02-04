@@ -51,7 +51,6 @@ return {
     opts = {
         transparent_background = true,
         integrations = {
-            mason = true,
             notify = true,
         },
     },
