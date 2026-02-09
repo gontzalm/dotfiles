@@ -1,3 +1,7 @@
+import warnings
+
+warnings.filterwarnings("ignore", message="Ignoring ~/.config/ipython")
+c.TerminalIPythonApp.display_banner = False
 c.TerminalInteractiveShell.editing_mode = "vi"
 c.TerminalInteractiveShell.autoindent = False
 c.TerminalInteractiveShell.colors = "Linux"
