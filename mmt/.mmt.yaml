@@ -1,0 +1,6 @@
+input: 172.21.115.51
+camera: gopro
+output: /home/gontz/Videos
+# range: week
+# skip_aux: false
+connection: connect

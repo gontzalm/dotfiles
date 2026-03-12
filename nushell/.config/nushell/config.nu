@@ -1,5 +1,7 @@
 use std/util "path add"
 
+use ($nu.default-config-dir | path join mise.nu)
+
 
 # path
 path add "~/.local/bin"
@@ -50,6 +52,8 @@ alias v = nvim
 alias cat = bat
 alias lazysync = nvim --headless '+Lazy! sync' +qa
 alias lzd = lazydocker
+
+alias sshfs-homelab = sshfs gontz@homelab:homelab ~/homelab
 alias lzd-homelab = ssh -t homelab "env TERM=xterm-256color lazydocker"
 
 def steam [] {
@@ -82,3 +86,4 @@ def l [
         ...$pattern
     ) | sort-by type name -i
 }
+

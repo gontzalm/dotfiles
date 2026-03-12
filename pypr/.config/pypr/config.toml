@@ -1,0 +1,23 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.bluetooth]
+animation = "fromRight"
+command = "overskride"
+class = "io.github.kaii_lb.Overskride"
+size = "30% 60%"
+unfocus = "hide"
+
+[scratchpads.network]
+animation = "fromRight"
+command = "nmrs"
+class = "org.netrs.ui"
+size = "40% 90%"
+unfocus = "hide"
+
+[scratchpads.yazi]
+animation = "fromLeft"
+command = "ghostty --class=pypr.yazi -e yazi"
+class = "pypr.yazi"
+size = "40% 90%"
+unfocus = "hide"
