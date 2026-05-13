@@ -1,6 +1,6 @@
 input: 172.21.115.51
 camera: gopro
-output: /home/gontz/Videos
-# range: week
+output: /home/gontz/Videos/raw
+range: day
 # skip_aux: false
 connection: connect

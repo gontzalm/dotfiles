@@ -11,7 +11,7 @@ unfocus = "hide"
 [scratchpads.network]
 animation = "fromRight"
 command = "nmrs"
-class = "org.netrs.ui"
+class = "org.nmrs.ui"
 size = "40% 90%"
 unfocus = "hide"
 
