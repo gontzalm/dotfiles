@@ -1,0 +1,37 @@
+[global]
+    font = Inter Regular 11
+    line_height = 4
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    width = 300
+    offset = (20, 20)
+    origin = top-right
+    gap_size = 8
+    corner_radius = 0
+    frame_width = 2
+    padding = 20
+    horizontal_padding = 20
+    text_icon_padding = 15
+    separator_height = 2
+    icon_position = left
+    max_icon_size = 48
+    background = "#000000"
+    foreground = "#FFFFFF"
+    frame_color = "#1A1A1A"
+    separator_color = "#1A1A1A"
+    highlight = "#FFFFFF"
+
+[urgency_low]
+    timeout = 4
+
+[urgency_normal]
+    timeout = 6
+
+[urgency_critical]
+    frame_color = "#E02424"
+    timeout = 0
+
+[chrome_nothing_sound]
+    appname = "Google Chrome"
+    script = ~/.local/bin/dunst-nothing.sh

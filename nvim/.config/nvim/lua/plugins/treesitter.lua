@@ -37,7 +37,7 @@ return {
             enable = true,
         },
     },
-    main = "nvim-treesitter.configs",
+    main = "nvim-treesitter.config",
     init = function()
         vim.o.foldmethod = "expr"
         vim.o.foldexpr = "nvim_treesitter#foldexpr()"
