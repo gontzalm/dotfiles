@@ -1,131 +1,148 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: VictorMono Nerd Font, monospace;
-    font-weight: bold;
+    font-family: 'VictorMono Nerd Font', monospace;
+    font-weight: 700;
     font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(21, 18, 27, 0);
-    color: #cdd6f4;
+    background: transparent;
+}
+
+/* Base style for individual floating pills */
+#clock, #workspaces, #window, .modules-right {
+    background: rgba(18, 18, 18, 0.9); /* Deep Nothing black */
+    color: #ececec;      /* Crisp white */
+    border: 1px solid #2a2a2a; /* Very subtle stroke */
+    border-radius: 20px;
+    margin: 0px 4px;
+    letter-spacing: 0.4px;
+}
+
+/* CLOCK */
+#clock {
+    padding: 4px 16px;
+    color: #ffffff;
+    font-weight: 900;
+    font-feature-settings: "tnum";
+}
+
+/* WORKSPACES */
+#workspaces {
+    padding: 2px 8px;
 }
 
 #workspaces button {
-    padding: 5px;
-    color: #555869;
-    margin-right: 5px;
+    color: #555555; 
+    min-width: 32px;
+    padding: 0px;
+    margin: 0px 2px;
+    border-bottom: 2px solid transparent; 
+    transition: all 0.2s ease;
 }
 
 #workspaces button.active {
-    color: #a6adc8;
-}
-
-#workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
-    border-radius: 10px;
+    color: #ffffff; 
+    border-bottom: 2px solid #ff0000;
 }
 
 #workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
+    color: #121212;
+    background: #ff0000;
     border-radius: 10px;
+    border-bottom: none;
 }
 
 #workspaces button:hover {
-    background: #cdd6f4;
-    color: #11111b; 
-    border-radius: 10px;
+    color: #ffffff;
+    background: transparent;
+    border-bottom: 2px solid #888888; 
 }
 
-#window,
-#clock,
-#battery,
-#pulseaudio,
-#network,
-#bluetooth,
-#cpu,
-#memory,
-#workspaces,
-#tray,
-#backlight {
-    background: #1e1e2e;
-    padding: 0px 10px;
-    margin: 3px 0px;
-    margin-top: 5px;
-    /* border: 1px solid #181825; */
-}
-
-#backlight {
-    border-radius: 10px 0px 0px 10px;
-}
-
-#tray {
-    border-radius: 10px;
-    margin-right: 10px;
-}
-
-#workspaces {
-    background: #1e1e2e;
-    border-radius: 10px;
-    margin-left: 10px;
-    padding-right: 0px;
-    padding-left: 5px;
-}
-
-#cpu {
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 10px;
-}
-
-#memory {
-    border-radius: 10px 0px 0px 10px;
-}
-
+/* WINDOW TITLE (Now fully legible on light wallpapers) */
 #window {
-    border-radius: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+    padding: 4px 18px;
+    color: #ececec;
 }
 
-#clock {
-    color: #a6adc8;
-    border-radius: 10px 10px 10px 10px;
-    margin-left: 5px;
-    border-right: 0px;
+/* RIGHT MODULES CONTAINER (Unified pill layout) */
+.modules-right {
+    padding: 2px 10px;
 }
 
-#network {
-    color:  #a6adc8;
-    border-radius: 10px 0px 0px 10px;
+/* Make individual modules inside the right pill transparent */
+#idle_inhibitor, #custom-updates, #custom-s1, #custom-s2, #custom-s3, #custom-s4, #custom-s5, #memory, #cpu, #backlight, #pulseaudio.output, #pulseaudio.input, #network, #bluetooth, #battery {
+    background: transparent;
+    color: #ececec;
+    border: none;
+    padding: 2px 8px;
+    margin: 0px;
 }
 
-#bluetooth {
-    color:  #a6adc8;
-}
-
-#pulseaudio {
-    color: #a6adc8;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#pulseaudio.microphone {
-    color: #a6adc8;
-    border-radius: 0px 10px 10px 0px;
-    border-left: 0px;
-    border-right: 0px;
-    margin-right: 10px;
-}
-
+/* Micro-adjustments for edges */
 #battery {
-    color:#a6adc8;
-    border-radius: 0px 10px 10px 0px;
-    margin-right: 5px;
+    padding-right: 4px;
 }
 
-#bluetooth {
+/* SPEAKER & MIC - Muted in red */
+#pulseaudio.output.muted {
+    color: #ff0000;
+}
+#pulseaudio.input.source-muted {
+    color: #ff0000;
+}
 
+/* IDLE INHIBITOR - Coffee icon, red when active */
+#idle_inhibitor {
+    padding-right: 14px;
+}
+#idle_inhibitor.activated {
+    color: #ff0000;
+}
+
+/* UPDATES - Red when packages available */
+#custom-updates.has-updates {
+    color: #ff0000;
+}
+
+/* CRITICAL STATES - Steady red (Nothing OS style) */
+#battery.critical, #memory.critical, #cpu.critical {
+    color: #ff0000;
+}
+
+/* SEPARATORS - Subtle red dots */
+#custom-s1, #custom-s2, #custom-s3, #custom-s4, #custom-s5 {
+    color: rgba(255, 0, 0, 0.5);
+    padding: 2px 3px;
+    font-size: 14px;
+}
+
+/* BLUETOOTH - Off in muted red */
+#bluetooth.off, #bluetooth.disabled {
+    color: rgba(255, 0, 0, 0.35);
+}
+
+/* HOVER - Red glow on interactive modules */
+#idle_inhibitor:hover,
+#pulseaudio.output:hover,
+#pulseaudio.input:hover,
+#network:hover,
+#bluetooth:hover,
+#battery:hover {
+    text-shadow: 0 0 6px rgba(255, 0, 0, 0.4);
+}
+
+/* TOOLTIPS - Estética Nothing OS */
+tooltip {
+    background: rgba(18, 18, 18, 0.9);
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: #ececec;
+    font-family: 'VictorMono Nerd Font', monospace;
+    font-size: 13px;
 }

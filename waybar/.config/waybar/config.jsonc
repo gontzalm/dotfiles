@@ -5,28 +5,45 @@
   "exclusive": true,
   "passthrough": false,
   "gtk-layer-shell": true,
-  "height": 0,
+  "height": 38,
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-right": 10,
+
   "modules-left": ["clock", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": [
-    "tray",
+    "custom/updates",
+    "idle_inhibitor",
+    "custom/s4",
     "memory",
     "cpu",
+    "custom/s1",
     "backlight",
-    "pulseaudio",
-    "pulseaudio#microphone",
+    "custom/s2",
+    "pulseaudio#output",
+    "pulseaudio#input",
+    "custom/s3",
     "network",
     "bluetooth",
+    "custom/s5",
     "battery",
   ],
+
   "hyprland/window": {
-    "format": "󰣇 {}",
+    "format": "{title}",
+    "max-length": 50,
+    "rewrite": {
+      "^(.*) - Google Chrome$": "󰊯  $1",
+      "^~/?(.*)$": "  $1",
+    },
   },
+
   "hyprland/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
     "on-click": "activate",
-    "format": "{icon} {name}",
+    "format": "{icon}",
     "format-icons": {
       "web": "󰖟",
       "chat": "󰭻",
@@ -35,26 +52,20 @@
       "other": "󰟃",
     },
   },
-  "tray": {
-    "icon-size": 13,
-    "spacing": 10,
-  },
 
   "clock": {
-    "format": "{:%A    %Y-%m-%d    %H:%M:%S}",
+    "format": "  {:%H:%M     %Y-%m-%d}",
+    "locale": "es_ES.UTF-8",
     "interval": 1,
-    "rotate": 0,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",
       "mode-mon-col": 3,
       "on-scroll": 1,
-      "on-click-right": "mode",
       "format": {
-        "months": "<span color='#a6adc8'><b>{}</b></span>",
-        "weekdays": "<span color='#a6adc8'><b>{}</b></span>",
-        "today": "<span color='#a6adc8'><b>{}</b></span>",
-        "days": "<span color='#555869'><b>{}</b></span>",
+        "months": "<span color='#ffffff'><b>{}</b></span>",
+        "weekdays": "<span color='#888888'><b>{}</b></span>",
+        "today": "<span color='#ff0000'><b>{}</b></span>",
       },
     },
   },
@@ -72,82 +83,93 @@
     "states": {
       "good": 95,
       "warning": 30,
-      "critical": 20,
+      "critical": 15,
     },
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{time} {icon}",
-    "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{time}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
   },
 
-  "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "tooltip": false,
-    "format-muted": "  Muted",
+  "pulseaudio#output": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  Mute",
     "on-click": "pamixer -t",
     "on-scroll-up": "pamixer -i 1",
     "on-scroll-down": "pamixer -d 1",
-    "scroll-step": 5,
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", "", ""],
+      "default": ["", "", ""],
     },
   },
 
-  "pulseaudio#microphone": {
+  "pulseaudio#input": {
     "format": "{format_source}",
     "format-source": " {volume}%",
-    "format-source-muted": "  Muted",
+    "format-source-muted": "  Mute",
     "on-click": "pamixer --default-source -t",
-    "on-scroll-up": "pamixer --default-source -i 5",
-    "on-scroll-down": "pamixer --default-source -d 5",
-    "scroll-step": 5,
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "",
+    },
+  },
+
+  "custom/updates": {
+    "exec": "~/.config/waybar/check-updates.sh",
+    "interval": 300,
+    "return-type": "json",
+  },
+
+  "custom/s1": {
+    "format": "•",
+    "tooltip": false,
+  },
+  "custom/s2": {
+    "format": "•",
+    "tooltip": false,
+  },
+  "custom/s3": {
+    "format": "•",
+    "tooltip": false,
+  },
+  "custom/s4": {
+    "format": "•",
+    "tooltip": false,
+  },
+  "custom/s5": {
+    "format": "•",
+    "tooltip": false,
   },
 
   "memory": {
-    "states": {
-      "c": 90, // critical
-      "h": 60, // high
-      "m": 30, // medium
-    },
+    "states": { "c": 90, "h": 60, "m": 30 },
     "interval": 10,
-    "format": "󰾆 {used}GB",
-    "format-m": "󰾅 {used}GB",
-    "format-h": "󰓅 {used}GB",
-    "format-c": " {used}GB",
-    "format-alt": "󰾆 {percentage}%",
-    "max-length": 10,
-    "tooltip": true,
-    "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB",
+    "format": "󰾆 {used:0.1f}GB",
+    "tooltip-format": "{used:0.1f}GB / {total:0.1f}GB ({percentage}%)",
   },
+
   "cpu": {
     "interval": 10,
     "format": "󰍛 {usage}%",
-    "format-alt": "{icon0}{icon1}{icon2}{icon3}",
-    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
+
   "bluetooth": {
     "format-on": "󰂯",
     "format-off": "󰂲",
-    "format-disabled": "", // an empty format will hide the module
+    "format-disabled": "",
     "format-connected": "󰂱 {num_connections}",
-    "tooltip-format-connected": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
   },
+
   "network": {
-    "tooltip": true,
-    "format-wifi": "  {essid}",
-    "format-ethernet": "󰈀 ",
-    "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
-    "format-linked": "󰈀 {ifname} (No IP)",
-    "format-disconnected": "󰖪 ",
-    "tooltip-format-disconnected": "Disconnected",
-    "interval": 2,
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{essid}\n{ipaddr}",
   },
 }
