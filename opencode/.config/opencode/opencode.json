@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "mcp": {
+    "aws_mcp": {
+      "type": "local",
+      "command": [
+        "bash",
+        "-c",
+        "uvx mcp-proxy-for-aws@latest https://aws-mcp.eu-central-1.api.aws/mcp --metadata AWS_REGION=$(aws configure get region)"
+      ],
+      "enabled": true
+    },
+    "airtable": {
+      "type": "local",
+      "command": [
+        "uv",
+        "run",
+        "--with",
+        "fastmcp",
+        "/home/gontz/.config/opencode/scripts/airtable-proxy-mcp.py"
+      ],
+      "enabled": true
+    }
+  }
+}
