@@ -57,6 +57,9 @@ alias mount-homelab = sshfs gontz@homelab:homelab ~/homelab
 alias umount-homelab = umount ~/homelab
 alias lzd-homelab = ssh -t homelab "env TERM=xterm-256color lazydocker"
 
+alias enode-on = tailscale set --exit-node=100.92.59.21
+alias enode-off = tailscale set --exit-node=
+
 def steam [] {
     with-env { DISPLAY: ":0", SDL_VIDEODRIVER: "x11" } {
         ^nohup /usr/bin/steam -system-composer out+err> /dev/null &
